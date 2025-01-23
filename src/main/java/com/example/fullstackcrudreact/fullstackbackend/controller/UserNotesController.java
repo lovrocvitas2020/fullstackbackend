@@ -20,12 +20,17 @@ public class UserNotesController {
     @Autowired
     private UserNotesRepository userNotesRepository;
 
-    @PostMapping("/user_notes")
-    UserNotes newUserNotes(@RequestBody UserNotes newUserNotes){
-        System.out.println("Debug: UserNotesController newUserNotes method");
+
+    // Add user note endpoint
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping("/add_user_notes")
+    public UserNotes newUserNote(@RequestBody UserNotes newUserNotes){
+
+        System.out.println("UserNotesController newUserNote method: "+newUserNotes.toString());
+
         return userNotesRepository.save(newUserNotes);
     }
-
+    
    
      // Get all user notes
     @GetMapping("/user_notes")
