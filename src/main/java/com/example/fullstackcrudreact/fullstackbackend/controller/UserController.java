@@ -48,7 +48,7 @@ public class UserController {
     }
 
 
-    @PostMapping("/login")
+    @PostMapping("/loginuser")
     public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
         User user = userRepository.findByUsername(loginRequest.getUsername());
         if (user != null && passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
