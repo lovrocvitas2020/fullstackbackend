@@ -30,7 +30,7 @@ public class UserNotesController {
     * @param newUserNotes
     * @return
     */
-    @CrossOrigin(origins = "http://localhost:3000")
+   
     @PostMapping("/add_user_notes")
     public UserNotes newUserNote(@RequestBody UserNotes newUserNotes){
 
