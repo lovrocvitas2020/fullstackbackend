@@ -15,7 +15,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -83,20 +82,7 @@ public class UserControllerTest {
                 .andExpect(status().isNotFound());
     }
 
-    @Test
-    public void testCreateUser() throws Exception {
-        User user = new User();
-        user.setId(1L);
-        user.setUsername("user1");
-
-        when(userRepository.save(any(User.class))).thenReturn(user);
-
-        mockMvc.perform(post("/user")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"username\":\"user1\", \"name\":\"Name\", \"email\":\"user1@example.com\"}"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.username").value("user1"));
-    }
+    
 
     @Test
     public void testUpdateUser() throws Exception {

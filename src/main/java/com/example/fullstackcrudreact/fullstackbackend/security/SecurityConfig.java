@@ -11,28 +11,32 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig  {
-
+public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+            .cors()
+            .and()
             .authorizeHttpRequests(authorize -> authorize
-            .requestMatchers("/users", 
-            "/register", 
-            "/loginuser",
-            "/add_user_notes",
-            "/update_user_note/**",
-            "/delete_user_note/**",
-            "/user_notes",
-            "/user_notes/**",
-            "/user/**,").permitAll()
-            .anyRequest().authenticated()
+                .requestMatchers(
+                    "/users", 
+                    "/register", 
+                    "/loginuser",
+                    "/add_user_notes",
+                    "/update_user_note/**",
+                    "/delete_user_note/**",
+                    "/user_notes",
+                    "/user_notes/**",
+                    "/user/**"
+                ).permitAll()
+                .anyRequest().authenticated()
             )
             .formLogin(formLogin -> formLogin
                 .loginPage("/login")
                 .permitAll()
             )
+            .logout(logout -> logout.permitAll())
             .rememberMe(Customizer.withDefaults())
             .csrf().disable();
 
@@ -43,8 +47,4 @@ public class SecurityConfig  {
     public UserDetailsService userDetailsService() {
         return new InMemoryUserDetailsManager(); // Replace this with your custom implementation if needed
     }
-    
-
-
-
 }
