@@ -58,7 +58,12 @@ public class UserController {
         return userRepository.save(newUser);
     }
 
-
+    /**
+     * Logins user
+     * 
+     * @param loginRequest
+     * @return
+     */
     @PostMapping("/loginuser")
     public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
         User user = userRepository.findByUsername(loginRequest.getUsername());
@@ -82,59 +87,57 @@ public class UserController {
         return userRepository.save(newUser);
     }
     
-   /*
-    * 
-           @GetMapping("/users")
-        List<User> getAllUsers(@RequestParam(defaultValue="0") int page,
-        @RequestParam(defaultValue= "10") int size){
-            logger.debug("Debug: UserController getAllUsers method");
-        return  userRepository.findAll();
+   
+    /**
+     * Gets all users
+     * 
+     * @param page
+     * @param size
+     * @param name
+     * @return
+     */
+    @GetMapping("/users")
+    public ResponseEntity<PagedModel<EntityModel<User>>> getAllUsers(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(required = false) String name) {
+        Pageable paging = PageRequest.of(page, size);
+        Page<User> userPage;
+        
+        if (name == null || name.isEmpty()) {
+            userPage = userRepository.findAll(paging);
+        } else {
+            userPage = userRepository.findByNameContainingIgnoreCase(name, paging);
+        }
+
+        PagedModel<EntityModel<User>> pagedModel = pagedResourcesAssembler.toModel(userPage, user ->
+                EntityModel.of(user,
+                        WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(UserController.class).getUserById(user.getId())).withSelfRel()));
+        return ResponseEntity.ok(pagedModel);
     }
 
-    */
-
-    @GetMapping("/users")
-	public ResponseEntity<PagedModel<EntityModel<User>>> getAllUsers(@RequestParam(defaultValue = "0") int page,
-                                                                 @RequestParam(defaultValue = "10") int size) {
-    Pageable paging = PageRequest.of(page, size);
-    Page<User> userPage = userRepository.findAll(paging);
-    PagedModel<EntityModel<User>> pagedModel = pagedResourcesAssembler.toModel(userPage, user -> 
-        EntityModel.of(user,
-                       WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(UserController.class).getUserById(user.getId())).withSelfRel()));
-    return ResponseEntity.ok(pagedModel);
-	}
-
      
+    
     /**
-     * Gets User by id
+     * Gets user by id
      * 
      * @param id
      * @return
      */
-    /*
-      @GetMapping("/user/{id}")
-    User getUserById(@PathVariable Long id) {
+    @GetMapping("/user/{id}")
+    public ResponseEntity<EntityModel<User>> getUserById(@PathVariable Long id) {
         logger.debug("Debug: UserController getUserById method");
-        return userRepository.findById(id)
+        User user = userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
+        EntityModel<User> resource = EntityModel.of(user,
+                WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(UserController.class).getUserById(id)).withSelfRel(),
+                WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(UserController.class).getAllUsers(0, 10, null)).withRel("users"));
+        return ResponseEntity.ok(resource);
     }
-    
-     */
-
-     @GetMapping("/user/{id}")
-     public ResponseEntity<EntityModel<User>> getUserById(@PathVariable Long id) {
-         logger.debug("Debug: UserController getUserById method");
-         User user = userRepository.findById(id)
-                 .orElseThrow(() -> new UserNotFoundException(id));
-         EntityModel<User> resource = EntityModel.of(user,
-                 WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(UserController.class).getUserById(id)).withSelfRel(),
-                 WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(UserController.class).getAllUsers(0, 10)).withRel("users"));
-         return ResponseEntity.ok(resource);
-     }
     
 
     /**
-     * Updates user
+     * Updates user by id
      * 
      * @param newUser
      * @param id

@@ -31,7 +31,6 @@ public class UserNotesController {
 
    /**
     *  Adds User Note
-
     * @param newUserNotes
     * @return
     */
@@ -46,7 +45,6 @@ public class UserNotesController {
    
      /**
       *  Fetches all user_notes
-
       * @return
       */
     @GetMapping("/user_notes")
