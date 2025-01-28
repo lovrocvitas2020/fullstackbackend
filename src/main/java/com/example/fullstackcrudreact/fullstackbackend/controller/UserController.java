@@ -1,7 +1,13 @@
 package com.example.fullstackcrudreact.fullstackbackend.controller;
 
+import java.io.IOException;
+import java.sql.Timestamp;
+import java.time.Instant;
+
 import org.slf4j.LoggerFactory;
+import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -9,6 +15,7 @@ import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.PagedModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,8 +33,9 @@ import com.example.fullstackcrudreact.fullstackbackend.exception.UserNotFoundExc
 import com.example.fullstackcrudreact.fullstackbackend.model.LoginRequest;
 import com.example.fullstackcrudreact.fullstackbackend.model.User;
 import com.example.fullstackcrudreact.fullstackbackend.repository.UserRepository;
+import com.example.fullstackcrudreact.fullstackbackend.service.ExcelExportService;
 
-
+import java.io.IOException;
 
 
 
@@ -45,6 +53,46 @@ public class UserController {
 
      @Autowired
     private PagedResourcesAssembler<User> pagedResourcesAssembler;
+
+
+     @Autowired
+    private JobLauncher jobLauncher;
+
+
+
+
+
+    @Autowired
+    private ApplicationContext applicationContext;
+
+      @Autowired
+    private ExcelExportService excelExportService;
+
+
+
+    /**
+     * Starts the batch job to export users to Excel.
+     *
+     * @return ResponseEntity with job execution status
+     */
+    @GetMapping("/xls")
+    public ResponseEntity<byte[]> generateXls() {
+        try {
+            // Attempt to generate Excel file
+            byte[] excelFile = excelExportService.exportUsersToExcel();
+
+            // Set the response headers for file download
+            HttpHeaders headers = new HttpHeaders();
+            headers.add("Content-Disposition", "attachment; filename=users.xlsx");
+
+            return new ResponseEntity<>(excelFile, headers, HttpStatus.OK);
+        } catch (IOException e) {
+            // Log the error and return a failure response
+            logger.error("Error while exporting users to Excel", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error exporting users to Excel".getBytes());
+        }
+    }
 
     /**
      * Creates new User
@@ -151,6 +199,7 @@ public class UserController {
                     user.setUsername(newUser.getUsername());
                     user.setName(newUser.getName());
                     user.setEmail(newUser.getEmail());
+                    user.setUpdatedOn(Timestamp.from(Instant.now()));
                     return userRepository.save(user);
                 }).orElseThrow(() -> new UserNotFoundException(id));
     }

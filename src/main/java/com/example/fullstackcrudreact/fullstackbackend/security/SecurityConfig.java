@@ -24,9 +24,11 @@ public class SecurityConfig {
                     "/register", 
                     "/loginuser",
                     "/add_user_notes",
+                    "/batch/start",
                     "/update_user_note/**",
                     "/delete_user_note/**",
                     "/user_notes",
+                    "/xls",
                     "/user_notes/**",
                     "/user/**"
                 ).permitAll()

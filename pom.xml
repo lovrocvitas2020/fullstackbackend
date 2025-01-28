@@ -78,11 +78,45 @@
 		<groupId>org.springframework.data</groupId>
 		<artifactId>spring-data-rest-hal-explorer</artifactId>
 	</dependency>
+	
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-hateoas</artifactId>
 		<version>3.0.6</version> <!-- Replace with the latest version -->
 	</dependency>
+
+		<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-batch</artifactId>
+	</dependency>
+
+
+
+	<!-- Apache POI for Excel -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>5.2.3</version> <!-- Use the latest version available -->
+    </dependency>
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>5.2.3</version>
+    </dependency>
+			
+		<dependency>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-core</artifactId>
+		
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-infrastructure</artifactId>
+			
+		</dependency>
+
+
 
 	</dependencies>
 
