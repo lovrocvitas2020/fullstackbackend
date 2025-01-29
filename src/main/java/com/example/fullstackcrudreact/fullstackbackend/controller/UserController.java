@@ -1,13 +1,12 @@
 package com.example.fullstackcrudreact.fullstackbackend.controller;
 
+
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.Instant;
 
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -35,8 +34,6 @@ import com.example.fullstackcrudreact.fullstackbackend.model.User;
 import com.example.fullstackcrudreact.fullstackbackend.repository.UserRepository;
 import com.example.fullstackcrudreact.fullstackbackend.service.ExcelExportService;
 
-import java.io.IOException;
-
 
 
 @RestController
@@ -54,16 +51,6 @@ public class UserController {
      @Autowired
     private PagedResourcesAssembler<User> pagedResourcesAssembler;
 
-
-     @Autowired
-    private JobLauncher jobLauncher;
-
-
-
-
-
-    @Autowired
-    private ApplicationContext applicationContext;
 
       @Autowired
     private ExcelExportService excelExportService;
@@ -200,6 +187,7 @@ public class UserController {
                     user.setName(newUser.getName());
                     user.setEmail(newUser.getEmail());
                     user.setUpdatedOn(Timestamp.from(Instant.now()));
+                    
                     return userRepository.save(user);
                 }).orElseThrow(() -> new UserNotFoundException(id));
     }

@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.fullstackcrudreact.fullstackbackend.exception.UserNotFoundException;
 import com.example.fullstackcrudreact.fullstackbackend.exception.UserNoteNotFoundException;
+import com.example.fullstackcrudreact.fullstackbackend.model.User;
 import com.example.fullstackcrudreact.fullstackbackend.model.UserNotes;
 import com.example.fullstackcrudreact.fullstackbackend.repository.UserNotesRepository;
+import com.example.fullstackcrudreact.fullstackbackend.repository.UserRepository;
 
 
 @RestController
@@ -28,6 +30,10 @@ public class UserNotesController {
     @Autowired
     private UserNotesRepository userNotesRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
+    User fetchedUser = new User();
 
    /**
     *  Adds User Note
@@ -62,6 +68,9 @@ public class UserNotesController {
     @GetMapping("/user_notes/{id}")
     public UserNotes getUserNoteById(@PathVariable Long id) {
         logger.debug("Debug: UserNotesController getUserNoteById method");
+
+        System.out.println("UserNotesController getUserNoteById method userNotesRepository.findById(id).toString(): " +userNotesRepository.findById(id).toString());
+
         return userNotesRepository.findById(id)
                 .orElseThrow(() -> new UserNoteNotFoundException(id));
     }
@@ -93,12 +102,38 @@ public class UserNotesController {
     @PutMapping("/update_user_note/{id}")
     public UserNotes updateUserNote(@RequestBody UserNotes newUserNotes, @PathVariable Long id) {
         logger.debug("UserNotesController updateUserNote method: " + id);
-        return userNotesRepository.findById(id)
-                .map(userNote -> {
-                    userNote.setUsernote(newUserNotes.getUsernote());
-                    userNote.setUser(newUserNotes.getUser());
-                    return userNotesRepository.save(userNote);
-                }).orElseThrow(() -> new UserNotFoundException(id));
+
+      // Fetch the UserNotes by ID
+    UserNotes fetchedUserNotes = userNotesRepository.findById(id)
+    .orElseThrow(() -> new UserNoteNotFoundException(id));
+        
+        System.out.println("UserNotesController updateUserNote method: " + id);     
+        System.out.println("UserNotesController updateUserNote newUserNotes.toString(): " + newUserNotes.toString());
+        System.out.println("UserNotesController updateUserNote method userNotesRepository.findById(id).toString(): " +userNotesRepository.findById(id).toString());
+
+       if(userNotesRepository.findById(id).isPresent()){
+       
+         
+            fetchedUser = fetchedUserNotes.getUser();
+            System.out.println("fetchedUser.getId(): "+fetchedUser.getId());
+       } else {
+             System.out.println("fetchedUser is null ");
+       }
+
+
+        Long userId = fetchedUser.getId();
+        logger.debug("UserNotesController updateUserNote userId: " + userId);
+
+            // Fetch the User from the userRepository
+            User fetchedUser = userRepository.findById(userId)
+            .orElseThrow(() -> new UserNotFoundException(userId));
+
+       // Update the UserNotes
+        fetchedUserNotes.setUsernote(newUserNotes.getUsernote());
+        fetchedUserNotes.setUser(fetchedUser); // Ensure user is set
+            
+         // Save and return the updated UserNotes
+    return userNotesRepository.save(fetchedUserNotes);
     }
 
 }

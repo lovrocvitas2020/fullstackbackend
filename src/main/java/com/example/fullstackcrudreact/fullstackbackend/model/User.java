@@ -27,7 +27,7 @@ public class User {
     private String password;
 
     @NonNull
-    private Timestamp createdOn; // New attribute
+    private Timestamp createdOn; 
 
     private Timestamp updatedOn;
 
