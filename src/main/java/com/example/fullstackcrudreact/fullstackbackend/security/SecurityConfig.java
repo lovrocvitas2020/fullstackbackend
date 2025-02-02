@@ -29,6 +29,11 @@ public class SecurityConfig {
                     "/delete_user_note/**",
                     "/user_notes",
                     "/xls",
+                    "/viewworklog",
+                    "/worklog/**",
+                    "/add_worklog",
+                    "/update_worklog/**",
+                    "/delete_worklog/**",
                     "/user_notes/**",
                     "/user/**"
                 ).permitAll()

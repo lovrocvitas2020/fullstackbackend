@@ -35,6 +35,10 @@ public class User {
     @JsonManagedReference
     private List<UserNotes> userNotes;
 
+    // No-argument constructor
+    public User() {
+    }
+
     @PrePersist
     protected void onCreate() {
         createdOn = Timestamp.from(Instant.now());
