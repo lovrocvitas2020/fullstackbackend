@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.fullstackcrudreact.fullstackbackend.exception.UserNotFoundException;
 import com.example.fullstackcrudreact.fullstackbackend.model.User;
 import com.example.fullstackcrudreact.fullstackbackend.model.Worklog;
+import com.example.fullstackcrudreact.fullstackbackend.model.WorklogDTO;
 import com.example.fullstackcrudreact.fullstackbackend.repository.UserRepository;
 import com.example.fullstackcrudreact.fullstackbackend.repository.WorklogRepository;
 
@@ -40,11 +42,13 @@ public class WorklogController {
      * @return
      */
     @GetMapping("/viewworklog")
-    public ResponseEntity<List<Worklog>> getAllWorklogs() {
-
-        List<Worklog> worklogs = worklogRepository.findAll();
-        return new ResponseEntity<>(worklogs, HttpStatus.OK);
-    }
+    public List<WorklogDTO> getAllWorklogs() {
+    List<Worklog> worklogs = worklogRepository.findAll();
+    List<WorklogDTO> worklogDTOs = worklogs.stream()
+            .map(WorklogDTO::new)  // Convert each Worklog to WorklogDTO
+            .collect(Collectors.toList());
+    return worklogDTOs;
+}
 
     /**
      *  Get one worklog
