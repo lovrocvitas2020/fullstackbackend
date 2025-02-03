@@ -8,6 +8,7 @@ import com.example.fullstackcrudreact.fullstackbackend.model.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
+    
     User findByUsername(String username);
 
     Page<User> findByNameContainingIgnoreCase(String name, Pageable pageable); // Added method for name search

@@ -13,6 +13,12 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
+    private final CustomUserDetailsService customUserDetailsService;
+
+    public SecurityConfig(CustomUserDetailsService customUserDetailsService) {
+        this.customUserDetailsService = customUserDetailsService;
+    }
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -45,7 +51,9 @@ public class SecurityConfig {
                 .permitAll()
             )
             .logout(logout -> logout.permitAll())
-            .rememberMe(Customizer.withDefaults())
+            .rememberMe(rememberMe -> rememberMe
+                .userDetailsService(customUserDetailsService)
+            )
             .csrf().disable();
 
         return http.build();
@@ -53,6 +61,6 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return new InMemoryUserDetailsManager(); // Replace this with your custom implementation if needed
+        return customUserDetailsService;
     }
 }
