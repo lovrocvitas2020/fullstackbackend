@@ -117,13 +117,10 @@ public class WorklogController {
         
         System.out.println("updateWorklog START ");
         System.out.println("worklogDetails.toString "+worklogDetails.toString());
-
         System.out.println("worklog.toString(): "+worklog.toString());
         System.out.println("worklog.toString(): ");
 
-        if (worklog.isPresent()) {
-          
-          
+        if (worklog.isPresent()) {         
             System.out.println("User worklog.get().getUser() : " + worklog.get().getUser());
         } else {
             System.out.println("WorkLog is not present");

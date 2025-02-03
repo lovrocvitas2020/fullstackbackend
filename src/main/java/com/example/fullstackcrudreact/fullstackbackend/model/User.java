@@ -39,6 +39,11 @@ public class User {
     public User() {
     }
 
+    // Constructor to handle integer value
+    public User(int id) {
+        this.id = (long) id;
+    }
+
     @PrePersist
     protected void onCreate() {
         createdOn = Timestamp.from(Instant.now());
