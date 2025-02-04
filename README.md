@@ -6,3 +6,8 @@ This repository contains backend part of application.
 
 Technologies used: Java, Spring Boot and MySQL database.
 
+1. Clone repository to the desired folder: git clone https://github.com/lovrocvitas2020/fullstackbackend.git
+2. Start the application.
+
+   
+
