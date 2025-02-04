@@ -1,5 +1,6 @@
 package com.example.fullstackcrudreact.fullstackbackend.model;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -14,9 +15,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 
 @Entity
-public class Worklog{
+public class Worklog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,22 +40,32 @@ public class Worklog{
     @Column(name = "end_hour", nullable = false)
     private LocalTime endHour;
 
+    @Column(name = "hour_sum", nullable = false)
+    private long durationSeconds; // Renamed for clarity
+
     @Column(name = "work_description", length = 500, nullable = false)
     private String workDescription;
 
-    public Worklog(){      
+    public Worklog() {
     }
 
-    public Worklog(User user, LocalDate workDate, LocalTime startHour, LocalTime endHour, String workDescription){
+    public Worklog(User user, LocalDate workDate, LocalTime startHour, LocalTime endHour, String workDescription) {
         this.user = user;
         this.workDate = workDate;
         this.startHour = startHour;
         this.endHour = endHour;
         this.workDescription = workDescription;
+        calculateDuration(); // Ensure duration is set
     }
 
-    
-    
+    // Ensure duration is calculated before persisting or updating
+    @PrePersist
+    @PreUpdate
+    private void calculateDuration() {
+        if (startHour != null && endHour != null) {
+            durationSeconds = Duration.between(startHour, endHour).getSeconds();
+        }
+    }
 
     // Getters and Setters
     public Long getId() {
@@ -85,6 +98,7 @@ public class Worklog{
 
     public void setStartHour(LocalTime startHour) {
         this.startHour = startHour;
+        calculateDuration(); // Recalculate on change
     }
 
     public LocalTime getEndHour() {
@@ -93,6 +107,15 @@ public class Worklog{
 
     public void setEndHour(LocalTime endHour) {
         this.endHour = endHour;
+        calculateDuration(); // Recalculate on change
+    }
+
+    public Duration getDuration() {
+        return Duration.ofSeconds(durationSeconds);
+    }
+
+    public void setDuration(Duration duration) {
+        this.durationSeconds = duration.getSeconds();
     }
 
     public String getWorkDescription() {
@@ -103,7 +126,6 @@ public class Worklog{
         this.workDescription = workDescription;
     }
 
-    // toString Method
     @Override
     public String toString() {
         return "WorkLog{" +
@@ -112,6 +134,7 @@ public class Worklog{
                 ", workDate=" + workDate +
                 ", startHour=" + startHour +
                 ", endHour=" + endHour +
+                ", durationSeconds=" + durationSeconds +
                 ", workDescription='" + workDescription + '\'' +
                 '}';
     }

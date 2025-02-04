@@ -37,114 +37,91 @@ public class WorklogController {
     private UserRepository userRepository;
 
     /**
-     *  Get all worklogs
-     * 
-     * @return
+     * Get all worklogs
      */
     @GetMapping("/viewworklog")
     public List<WorklogDTO> getAllWorklogs() {
-    List<Worklog> worklogs = worklogRepository.findAll();
-    List<WorklogDTO> worklogDTOs = worklogs.stream()
-            .map(WorklogDTO::new)  // Convert each Worklog to WorklogDTO
-            .collect(Collectors.toList());
-    return worklogDTOs;
-}
+        List<Worklog> worklogs = worklogRepository.findAll();
+        return worklogs.stream()
+                .map(WorklogDTO::new)  // Convert each Worklog to WorklogDTO
+                .collect(Collectors.toList());
+    }
 
     /**
-     *  Get one worklog
-     * 
-     * @param id
-     * @return
+     * Get one worklog
      */
     @GetMapping("/worklog/{id}")
-    public ResponseEntity<Worklog> getWorklogById(@PathVariable Long id) {
+    public ResponseEntity<WorklogDTO> getWorklogById(@PathVariable Long id) {
         Optional<Worklog> worklog = worklogRepository.findById(id);
-        return worklog.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
+        return worklog.map(w -> new ResponseEntity<>(new WorklogDTO(w), HttpStatus.OK))
                       .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     /**
-     *  Add worklog
-     * 
-     * @param worklog
-     * @return
+     * Add worklog
      */
     @PostMapping("/add_worklog")
-    public ResponseEntity<Worklog> createWorklog(@RequestBody Map<String, Object> worklogMap) {
-        // Extract data from the map
-        Long userId = ((Number) worklogMap.get("user")).longValue();
-        String workDate = (String) worklogMap.get("workDate");
-        String startHour = (String) worklogMap.get("startHour");
-        String endHour = (String) worklogMap.get("endHour");
-        String workDescription = (String) worklogMap.get("workDescription");
+    public ResponseEntity<WorklogDTO> createWorklog(@RequestBody Map<String, Object> worklogMap) {
+        try {
+            Long userId = ((Number) worklogMap.get("user")).longValue();
+            String workDate = (String) worklogMap.get("workDate");
+            String startHour = (String) worklogMap.get("startHour");
+            String endHour = (String) worklogMap.get("endHour");
+            String workDescription = (String) worklogMap.get("workDescription");
 
-        System.out.println("createWorklog userId: "+userId);
-        System.out.println("createWorklog workDate: "+workDate);
-        System.out.println("createWorklog startHour: "+startHour);
-        System.out.println("createWorklog endHour: "+endHour);
-        System.out.println("createWorklog workDescription: "+workDescription);
+            LocalTime start = LocalTime.parse(startHour);
+            LocalTime end = LocalTime.parse(endHour);
 
-         User fetchedUser = userRepository.findById(userId)
-            .orElseThrow(() -> new UserNotFoundException(userId));
+            if (end.isBefore(start)) {
+                throw new IllegalArgumentException("End time must be after start time.");
+            }
 
-         System.out.println("createWorklog fetchedUser:"+fetchedUser);   
+            User fetchedUser = userRepository.findById(userId)
+                    .orElseThrow(() -> new UserNotFoundException(userId));
 
-       
-        // Create and save the Worklog entity
-      Worklog worklog = new Worklog(fetchedUser, LocalDate.parse(workDate), LocalTime.parse(startHour), LocalTime.parse(endHour), workDescription);
+            Worklog worklog = new Worklog(fetchedUser, LocalDate.parse(workDate), start, end, workDescription);
+            Worklog createdWorklog = worklogRepository.save(worklog);
 
-      System.out.println("createWorklog worklog.toString(): "+worklog.toString());
-
-      Worklog createdWorklog = worklogRepository.save(worklog);
-
-        
-       return new ResponseEntity<>(createdWorklog, HttpStatus.CREATED);
-     //   return null;
-
+            return new ResponseEntity<>(new WorklogDTO(createdWorklog), HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
     }
 
     /**
-     *  Update worklog
-     * 
-     * @param id
-     * @param worklogDetails
-     * @return
+     * Update worklog
      */
     @PutMapping("/update_worklog/{id}")
-    public ResponseEntity<Worklog> updateWorklog(@PathVariable Long id, @RequestBody Worklog worklogDetails) {
-        Optional<Worklog> worklog = worklogRepository.findById(id);
+    public ResponseEntity<WorklogDTO> updateWorklog(@PathVariable Long id, @RequestBody Worklog worklogDetails) {
+        Optional<Worklog> worklogOptional = worklogRepository.findById(id);
 
-        
-        System.out.println("updateWorklog START ");
-        System.out.println("worklogDetails.toString "+worklogDetails.toString());
-        System.out.println("worklog.toString(): "+worklog.toString());
-        System.out.println("worklog.toString(): ");
+        if (worklogOptional.isPresent()) {
+            Worklog worklog = worklogOptional.get();
 
-        if (worklog.isPresent()) {         
-            System.out.println("User worklog.get().getUser() : " + worklog.get().getUser());
-        } else {
-            System.out.println("WorkLog is not present");
-        }
-       
+            // Validate times
+            LocalTime startHour = worklogDetails.getStartHour();
+            LocalTime endHour = worklogDetails.getEndHour();
 
-        User fetchedUser = worklog.get().getUser();
-        System.out.println("fetchedUser: "+fetchedUser);
+            if (endHour.isBefore(startHour)) {
+                throw new IllegalArgumentException("End time must be after start time.");
+            }
 
+            worklog.setWorkDate(worklogDetails.getWorkDate());
+            worklog.setStartHour(startHour);
+            worklog.setEndHour(endHour);
+            worklog.setWorkDescription(worklogDetails.getWorkDescription());
 
-        if (worklog.isPresent()) {
-            Worklog updatedWorklog = worklog.get();
-            updatedWorklog.setUser(worklog.get().getUser()); 
-            updatedWorklog.setWorkDate(worklogDetails.getWorkDate());
-            updatedWorklog.setStartHour(worklogDetails.getStartHour());
-            updatedWorklog.setEndHour(worklogDetails.getEndHour());
-            updatedWorklog.setWorkDescription(worklogDetails.getWorkDescription());
-            worklogRepository.save(updatedWorklog);
-            return new ResponseEntity<>(updatedWorklog, HttpStatus.OK);
+            // Save and return updated DTO
+            Worklog updatedWorklog = worklogRepository.save(worklog);
+            return new ResponseEntity<>(new WorklogDTO(updatedWorklog), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
+    /**
+     * Delete worklog
+     */
     @DeleteMapping("/delete_worklog/{id}")
     public ResponseEntity<HttpStatus> deleteWorklog(@PathVariable Long id) {
         Optional<Worklog> worklog = worklogRepository.findById(id);

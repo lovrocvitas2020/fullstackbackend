@@ -6,20 +6,22 @@ import java.time.LocalTime;
 public class WorklogDTO {
     private Long id;
     private Long userId;
-    private String username;  // To store the username
+    private String username;  
     private LocalDate workDate;
     private LocalTime startHour;
     private LocalTime endHour;
+    private long durationSeconds;  // Changed from Duration to long
     private String workDescription;
 
     // Constructor to convert Worklog to WorklogDTO
     public WorklogDTO(Worklog worklog) {
         this.id = worklog.getId();
-        this.userId = worklog.getUser().getId();  // Get the user id
-        this.username = worklog.getUser().getUsername();  // Get the username
+        this.userId = worklog.getUser().getId();  
+        this.username = worklog.getUser().getUsername();  
         this.workDate = worklog.getWorkDate();
         this.startHour = worklog.getStartHour();
         this.endHour = worklog.getEndHour();
+        this.durationSeconds = worklog.getDuration().getSeconds();  // Convert Duration to seconds
         this.workDescription = worklog.getWorkDescription();
     }
 
@@ -70,6 +72,14 @@ public class WorklogDTO {
 
     public void setEndHour(LocalTime endHour) {
         this.endHour = endHour;
+    }
+
+    public long getDurationSeconds() {  // Updated to use long instead of Duration
+        return durationSeconds;
+    }
+
+    public void setDurationSeconds(long durationSeconds) {  // Updated setter
+        this.durationSeconds = durationSeconds;
     }
 
     public String getWorkDescription() {
