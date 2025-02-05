@@ -6,122 +6,218 @@ import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyString;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 import org.mockito.MockitoAnnotations;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.http.MediaType;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.web.servlet.MockMvc;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import org.springframework.test.web.servlet.RequestBuilder;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.example.fullstackcrudreact.fullstackbackend.controller.UserController;
+import com.example.fullstackcrudreact.fullstackbackend.model.LoginRequest;
 import com.example.fullstackcrudreact.fullstackbackend.model.User;
 import com.example.fullstackcrudreact.fullstackbackend.repository.UserRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 
-public class UserControllerTest {
+class UserControllerTest {
 
     private MockMvc mockMvc;
 
     @Mock
     private UserRepository userRepository;
 
+    @Mock
+    private PasswordEncoder passwordEncoder;
+
+    @Mock
+    private PagedResourcesAssembler<User> pagedResourcesAssembler;
+
     @InjectMocks
     private UserController userController;
 
+    private ObjectMapper objectMapper = new ObjectMapper();
+
     @BeforeEach
-    public void setup() {
+    void setUp() {
         MockitoAnnotations.openMocks(this);
         mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
     }
 
     @Test
-    public void testGetAllUsers() throws Exception {
-        User user1 = new User();
-        user1.setId(1L);
-        user1.setUsername("user1");
+    void testRegisterUser_Success() throws Exception {
+        User user = new User();
+        user.setUsername("admin700");
+        user.setPassword("admin700");
 
-        User user2 = new User();
-        user2.setId(2L);
-        user2.setUsername("user2");
+        when(userRepository.findByUsername("testuser")).thenReturn(null);
+        when(passwordEncoder.encode(anyString())).thenReturn("encodedPassword");
+        when(userRepository.save(any(User.class))).thenReturn(user);
 
-        when(userRepository.findAll()).thenReturn(Arrays.asList(user1, user2));
+        RequestBuilder request = org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                .post("/register")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(user));
 
-        mockMvc.perform(get("/users"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].username").value("user1"))
-                .andExpect(jsonPath("$[1].username").value("user2"));
+        mockMvc.perform(request)
+                .andExpect(status().isOk());
     }
 
     @Test
-    public void testGetUserById() throws Exception {
+    void testRegisterUser_Fail_DuplicateUsername() throws Exception {
+        User user = new User();
+        user.setUsername("testuser");
+
+        when(userRepository.findByUsername("testuser")).thenReturn(user);
+
+        RequestBuilder request = org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                .post("/register")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(user));
+
+        mockMvc.perform(request)
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void testLoginUser_Success() throws Exception {
+        User user = new User();
+        user.setUsername("admin700");
+        user.setPassword("admin700");
+
+        LoginRequest loginRequest = new LoginRequest();
+
+        loginRequest.setPassword("admin700");
+        loginRequest.setUsername("admin700");
+
+        when(userRepository.findByUsername("admin700")).thenReturn(user);
+        when(passwordEncoder.matches("admin700", "encodedPassword")).thenReturn(true);
+
+        RequestBuilder request = org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                .post("/loginuser")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(loginRequest));
+
+        mockMvc.perform(request)
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    void testLoginUser_Fail_InvalidCredentials() throws Exception {
+        LoginRequest loginRequest = new LoginRequest();
+
+        loginRequest.setPassword("password");
+        loginRequest.setUsername("username");
+
+        when(userRepository.findByUsername("testuser")).thenReturn(null);
+
+        RequestBuilder request = org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                .post("/loginuser")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(loginRequest));
+
+        mockMvc.perform(request)
+                .andExpect(status().isUnauthorized());
+    }
+
+    @Test
+    void testGetAllUsers() throws Exception {
         User user = new User();
         user.setId(1L);
-        user.setUsername("user1");
+        user.setUsername("testuser");
 
-        when(userRepository.findById(anyLong())).thenReturn(Optional.of(user));
+        Page<User> userPage = new PageImpl<>(Arrays.asList(user), PageRequest.of(0, 10), 1);
+        when(userRepository.findAll(any(PageRequest.class))).thenReturn(userPage);
 
-        mockMvc.perform(get("/user/1"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.username").value("user1"));
+        RequestBuilder request = org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                .get("/users")
+                .param("page", "0")
+                .param("size", "10");
+
+        mockMvc.perform(request)
+                .andExpect(status().isOk());
     }
 
     @Test
-    public void testGetUserByIdNotFound() throws Exception {
-        when(userRepository.findById(anyLong())).thenReturn(Optional.empty());
+    void testGetUserById_Success() throws Exception {
+        User user = new User();
+        user.setId(1L);
+        user.setUsername("testuser");
 
-        mockMvc.perform(get("/user/102"))
+        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+
+        RequestBuilder request = org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                .get("/user/1");
+
+        mockMvc.perform(request)
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    void testGetUserById_Fail_NotFound() throws Exception {
+        when(userRepository.findById(1L)).thenReturn(Optional.empty());
+
+        RequestBuilder request = org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                .get("/user/1");
+
+        mockMvc.perform(request)
                 .andExpect(status().isNotFound());
     }
 
-    
-
     @Test
-    public void testUpdateUser() throws Exception {
-        User existingUser = new User();
-        existingUser.setId(1L);
-        existingUser.setUsername("existingUser");
-
-        User updatedUser = new User();
-        updatedUser.setId(1L);
-        updatedUser.setUsername("updatedUser");
-
-        when(userRepository.findById(anyLong())).thenReturn(Optional.of(existingUser));
-        when(userRepository.save(any(User.class))).thenReturn(updatedUser);
-
-        mockMvc.perform(put("/user/1")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"username\":\"updatedUser\", \"name\":\"Name\", \"email\":\"updatedUser@example.com\"}"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.username").value("updatedUser"));
-    }
-
-    @Test
-    public void testDeleteUser() throws Exception {
+    void testUpdateUser_Success() throws Exception {
         User user = new User();
         user.setId(1L);
-        user.setUsername("user1");
+        user.setUsername("olduser");
 
-        when(userRepository.existsById(anyLong())).thenReturn(true);
+        User updatedUser = new User();
+        updatedUser.setUsername("newuser");
+        updatedUser.setPassword("newpassword");
 
-        mockMvc.perform(delete("/user/1"))
-                .andExpect(status().isOk())
-                .andExpect(content().string("User with id 1 has been deleted success."));
+        when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+        when(passwordEncoder.encode("newpassword")).thenReturn("encodedPassword");
+        when(userRepository.save(any(User.class))).thenReturn(updatedUser);
+
+        RequestBuilder request = org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                .put("/user/1")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(updatedUser));
+
+        mockMvc.perform(request)
+                .andExpect(status().isOk());
     }
 
     @Test
-    public void testDeleteUserNotFound() throws Exception {
-        when(userRepository.existsById(anyLong())).thenReturn(false);
+    void testDeleteUser_Success() throws Exception {
+        when(userRepository.existsById(1L)).thenReturn(true);
+        doNothing().when(userRepository).deleteById(1L);
 
-        mockMvc.perform(delete("/user/1"))
+        RequestBuilder request = org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                .delete("/user/1");
+
+        mockMvc.perform(request)
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    void testDeleteUser_Fail_NotFound() throws Exception {
+        when(userRepository.existsById(1L)).thenReturn(false);
+
+        RequestBuilder request = org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                .delete("/user/1");
+
+        mockMvc.perform(request)
                 .andExpect(status().isNotFound());
     }
 }

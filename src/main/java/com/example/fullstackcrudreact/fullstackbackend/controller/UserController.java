@@ -1,9 +1,10 @@
 package com.example.fullstackcrudreact.fullstackbackend.controller;
 
-
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +35,6 @@ import com.example.fullstackcrudreact.fullstackbackend.model.User;
 import com.example.fullstackcrudreact.fullstackbackend.repository.UserRepository;
 import com.example.fullstackcrudreact.fullstackbackend.service.ExcelExportService;
 
-
-
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
@@ -48,166 +47,131 @@ public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-     @Autowired
+    @Autowired
     private PagedResourcesAssembler<User> pagedResourcesAssembler;
 
-
-      @Autowired
+    @Autowired
     private ExcelExportService excelExportService;
 
-
-
     /**
-     * Starts the batch job to export users to Excel.
-     *
-     * @return ResponseEntity with job execution status
+     * Generate and Download Excel Report
      */
     @GetMapping("/xls")
     public ResponseEntity<byte[]> generateXls() {
         try {
-            // Attempt to generate Excel file
             byte[] excelFile = excelExportService.exportUsersToExcel();
-
-            // Set the response headers for file download
             HttpHeaders headers = new HttpHeaders();
             headers.add("Content-Disposition", "attachment; filename=users.xlsx");
-
             return new ResponseEntity<>(excelFile, headers, HttpStatus.OK);
         } catch (IOException e) {
-            // Log the error and return a failure response
-            logger.error("Error while exporting users to Excel", e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error exporting users to Excel".getBytes());
+            logger.error("Error exporting users to Excel", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
 
-    /**
-     * Creates new User
-     * 
-     * @param newUser
-     * @return
+
+     /**
+     * Creates a New User
      */
     @PostMapping("/user")
-    User newUser(@RequestBody User newUser){
+    public ResponseEntity<?> createUser(@RequestBody User newUser) {
+        if (userRepository.findByUsername(newUser.getUsername()) != null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Username already exists");
+        }
         newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
-        return userRepository.save(newUser);
+        return ResponseEntity.ok(userRepository.save(newUser));
     }
 
     /**
-     * Logins user
-     * 
-     * @param loginRequest
-     * @return
+     * Register a New User
+     */
+    @PostMapping("/register")
+    public ResponseEntity<?> registerUser(@RequestBody User newUser) {
+        if (userRepository.findByUsername(newUser.getUsername()) != null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Username already exists");
+        }
+        newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
+        return ResponseEntity.ok(userRepository.save(newUser));
+    }
+
+    /**
+     * Login User
      */
     @PostMapping("/loginuser")
     public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
         User user = userRepository.findByUsername(loginRequest.getUsername());
         if (user != null && passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
-            return ResponseEntity.ok(user);
+            Map<String, String> response = new HashMap<>();
+            response.put("username", user.getUsername());
+            response.put("email", user.getEmail());
+            return ResponseEntity.ok(response);
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
     }
 
-
     /**
-     * Registers a new user
-     * 
-     * @param newUser
-     * @return
-     */
-    @PostMapping("/register")
-    public User registerUser(@RequestBody User newUser) {
-        newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
-        return userRepository.save(newUser);
-    }
-    
-   
-    /**
-     * Gets all users
-     * 
-     * @param page
-     * @param size
-     * @param name
-     * @return
+     * Get All Users (Paginated)
      */
     @GetMapping("/users")
     public ResponseEntity<PagedModel<EntityModel<User>>> getAllUsers(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(required = false) String name) {
-        Pageable paging = PageRequest.of(page, size);
-        Page<User> userPage;
         
-        if (name == null || name.isEmpty()) {
-            userPage = userRepository.findAll(paging);
-        } else {
-            userPage = userRepository.findByNameContainingIgnoreCase(name, paging);
-        }
+        Pageable paging = PageRequest.of(page, size);
+        Page<User> userPage = (name == null || name.isEmpty()) 
+                ? userRepository.findAll(paging) 
+                : userRepository.findByNameContainingIgnoreCase(name, paging);
 
         PagedModel<EntityModel<User>> pagedModel = pagedResourcesAssembler.toModel(userPage, user ->
                 EntityModel.of(user,
                         WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(UserController.class).getUserById(user.getId())).withSelfRel()));
+
         return ResponseEntity.ok(pagedModel);
     }
 
-     
-    
     /**
-     * Gets user by id
-     * 
-     * @param id
-     * @return
+     * Get User by ID
      */
     @GetMapping("/user/{id}")
     public ResponseEntity<EntityModel<User>> getUserById(@PathVariable Long id) {
-        logger.debug("Debug: UserController getUserById method");
-        User user = userRepository.findById(id)
-                .orElseThrow(() -> new UserNotFoundException(id));
+        User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
         EntityModel<User> resource = EntityModel.of(user,
                 WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(UserController.class).getUserById(id)).withSelfRel(),
                 WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(UserController.class).getAllUsers(0, 10, null)).withRel("users"));
+
         return ResponseEntity.ok(resource);
     }
-    
 
     /**
-     * Updates user by id
-     * 
-     * @param newUser
-     * @param id
-     * @return
+     * Update User by ID
      */
     @PutMapping("/user/{id}")
-    User updateUser(@RequestBody User newUser, @PathVariable Long id) {
-        logger.debug("Debug: UserController updateUser method");
+    public ResponseEntity<?> updateUser(@RequestBody User newUser, @PathVariable Long id) {
         return userRepository.findById(id)
                 .map(user -> {
                     user.setUsername(newUser.getUsername());
                     user.setName(newUser.getName());
                     user.setEmail(newUser.getEmail());
+                    if (!newUser.getPassword().isEmpty()) {
+                        user.setPassword(passwordEncoder.encode(newUser.getPassword()));
+                    }
                     user.setUpdatedOn(Timestamp.from(Instant.now()));
-                    
-                    return userRepository.save(user);
+                    userRepository.save(user);
+                    return ResponseEntity.ok("User updated successfully");
                 }).orElseThrow(() -> new UserNotFoundException(id));
     }
 
     /**
-     * Deletes user
-     * 
-     * @param id
-     * @return
+     * Delete User
      */
     @DeleteMapping("/user/{id}")
-    String deleteUser(@PathVariable Long id){
-        logger.debug("Debug: UserController deleteUser method");
-        if(!userRepository.existsById(id)){
+    public ResponseEntity<?> deleteUser(@PathVariable Long id) {
+        if (!userRepository.existsById(id)) {
             throw new UserNotFoundException(id);
         }
         userRepository.deleteById(id);
-        return  "User with id "+id+" has been deleted success.";
+        return ResponseEntity.ok("User with ID " + id + " has been deleted successfully.");
     }
-    
-    
-
 }
