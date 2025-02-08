@@ -12,12 +12,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.WebRequest;
 
 import com.example.fullstackcrudreact.fullstackbackend.exception.UserNotFoundException;
 import com.example.fullstackcrudreact.fullstackbackend.model.User;
@@ -83,6 +85,10 @@ public class WorklogController {
             Worklog createdWorklog = worklogRepository.save(worklog);
 
             return new ResponseEntity<>(new WorklogDTO(createdWorklog), HttpStatus.CREATED);
+        } catch (UserNotFoundException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -93,29 +99,35 @@ public class WorklogController {
      */
     @PutMapping("/update_worklog/{id}")
     public ResponseEntity<WorklogDTO> updateWorklog(@PathVariable Long id, @RequestBody Worklog worklogDetails) {
-        Optional<Worklog> worklogOptional = worklogRepository.findById(id);
+        try {
+            Optional<Worklog> worklogOptional = worklogRepository.findById(id);
 
-        if (worklogOptional.isPresent()) {
-            Worklog worklog = worklogOptional.get();
+            if (worklogOptional.isPresent()) {
+                Worklog worklog = worklogOptional.get();
 
-            // Validate times
-            LocalTime startHour = worklogDetails.getStartHour();
-            LocalTime endHour = worklogDetails.getEndHour();
+                // Validate times
+                LocalTime startHour = worklogDetails.getStartHour();
+                LocalTime endHour = worklogDetails.getEndHour();
 
-            if (endHour.isBefore(startHour)) {
-                throw new IllegalArgumentException("End time must be after start time.");
+                if (endHour.isBefore(startHour)) {
+                    throw new IllegalArgumentException("End time must be after start time.");
+                }
+
+                worklog.setWorkDate(worklogDetails.getWorkDate());
+                worklog.setStartHour(startHour);
+                worklog.setEndHour(endHour);
+                worklog.setWorkDescription(worklogDetails.getWorkDescription());
+
+                // Save and return updated DTO
+                Worklog updatedWorklog = worklogRepository.save(worklog);
+                return new ResponseEntity<>(new WorklogDTO(updatedWorklog), HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
-
-            worklog.setWorkDate(worklogDetails.getWorkDate());
-            worklog.setStartHour(startHour);
-            worklog.setEndHour(endHour);
-            worklog.setWorkDescription(worklogDetails.getWorkDescription());
-
-            // Save and return updated DTO
-            Worklog updatedWorklog = worklogRepository.save(worklog);
-            return new ResponseEntity<>(new WorklogDTO(updatedWorklog), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -131,5 +143,21 @@ public class WorklogController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+
+    @ExceptionHandler(Exception.class)
+    public final ResponseEntity<Object> handleAllExceptions(Exception ex, WebRequest request) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public final ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException ex, WebRequest request) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public final ResponseEntity<Object> handleIllegalArgumentException(IllegalArgumentException ex, WebRequest request) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 }

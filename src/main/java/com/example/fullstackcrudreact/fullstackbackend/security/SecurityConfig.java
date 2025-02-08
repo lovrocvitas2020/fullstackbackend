@@ -5,8 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -22,24 +20,24 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .cors()
-            .and()
+            .cors(Customizer.withDefaults())
             .authorizeHttpRequests(authorize -> authorize
                 .requestMatchers(
                     "/users", 
                     "/register", 
+                    "/login",
                     "/loginuser",
-                    "/add_user_notes",
-                    "/batch/start",
-                    "/update_user_note/**",
-                    "/delete_user_note/**",
+                    // Remove public access to modification endpoints
+                    // "/add_user_notes",
+                    // "/update_user_note/**",
+                    // "/delete_user_note/**",
                     "/user_notes",
                     "/xls",
                     "/viewworklog",
                     "/worklog/**",
-                    "/add_worklog",
-                    "/update_worklog/**",
-                    "/delete_worklog/**",
+                    // "/add_worklog",
+                    // "/update_worklog/**",
+                    // "/delete_worklog/**",
                     "/user_notes/**",
                     "/user/**"
                 ).permitAll()
@@ -47,20 +45,24 @@ public class SecurityConfig {
             )
             .formLogin(formLogin -> formLogin
                 .loginPage("/login")
-                .defaultSuccessUrl("/home",true)
+                .defaultSuccessUrl("/home", true)
                 .permitAll()
             )
-            .logout(logout -> logout.permitAll())
+            .logout(logout -> logout
+                .permitAll()
+                .logoutSuccessUrl("/login?logout")
+            )
             .rememberMe(rememberMe -> rememberMe
                 .userDetailsService(customUserDetailsService)
             )
-            .csrf().disable();
+            .csrf(csrf -> csrf.disable()); // Consider enabling CSRF with token management
 
         return http.build();
     }
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return customUserDetailsService;
-    }
+    // Remove if CustomUserDetailsService is already a Spring bean
+    // @Bean
+    // public UserDetailsService userDetailsService() {
+    //     return customUserDetailsService;
+    // }
 }

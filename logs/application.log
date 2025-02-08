@@ -1,0 +1,77 @@
+2025-02-08 21:57:45 - Starting FullstackbackendApplication using Java 23.0.1 with PID 34964 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
+2025-02-08 21:57:45 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-08 21:57:45 - No active profile set, falling back to 1 default profile: "default"
+2025-02-08 21:57:47 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-08 21:57:47 - Finished Spring Data repository scanning in 130 ms. Found 3 JPA repository interfaces.
+2025-02-08 21:57:50 - Tomcat initialized with port 8080 (http)
+2025-02-08 21:57:50 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-08 21:57:50 - Starting service [Tomcat]
+2025-02-08 21:57:50 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-08 21:57:50 - Initializing Spring embedded WebApplicationContext
+2025-02-08 21:57:50 - Root WebApplicationContext: initialization completed in 4499 ms
+2025-02-08 21:57:50 - HikariPool-1 - Starting...
+2025-02-08 21:57:51 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4861cca9
+2025-02-08 21:57:51 - HikariPool-1 - Start completed.
+2025-02-08 21:57:51 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-08 21:57:51 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-08 21:57:52 - HHH000026: Second-level cache disabled
+2025-02-08 21:57:52 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-08 21:57:53 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-08 21:57:53 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-08 21:57:53 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-08 21:57:55 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-08 21:57:55 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-08 21:57:56 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-08 21:57:56 - Found 2 UserDetailsService beans, with names [customUserDetailsService, userDetailsService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-02-08 21:57:58 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-08 21:57:58 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-08 21:57:58 - Started FullstackbackendApplication in 14.321 seconds (process running for 15.361)
+2025-02-08 21:57:58 - Running default command line with: []
+2025-02-08 22:02:31 - Starting FullstackbackendApplication using Java 23.0.1 with PID 26100 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
+2025-02-08 22:02:31 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-08 22:02:31 - No active profile set, falling back to 1 default profile: "default"
+2025-02-08 22:02:32 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-08 22:02:32 - Finished Spring Data repository scanning in 114 ms. Found 3 JPA repository interfaces.
+2025-02-08 22:02:34 - Tomcat initialized with port 8080 (http)
+2025-02-08 22:02:34 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-08 22:02:34 - Starting service [Tomcat]
+2025-02-08 22:02:34 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-08 22:02:34 - Initializing Spring embedded WebApplicationContext
+2025-02-08 22:02:34 - Root WebApplicationContext: initialization completed in 3108 ms
+2025-02-08 22:02:34 - HikariPool-1 - Starting...
+2025-02-08 22:02:35 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@714e861f
+2025-02-08 22:02:35 - HikariPool-1 - Start completed.
+2025-02-08 22:02:35 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-08 22:02:36 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-08 22:02:36 - HHH000026: Second-level cache disabled
+2025-02-08 22:02:36 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-08 22:02:36 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-08 22:02:36 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-08 22:02:36 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-08 22:02:38 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-08 22:02:38 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-08 22:02:39 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-08 22:02:39 - Found 2 UserDetailsService beans, with names [customUserDetailsService, userDetailsService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2025-02-08 22:02:41 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-08 22:02:41 - Tomcat started on port 8080 (http) with context path '/'
+2025-02-08 22:02:41 - Started FullstackbackendApplication in 11.197 seconds (process running for 11.793)
+2025-02-08 22:02:41 - Running default command line with: []
+2025-02-08 22:03:21 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-08 22:03:21 - Initializing Servlet 'dispatcherServlet'
+2025-02-08 22:03:21 - Completed initialization in 2 ms
+2025-02-08 22:09:26 - UserNotesController getAllUserNotes method
+2025-02-08 22:09:26 - UserNotesController getAllUserNotes method
