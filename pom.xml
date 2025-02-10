@@ -58,6 +58,14 @@
 			<artifactId>logback-classic</artifactId>
     	</dependency>
 
+		<dependency>
+			<groupId>jakarta.validation</groupId>
+			<artifactId>jakarta.validation-api</artifactId>
+			<version>3.0.2</version> <!-- Use the latest version -->
+			<scope>provided</scope>
+		</dependency>
+
+
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-security</artifactId>
@@ -96,6 +104,11 @@
 	</dependency>
 
 
+	<dependency>
+		<groupId>org.hibernate.validator</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>8.0.2.Final</version>
+	</dependency>
 
 	<!-- Apache POI for Excel -->
     <dependency>

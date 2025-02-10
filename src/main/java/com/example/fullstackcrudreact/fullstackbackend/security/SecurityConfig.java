@@ -39,6 +39,8 @@ public class SecurityConfig {
                     // "/update_worklog/**",
                     // "/delete_worklog/**",
                     "/user_notes/**",
+                    "/userdetails/**",
+                    "/adduserdetails/**",
                     "/user/**"
                 ).permitAll()
                 .anyRequest().authenticated()

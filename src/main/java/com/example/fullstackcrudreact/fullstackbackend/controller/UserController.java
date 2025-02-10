@@ -42,7 +42,9 @@ public class UserController {
 
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    @Autowired
+    /*
+      
+     @Autowired
     private UserRepository userRepository;
 
     @Autowired
@@ -51,9 +53,28 @@ public class UserController {
      @Autowired
     private PagedResourcesAssembler<User> pagedResourcesAssembler;
 
-
-      @Autowired
+    @Autowired
     private ExcelExportService excelExportService;
+    
+     */
+   
+
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final ExcelExportService excelExportService;
+    private final PagedResourcesAssembler<User> pagedResourcesAssembler;
+
+    @Autowired
+    public UserController(UserRepository userRepository, 
+                          PasswordEncoder passwordEncoder,
+                          ExcelExportService excelExportService,
+                          PagedResourcesAssembler<User> pagedResourcesAssembler) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.excelExportService = excelExportService;
+        this.pagedResourcesAssembler = pagedResourcesAssembler;
+    }
+
 
 
 
@@ -161,7 +182,7 @@ public class UserController {
      */
     @GetMapping("/user/{id}")
     public ResponseEntity<EntityModel<User>> getUserById(@PathVariable Long id) {
-        logger.debug("Debug: UserController getUserById method");
+        
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
         EntityModel<User> resource = EntityModel.of(user,
@@ -207,7 +228,11 @@ public class UserController {
         userRepository.deleteById(id);
         return  "User with id "+id+" has been deleted success.";
     }
-    
-    
+
+
+  
+     
+
+
 
 }
