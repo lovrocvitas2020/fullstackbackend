@@ -173,18 +173,24 @@ public class UserController {
      */
     @PutMapping("/user/{id}")
     public ResponseEntity<?> updateUser(@RequestBody User newUser, @PathVariable Long id) {
+
+        System.out.println("updateUser newUser.isActive(): "+newUser.isActive());
+        System.out.println("updateUser newUser: " + newUser.toString());
+
         return userRepository.findById(id)
-                .map(user -> {
-                    user.setUsername(newUser.getUsername());
-                    user.setName(newUser.getName());
-                    user.setEmail(newUser.getEmail());
-                    if (!newUser.getPassword().isEmpty()) {
-                        user.setPassword(passwordEncoder.encode(newUser.getPassword()));
-                    }
-                    user.setUpdatedOn(Timestamp.from(Instant.now()));
-                    userRepository.save(user);
-                    return ResponseEntity.ok("User updated successfully");
-                }).orElseThrow(() -> new UserNotFoundException(id));
+            .map(user -> {
+                user.setUsername(newUser.getUsername());
+                user.setName(newUser.getName());
+                user.setEmail(newUser.getEmail());
+                if (!newUser.getPassword().isEmpty()) {
+                    user.setPassword(passwordEncoder.encode(newUser.getPassword()));
+                }
+                user.setUpdatedOn(Timestamp.from(Instant.now()));
+                user.setActive(newUser.isActive());
+                userRepository.save(user);
+                return ResponseEntity.ok("User updated successfully");
+            }).orElseThrow(() -> new UserNotFoundException(id));
+
     }
 
     /**

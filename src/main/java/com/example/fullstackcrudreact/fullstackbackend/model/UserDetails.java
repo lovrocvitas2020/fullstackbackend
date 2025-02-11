@@ -5,11 +5,13 @@ import java.time.LocalDate;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -55,6 +57,10 @@ public class UserDetails {
     @NotBlank(message = "Zip code is required")
     @Pattern(regexp = "^[0-9]{5}(?:-[0-9]{4})?$", message = "Invalid zip code format")
     private String zipCode;
+
+    @Lob
+    @Column(name = "user_image", columnDefinition = "LONGBLOB")
+    private byte[] userImage;
 
     public enum Sex {
         MALE, FEMALE, OTHER, PREFER_NOT_TO_SAY
@@ -132,11 +138,19 @@ public class UserDetails {
         this.zipCode = zipCode;
     }
 
+    public byte[] getUserImage() {
+        return userImage;
+    }
+
+    public void setUserImage(byte[] userImage) {
+        this.userImage = userImage;
+    }
+
     @Override
     public String toString() {
         return "UserDetails [id=" + id + ", user=" + user + ", phoneNumber=" + phoneNumber + ", address=" + address
                 + ", dateOfBirth=" + dateOfBirth + ", sex=" + sex + ", countryOfBirth=" + countryOfBirth + ", city="
-                + city + ", zipCode=" + zipCode + "]";
+                + city + ", zipCode=" + zipCode + ", userImage=" + (userImage != null ? "present" : "absent") + "]";
     }
 
     

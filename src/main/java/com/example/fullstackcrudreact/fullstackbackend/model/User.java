@@ -31,6 +31,8 @@ public class User {
 
     private Timestamp updatedOn;
 
+    private boolean active;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<UserNotes> userNotes;
@@ -95,11 +97,19 @@ public class User {
         this.updatedOn = updatedOn;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     @Override
     public String toString() {
         return "User [id=" + id + ", username=" + username + ", name=" + name + 
         ", email=" + email + ", password=" + password + 
-        ", createdOn=" + createdOn + ", updatedOn=" + updatedOn + "]";
+        ", createdOn=" + createdOn + ", active=" + active + ", updatedOn=" + updatedOn + "]";
     }
 
 
