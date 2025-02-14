@@ -35,27 +35,15 @@ import com.example.fullstackcrudreact.fullstackbackend.model.User;
 import com.example.fullstackcrudreact.fullstackbackend.repository.UserRepository;
 import com.example.fullstackcrudreact.fullstackbackend.service.ExcelExportService;
 
+import jakarta.transaction.Transactional;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
 
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    /*
-      
-     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    @Autowired
-    private PagedResourcesAssembler<User> pagedResourcesAssembler;
-
-    @Autowired
-    private ExcelExportService excelExportService;
     
-     */
    
 
     private final UserRepository userRepository;
@@ -96,6 +84,7 @@ public class UserController {
      * Creates a New User
      */
     @PostMapping("/user")
+    @Transactional
     public ResponseEntity<?> createUser(@RequestBody User newUser) {
         if (userRepository.findByUsername(newUser.getUsername()) != null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Username already exists");
@@ -107,6 +96,7 @@ public class UserController {
     /**
      * Register a New User
      */
+    @Transactional
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody User newUser) {
         if (userRepository.findByUsername(newUser.getUsername()) != null) {
@@ -140,6 +130,8 @@ public class UserController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(required = false) String name) {
+
+              
         
         Pageable paging = PageRequest.of(page, size);
         Page<User> userPage = (name == null || name.isEmpty()) 
@@ -172,10 +164,10 @@ public class UserController {
      * Update User by ID
      */
     @PutMapping("/user/{id}")
+    @Transactional
     public ResponseEntity<?> updateUser(@RequestBody User newUser, @PathVariable Long id) {
 
-        System.out.println("updateUser newUser.isActive(): "+newUser.isActive());
-        System.out.println("updateUser newUser: " + newUser.toString());
+       
 
         return userRepository.findById(id)
             .map(user -> {
@@ -197,6 +189,7 @@ public class UserController {
      * Delete User
      */
     @DeleteMapping("/user/{id}")
+    @Transactional
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {
         if (!userRepository.existsById(id)) {
             throw new UserNotFoundException(id);

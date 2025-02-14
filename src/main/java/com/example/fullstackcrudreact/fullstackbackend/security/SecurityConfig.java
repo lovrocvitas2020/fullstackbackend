@@ -41,6 +41,7 @@ public class SecurityConfig {
                     "/user_notes/**",
                     "/userdetails/**",
                     "/adduserdetails/**",
+                    "/reset-password/**",
                     "/user/**"
                 ).permitAll()
                 .anyRequest().authenticated()

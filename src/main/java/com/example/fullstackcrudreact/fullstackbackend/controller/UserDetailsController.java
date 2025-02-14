@@ -63,7 +63,7 @@ public class UserDetailsController {
             @RequestParam("countryOfBirth") String countryOfBirth,
             @RequestParam("city") String city,
             @RequestParam("zipCode") String zipCode,
-            @RequestParam("userImage") MultipartFile userImage) throws IOException {
+            @RequestParam(value = "userImage", required= false) MultipartFile userImage) throws IOException {
 
          try {
         // Check if User Exists   
@@ -140,7 +140,7 @@ public class UserDetailsController {
             @RequestParam("countryOfBirth") String countryOfBirth,
             @RequestParam("city") String city,
             @RequestParam("zipCode") String zipCode,
-            @RequestParam("userImage") MultipartFile userImage) {
+            @RequestParam(value = "userImage", required = false) MultipartFile userImage) {
         return userDetailsRepository.findUserDetailsById(userId)
                 .map(existingDetails -> {
                     existingDetails.setPhoneNumber(phoneNumber);
