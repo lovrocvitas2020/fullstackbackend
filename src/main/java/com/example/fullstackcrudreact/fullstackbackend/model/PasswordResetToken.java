@@ -1,6 +1,6 @@
 package com.example.fullstackcrudreact.fullstackbackend.model;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,37 +13,41 @@ public class PasswordResetToken {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String token;
     private String email;
-    private LocalDateTime expiryDate;
+    private Timestamp expiryDate;
 
-    
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getToken() {
-        return token;
-    }
-    public void setToken(String token) {
+    // Constructors, getters, and setters
+
+    public PasswordResetToken() {}
+
+    public PasswordResetToken(String token, String email, Timestamp expiryDate) {
         this.token = token;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
         this.email = email;
-    }
-    public LocalDateTime getExpiryDate() {
-        return expiryDate;
-    }
-    public void setExpiryDate(LocalDateTime expiryDate) {
         this.expiryDate = expiryDate;
     }
 
-    
+    public String getToken() {
+        return token;
+    }
 
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Timestamp getExpiryDate() {
+        return expiryDate;
+    }
+
+    public void setExpiryDate(Timestamp expiryDate) {
+        this.expiryDate = expiryDate;
+    }
 }

@@ -28,7 +28,7 @@ public class EmailService {
         helper.setTo(to);
         helper.setSubject("Reset Your Password");
         helper.setText("Click the link below to reset your password:\n" +
-                "http://localhost:3000/reset-password?token=" + token, true);
+                "Token: " + token, true);
 
         mailSender.send(message);
     }

@@ -27,10 +27,6 @@ public class SecurityConfig {
                     "/register", 
                     "/login",
                     "/loginuser",
-                    // Remove public access to modification endpoints
-                    // "/add_user_notes",
-                    // "/update_user_note/**",
-                    // "/delete_user_note/**",
                     "/user_notes",
                     "/xls",
                     "/viewworklog",
@@ -41,7 +37,8 @@ public class SecurityConfig {
                     "/user_notes/**",
                     "/userdetails/**",
                     "/adduserdetails/**",
-                    "/reset-password/**",
+                    "/send-reset-request/**",
+                    "/confirm-reset-password/**",
                     "/user/**"
                 ).permitAll()
                 .anyRequest().authenticated()
@@ -58,14 +55,10 @@ public class SecurityConfig {
             .rememberMe(rememberMe -> rememberMe
                 .userDetailsService(customUserDetailsService)
             )
-            .csrf(csrf -> csrf.disable()); // Consider enabling CSRF with token management
+            .csrf(csrf -> csrf.disable()); 
 
         return http.build();
     }
 
-    // Remove if CustomUserDetailsService is already a Spring bean
-    // @Bean
-    // public UserDetailsService userDetailsService() {
-    //     return customUserDetailsService;
-    // }
+  
 }

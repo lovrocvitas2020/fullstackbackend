@@ -43,7 +43,7 @@ public class WorklogController {
      */
     @GetMapping("/viewworklog")
     public List<WorklogDTO> getAllWorklogs() {
-        List<Worklog> worklogs = worklogRepository.findAll();
+        List<Worklog> worklogs = worklogRepository.findAllByOrderByWorkDateDesc(); // worklogRepository.findAll()
         return worklogs.stream()
                 .map(WorklogDTO::new)  // Convert each Worklog to WorklogDTO
                 .collect(Collectors.toList());

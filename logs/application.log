@@ -1,233 +1,33 @@
-2025-02-14 14:16:52 - HV000001: Hibernate Validator 8.0.2.Final
-2025-02-14 14:16:52 - Starting FullstackbackendApplication using Java 21.0.6 with PID 15864 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
-2025-02-14 14:16:52 - Running with Spring Boot v3.2.2, Spring v6.1.3
-2025-02-14 14:16:52 - No active profile set, falling back to 1 default profile: "default"
-2025-02-14 14:16:54 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-14 14:16:54 - Finished Spring Data repository scanning in 124 ms. Found 5 JPA repository interfaces.
-2025-02-14 14:16:55 - Tomcat initialized with port 8080 (http)
-2025-02-14 14:16:55 - Initializing ProtocolHandler ["http-nio-8080"]
-2025-02-14 14:16:55 - Starting service [Tomcat]
-2025-02-14 14:16:55 - Starting Servlet engine: [Apache Tomcat/10.1.18]
-2025-02-14 14:16:55 - Initializing Spring embedded WebApplicationContext
-2025-02-14 14:16:55 - Root WebApplicationContext: initialization completed in 3098 ms
-2025-02-14 14:16:56 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-14 14:16:56 - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-02-14 14:16:56 - HHH000026: Second-level cache disabled
-2025-02-14 14:16:57 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-14 14:16:57 - HikariPool-1 - Starting...
-2025-02-14 14:16:57 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a1ddbf1
-2025-02-14 14:16:57 - HikariPool-1 - Start completed.
-2025-02-14 14:16:57 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-02-14 14:16:57 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-02-14 14:16:59 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-14 14:16:59 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-14 14:17:00 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-14 14:17:01 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6441db2c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@218c6d3e, org.springframework.security.web.context.SecurityContextHolderFilter@6d76aa05, org.springframework.security.web.header.HeaderWriterFilter@26edfa34, org.springframework.web.filter.CorsFilter@5856dbe4, org.springframework.security.web.authentication.logout.LogoutFilter@3fecdd00, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@20c55658, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@8b93c88, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@628e0403, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@65384249, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63f819a6, org.springframework.security.web.access.ExceptionTranslationFilter@2e7cd4bb, org.springframework.security.web.access.intercept.AuthorizationFilter@37bac0f4]
-2025-02-14 14:17:02 - Starting ProtocolHandler ["http-nio-8080"]
-2025-02-14 14:17:02 - Tomcat started on port 8080 (http) with context path ''
-2025-02-14 14:17:02 - Started FullstackbackendApplication in 10.932 seconds (process running for 11.689)
-2025-02-14 14:19:11 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-14 14:19:11 - Initializing Servlet 'dispatcherServlet'
-2025-02-14 14:19:11 - Completed initialization in 1 ms
-2025-02-14 14:22:54 - Resolved [org.springframework.web.multipart.support.MissingServletRequestPartException: Required part 'userImage' is not present.]
-2025-02-14 14:23:27 - Resolved [org.springframework.web.multipart.support.MissingServletRequestPartException: Required part 'userImage' is not present.]
-2025-02-14 14:38:07 - HV000001: Hibernate Validator 8.0.2.Final
-2025-02-14 14:38:07 - Starting FullstackbackendApplication using Java 21.0.6 with PID 37504 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
-2025-02-14 14:38:07 - Running with Spring Boot v3.2.2, Spring v6.1.3
-2025-02-14 14:38:07 - No active profile set, falling back to 1 default profile: "default"
-2025-02-14 14:38:09 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-14 14:38:09 - Finished Spring Data repository scanning in 125 ms. Found 5 JPA repository interfaces.
-2025-02-14 14:38:10 - Tomcat initialized with port 8080 (http)
-2025-02-14 14:38:10 - Initializing ProtocolHandler ["http-nio-8080"]
-2025-02-14 14:38:10 - Starting service [Tomcat]
-2025-02-14 14:38:10 - Starting Servlet engine: [Apache Tomcat/10.1.18]
-2025-02-14 14:38:11 - Initializing Spring embedded WebApplicationContext
-2025-02-14 14:38:11 - Root WebApplicationContext: initialization completed in 3408 ms
-2025-02-14 14:38:11 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-14 14:38:11 - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-02-14 14:38:11 - HHH000026: Second-level cache disabled
-2025-02-14 14:38:12 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-14 14:38:12 - HikariPool-1 - Starting...
-2025-02-14 14:38:12 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@c67395
-2025-02-14 14:38:12 - HikariPool-1 - Start completed.
-2025-02-14 14:38:12 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-02-14 14:38:12 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-02-14 14:38:14 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-14 14:38:14 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-14 14:38:15 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-14 14:38:16 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@22825762, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34e7a627, org.springframework.security.web.context.SecurityContextHolderFilter@5367d46f, org.springframework.security.web.header.HeaderWriterFilter@3a70acd5, org.springframework.web.filter.CorsFilter@43ecfeb5, org.springframework.security.web.authentication.logout.LogoutFilter@786de0a3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@63f819a6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@564e9c0b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c7d19bf, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@4f3672eb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5bb7fc38, org.springframework.security.web.access.ExceptionTranslationFilter@8b93c88, org.springframework.security.web.access.intercept.AuthorizationFilter@218c6d3e]
-2025-02-14 14:38:16 - Starting ProtocolHandler ["http-nio-8080"]
-2025-02-14 14:38:16 - Tomcat started on port 8080 (http) with context path ''
-2025-02-14 14:38:16 - Started FullstackbackendApplication in 9.768 seconds (process running for 10.297)
-2025-02-14 14:38:24 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-14 14:38:24 - Initializing Servlet 'dispatcherServlet'
-2025-02-14 14:38:24 - Completed initialization in 1 ms
-2025-02-14 14:39:09 - Resolved [org.springframework.web.multipart.support.MissingServletRequestPartException: Required part 'userImage' is not present.]
-2025-02-14 14:39:22 - Resolved [org.springframework.web.multipart.support.MissingServletRequestPartException: Required part 'userImage' is not present.]
-2025-02-14 14:39:33 - Resolved [org.springframework.web.multipart.support.MissingServletRequestPartException: Required part 'userImage' is not present.]
-2025-02-14 14:44:42 - HV000001: Hibernate Validator 8.0.2.Final
-2025-02-14 14:44:42 - Starting FullstackbackendApplication using Java 21.0.6 with PID 38872 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
-2025-02-14 14:44:42 - Running with Spring Boot v3.2.2, Spring v6.1.3
-2025-02-14 14:44:42 - No active profile set, falling back to 1 default profile: "default"
-2025-02-14 14:44:43 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-14 14:44:44 - Finished Spring Data repository scanning in 136 ms. Found 5 JPA repository interfaces.
-2025-02-14 14:44:45 - Tomcat initialized with port 8080 (http)
-2025-02-14 14:44:45 - Initializing ProtocolHandler ["http-nio-8080"]
-2025-02-14 14:44:45 - Starting service [Tomcat]
-2025-02-14 14:44:45 - Starting Servlet engine: [Apache Tomcat/10.1.18]
-2025-02-14 14:44:45 - Initializing Spring embedded WebApplicationContext
-2025-02-14 14:44:45 - Root WebApplicationContext: initialization completed in 2601 ms
-2025-02-14 14:44:45 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-14 14:44:45 - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-02-14 14:44:45 - HHH000026: Second-level cache disabled
-2025-02-14 14:44:46 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-14 14:44:46 - HikariPool-1 - Starting...
-2025-02-14 14:44:46 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d626f2
-2025-02-14 14:44:46 - HikariPool-1 - Start completed.
-2025-02-14 14:44:46 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-02-14 14:44:46 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-02-14 14:44:48 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-14 14:44:48 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-14 14:44:49 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-14 14:44:50 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2f143ea, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5b2c9a69, org.springframework.security.web.context.SecurityContextHolderFilter@4c897417, org.springframework.security.web.header.HeaderWriterFilter@28f7cca4, org.springframework.web.filter.CorsFilter@79476a4e, org.springframework.security.web.authentication.logout.LogoutFilter@4c7d19bf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@41fe0d98, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14ecd835, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19c578bf, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@64c1a76e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19983dd1, org.springframework.security.web.access.ExceptionTranslationFilter@6c04310f, org.springframework.security.web.access.intercept.AuthorizationFilter@4505ec36]
-2025-02-14 14:44:50 - Starting ProtocolHandler ["http-nio-8080"]
-2025-02-14 14:44:50 - Tomcat started on port 8080 (http) with context path ''
-2025-02-14 14:44:50 - Started FullstackbackendApplication in 9.255 seconds (process running for 9.883)
-2025-02-14 14:45:46 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-14 14:45:46 - Initializing Servlet 'dispatcherServlet'
-2025-02-14 14:45:46 - Completed initialization in 3 ms
-2025-02-14 16:52:52 - HV000001: Hibernate Validator 8.0.2.Final
-2025-02-14 16:52:52 - Starting FullstackbackendApplication using Java 21.0.6 with PID 29308 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
-2025-02-14 16:52:52 - Running with Spring Boot v3.2.2, Spring v6.1.3
-2025-02-14 16:52:52 - No active profile set, falling back to 1 default profile: "default"
-2025-02-14 16:52:54 - Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
-2025-02-14 16:52:54 - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-02-14 16:52:54 - Application run failed
-java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:428)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.example.fullstackcrudreact.fullstackbackend.FullstackbackendApplication.main(FullstackbackendApplication.java:10)
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.fullstackcrudreact.fullstackbackend.config.MailConfig] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@3d4eac69]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
-	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360)
-	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:749)
-	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:748)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:681)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:652)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1644)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:158)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 17 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: org/springframework/mail/javamail/JavaMailSender
-	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
-	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578)
-	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676)
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
-	... 33 common frames omitted
-Caused by: java.lang.ClassNotFoundException: org.springframework.mail.javamail.JavaMailSender
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	... 37 common frames omitted
-2025-02-14 16:55:34 - HV000001: Hibernate Validator 8.0.2.Final
-2025-02-14 16:55:35 - Starting FullstackbackendApplication using Java 21.0.6 with PID 23860 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
-2025-02-14 16:55:35 - Running with Spring Boot v3.2.2, Spring v6.1.3
-2025-02-14 16:55:35 - No active profile set, falling back to 1 default profile: "default"
-2025-02-14 16:55:36 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-14 16:55:36 - Finished Spring Data repository scanning in 94 ms. Found 5 JPA repository interfaces.
-2025-02-14 16:55:37 - Tomcat initialized with port 8080 (http)
-2025-02-14 16:55:37 - Initializing ProtocolHandler ["http-nio-8080"]
-2025-02-14 16:55:37 - Starting service [Tomcat]
-2025-02-14 16:55:37 - Starting Servlet engine: [Apache Tomcat/10.1.18]
-2025-02-14 16:55:38 - Initializing Spring embedded WebApplicationContext
-2025-02-14 16:55:38 - Root WebApplicationContext: initialization completed in 2982 ms
-2025-02-14 16:55:38 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-14 16:55:38 - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-02-14 16:55:38 - HHH000026: Second-level cache disabled
-2025-02-14 16:55:39 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-14 16:55:39 - HikariPool-1 - Starting...
-2025-02-14 16:55:39 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d1f23a0
-2025-02-14 16:55:39 - HikariPool-1 - Start completed.
-2025-02-14 16:55:39 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-02-14 16:55:39 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-02-14 16:55:41 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-14 16:55:42 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-14 16:55:43 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-14 16:55:43 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3f2bf80d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6cb5a64d, org.springframework.security.web.context.SecurityContextHolderFilter@60515ab1, org.springframework.security.web.header.HeaderWriterFilter@31a9eaa, org.springframework.web.filter.CorsFilter@1150d471, org.springframework.security.web.authentication.logout.LogoutFilter@215efb16, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3dc5eb8f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@16a89351, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@395854dd, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@7af5ce66, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@729eef5f, org.springframework.security.web.access.ExceptionTranslationFilter@191cf38f, org.springframework.security.web.access.intercept.AuthorizationFilter@31f96cf]
-2025-02-14 16:55:44 - Starting ProtocolHandler ["http-nio-8080"]
-2025-02-14 16:55:44 - Tomcat started on port 8080 (http) with context path ''
-2025-02-14 16:55:44 - Started FullstackbackendApplication in 10.101 seconds (process running for 10.616)
-2025-02-14 16:55:52 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-14 16:55:52 - Initializing Servlet 'dispatcherServlet'
-2025-02-14 16:55:52 - Completed initialization in 1 ms
-2025-02-14 17:03:00 - HV000001: Hibernate Validator 8.0.2.Final
-2025-02-14 17:03:00 - Starting FullstackbackendApplication using Java 21.0.6 with PID 23728 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
-2025-02-14 17:03:00 - Running with Spring Boot v3.2.2, Spring v6.1.3
-2025-02-14 17:03:00 - No active profile set, falling back to 1 default profile: "default"
-2025-02-14 17:03:02 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-14 17:03:02 - Finished Spring Data repository scanning in 231 ms. Found 5 JPA repository interfaces.
-2025-02-14 17:03:04 - Tomcat initialized with port 8080 (http)
-2025-02-14 17:03:04 - Initializing ProtocolHandler ["http-nio-8080"]
-2025-02-14 17:03:04 - Starting service [Tomcat]
-2025-02-14 17:03:04 - Starting Servlet engine: [Apache Tomcat/10.1.18]
-2025-02-14 17:03:04 - Initializing Spring embedded WebApplicationContext
-2025-02-14 17:03:04 - Root WebApplicationContext: initialization completed in 3400 ms
-2025-02-14 17:03:04 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-14 17:03:04 - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-02-14 17:03:04 - HHH000026: Second-level cache disabled
-2025-02-14 17:03:05 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-14 17:03:05 - HikariPool-1 - Starting...
-2025-02-14 17:03:06 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f810c18
-2025-02-14 17:03:06 - HikariPool-1 - Start completed.
-2025-02-14 17:03:06 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-02-14 17:03:06 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-02-14 17:03:08 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-14 17:03:08 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-14 17:03:09 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-14 17:03:10 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@67836d4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65011123, org.springframework.security.web.context.SecurityContextHolderFilter@4eb69e8d, org.springframework.security.web.header.HeaderWriterFilter@b67b359, org.springframework.web.filter.CorsFilter@307e4c44, org.springframework.security.web.authentication.logout.LogoutFilter@45f32b12, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@16a89351, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13cec4ff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e08ed28, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@7d7d7b1a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20e4e27f, org.springframework.security.web.access.ExceptionTranslationFilter@7e2c8622, org.springframework.security.web.access.intercept.AuthorizationFilter@37e967df]
-2025-02-14 17:03:11 - Starting ProtocolHandler ["http-nio-8080"]
-2025-02-14 17:03:11 - Tomcat started on port 8080 (http) with context path ''
-2025-02-14 17:03:11 - Started FullstackbackendApplication in 11.965 seconds (process running for 12.641)
-2025-02-14 17:03:34 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-14 17:03:34 - Initializing Servlet 'dispatcherServlet'
-2025-02-14 17:03:34 - Completed initialization in 2 ms
-2025-02-14 17:03:50 - Generated reset token for email: lcvitas@gmail.com
-2025-02-14 17:03:53 - Failed to send reset password email:
-org.springframework.mail.MailSendException: Failed messages: org.eclipse.angus.mail.smtp.SMTPSendFailedException: 550 Request failed; Mailbox unavailable
-;
-  nested exception is:
-	org.eclipse.angus.mail.smtp.SMTPSenderFailedException: 550 Request failed; Mailbox unavailable
-
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:453)
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350)
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101)
-	at com.example.fullstackcrudreact.fullstackbackend.service.EmailService.sendResetPasswordEmail(EmailService.java:28)
-	at com.example.fullstackcrudreact.fullstackbackend.controller.AuthController.resetPassword(AuthController.java:64)
+2025-02-16 00:00:01 - Tomcat initialized with port 8080 (http)
+2025-02-16 00:00:01 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-16 00:00:01 - Starting service [Tomcat]
+2025-02-16 00:00:01 - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-02-16 00:00:01 - Initializing Spring embedded WebApplicationContext
+2025-02-16 00:00:01 - Root WebApplicationContext: initialization completed in 2779 ms
+2025-02-16 00:00:01 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-16 00:00:01 - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-16 00:00:01 - HHH000026: Second-level cache disabled
+2025-02-16 00:00:02 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-16 00:00:03 - HikariPool-1 - Starting...
+2025-02-16 00:00:03 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3451fc88
+2025-02-16 00:00:03 - HikariPool-1 - Start completed.
+2025-02-16 00:00:03 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-16 00:00:03 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-16 00:00:06 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-16 00:00:06 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-16 00:00:08 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-16 00:00:09 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1df60140, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@62d4dac4, org.springframework.security.web.context.SecurityContextHolderFilter@281a54b, org.springframework.security.web.header.HeaderWriterFilter@64c79b69, org.springframework.web.filter.CorsFilter@285583d4, org.springframework.security.web.authentication.logout.LogoutFilter@5f80b25a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7441edeb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@763a72da, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50e32998, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3f13720f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@11efa76e, org.springframework.security.web.access.ExceptionTranslationFilter@331da721, org.springframework.security.web.access.intercept.AuthorizationFilter@9e2b199]
+2025-02-16 00:00:09 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-16 00:00:09 - Tomcat started on port 8080 (http) with context path ''
+2025-02-16 00:00:09 - Started FullstackbackendApplication in 12.692 seconds (process running for 13.4)
+2025-02-16 00:00:27 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-16 00:00:27 - Initializing Servlet 'dispatcherServlet'
+2025-02-16 00:00:27 - Completed initialization in 1 ms
+2025-02-16 00:00:37 - Generated reset token for email: lcvitas@gmail.com
+2025-02-16 00:00:57 - Failed to reset password:
+java.lang.IllegalArgumentException: rawPassword cannot be null
+	at org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder.encode(BCryptPasswordEncoder.java:107)
+	at com.example.fullstackcrudreact.fullstackbackend.controller.AuthController.confirmResetPassword(AuthController.java:115)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:261)
@@ -329,18 +129,42 @@ org.springframework.mail.MailSendException: Failed messages: org.eclipse.angus.m
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-02-14 17:21:27 - Generated reset token for email: lcvitas@gmail.com
-2025-02-14 17:21:30 - Failed to send reset password email:
-org.springframework.mail.MailSendException: Failed messages: org.eclipse.angus.mail.smtp.SMTPSendFailedException: 550 Request failed; Mailbox unavailable
-;
-  nested exception is:
-	org.eclipse.angus.mail.smtp.SMTPSenderFailedException: 550 Request failed; Mailbox unavailable
-
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:453)
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350)
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101)
-	at com.example.fullstackcrudreact.fullstackbackend.service.EmailService.sendResetPasswordEmail(EmailService.java:28)
-	at com.example.fullstackcrudreact.fullstackbackend.controller.AuthController.resetPassword(AuthController.java:64)
+2025-02-16 00:02:46 - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-16 00:02:46 - Starting FullstackbackendApplication using Java 21.0.6 with PID 35540 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
+2025-02-16 00:02:46 - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-02-16 00:02:46 - No active profile set, falling back to 1 default profile: "default"
+2025-02-16 00:02:47 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-16 00:02:48 - Finished Spring Data repository scanning in 170 ms. Found 6 JPA repository interfaces.
+2025-02-16 00:02:49 - Tomcat initialized with port 8080 (http)
+2025-02-16 00:02:49 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-16 00:02:49 - Starting service [Tomcat]
+2025-02-16 00:02:49 - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-02-16 00:02:49 - Initializing Spring embedded WebApplicationContext
+2025-02-16 00:02:49 - Root WebApplicationContext: initialization completed in 3384 ms
+2025-02-16 00:02:50 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-16 00:02:50 - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-16 00:02:50 - HHH000026: Second-level cache disabled
+2025-02-16 00:02:51 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-16 00:02:51 - HikariPool-1 - Starting...
+2025-02-16 00:02:51 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d90644f
+2025-02-16 00:02:51 - HikariPool-1 - Start completed.
+2025-02-16 00:02:51 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-16 00:02:51 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-16 00:02:54 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-16 00:02:54 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-16 00:02:55 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-16 00:02:56 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@31f96cf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3dc5eb8f, org.springframework.security.web.context.SecurityContextHolderFilter@456beb8b, org.springframework.security.web.header.HeaderWriterFilter@45f32b12, org.springframework.web.filter.CorsFilter@4c19d42e, org.springframework.security.web.authentication.logout.LogoutFilter@163cd4a6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@73ccdfc1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2dc54b50, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31a9eaa, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5d4af473, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d4b0a07, org.springframework.security.web.access.ExceptionTranslationFilter@43a9988a, org.springframework.security.web.access.intercept.AuthorizationFilter@9423344]
+2025-02-16 00:02:56 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-16 00:02:56 - Tomcat started on port 8080 (http) with context path ''
+2025-02-16 00:02:56 - Started FullstackbackendApplication in 11.409 seconds (process running for 12.089)
+2025-02-16 00:03:57 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-16 00:03:57 - Initializing Servlet 'dispatcherServlet'
+2025-02-16 00:03:57 - Completed initialization in 2 ms
+2025-02-16 00:04:06 - Generated reset token for email: lcvitas@gmail.com
+2025-02-16 00:04:32 - Failed to reset password:
+java.lang.IllegalArgumentException: rawPassword cannot be null
+	at org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder.encode(BCryptPasswordEncoder.java:107)
+	at com.example.fullstackcrudreact.fullstackbackend.controller.AuthController.confirmResetPassword(AuthController.java:116)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:261)
@@ -442,49 +266,44 @@ org.springframework.mail.MailSendException: Failed messages: org.eclipse.angus.m
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-02-14 17:23:09 - HV000001: Hibernate Validator 8.0.2.Final
-2025-02-14 17:23:09 - Starting FullstackbackendApplication using Java 21.0.6 with PID 25236 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
-2025-02-14 17:23:09 - Running with Spring Boot v3.2.2, Spring v6.1.3
-2025-02-14 17:23:09 - No active profile set, falling back to 1 default profile: "default"
-2025-02-14 17:23:10 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-14 17:23:11 - Finished Spring Data repository scanning in 113 ms. Found 5 JPA repository interfaces.
-2025-02-14 17:23:12 - Tomcat initialized with port 8080 (http)
-2025-02-14 17:23:12 - Initializing ProtocolHandler ["http-nio-8080"]
-2025-02-14 17:23:12 - Starting service [Tomcat]
-2025-02-14 17:23:12 - Starting Servlet engine: [Apache Tomcat/10.1.18]
-2025-02-14 17:23:12 - Initializing Spring embedded WebApplicationContext
-2025-02-14 17:23:12 - Root WebApplicationContext: initialization completed in 2982 ms
-2025-02-14 17:23:12 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-14 17:23:12 - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-02-14 17:23:12 - HHH000026: Second-level cache disabled
-2025-02-14 17:23:13 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-14 17:23:13 - HikariPool-1 - Starting...
-2025-02-14 17:23:14 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a34a51e
-2025-02-14 17:23:14 - HikariPool-1 - Start completed.
-2025-02-14 17:23:14 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-02-14 17:23:14 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-02-14 17:23:16 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-14 17:23:16 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-14 17:23:17 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-14 17:23:18 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@78c9c38a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8a0a1d1, org.springframework.security.web.context.SecurityContextHolderFilter@738ed8d3, org.springframework.security.web.header.HeaderWriterFilter@6db59e26, org.springframework.web.filter.CorsFilter@61615b4a, org.springframework.security.web.authentication.logout.LogoutFilter@53b60595, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@16bbb59c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@517fb2c3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6c289070, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5653429e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6dd50380, org.springframework.security.web.access.ExceptionTranslationFilter@6e200307, org.springframework.security.web.access.intercept.AuthorizationFilter@12d33d7a]
-2025-02-14 17:23:18 - Starting ProtocolHandler ["http-nio-8080"]
-2025-02-14 17:23:18 - Tomcat started on port 8080 (http) with context path ''
-2025-02-14 17:23:18 - Started FullstackbackendApplication in 10.51 seconds (process running for 11.177)
-2025-02-14 17:23:38 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-14 17:23:38 - Initializing Servlet 'dispatcherServlet'
-2025-02-14 17:23:38 - Completed initialization in 3 ms
-2025-02-14 17:23:39 - Generated reset token for email: lcvitas@gmail.com
-2025-02-14 17:23:41 - Failed to send reset password email:
-org.springframework.mail.MailSendException: Failed messages: org.eclipse.angus.mail.smtp.SMTPSendFailedException: 550 Request failed; Mailbox unavailable
-;
-  nested exception is:
-	org.eclipse.angus.mail.smtp.SMTPSenderFailedException: 550 Request failed; Mailbox unavailable
-
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:453)
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350)
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101)
-	at com.example.fullstackcrudreact.fullstackbackend.service.EmailService.sendResetPasswordEmail(EmailService.java:28)
-	at com.example.fullstackcrudreact.fullstackbackend.controller.AuthController.resetPassword(AuthController.java:68)
+2025-02-16 00:11:23 - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-16 00:11:23 - Starting FullstackbackendApplication using Java 21.0.6 with PID 29140 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
+2025-02-16 00:11:23 - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-02-16 00:11:23 - No active profile set, falling back to 1 default profile: "default"
+2025-02-16 00:11:25 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-16 00:11:25 - Finished Spring Data repository scanning in 110 ms. Found 6 JPA repository interfaces.
+2025-02-16 00:11:26 - Tomcat initialized with port 8080 (http)
+2025-02-16 00:11:26 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-16 00:11:26 - Starting service [Tomcat]
+2025-02-16 00:11:26 - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-02-16 00:11:26 - Initializing Spring embedded WebApplicationContext
+2025-02-16 00:11:26 - Root WebApplicationContext: initialization completed in 2902 ms
+2025-02-16 00:11:26 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-16 00:11:27 - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-16 00:11:27 - HHH000026: Second-level cache disabled
+2025-02-16 00:11:28 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-16 00:11:28 - HikariPool-1 - Starting...
+2025-02-16 00:11:28 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51de5efa
+2025-02-16 00:11:28 - HikariPool-1 - Start completed.
+2025-02-16 00:11:29 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-16 00:11:29 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-16 00:11:30 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-16 00:11:30 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-16 00:11:31 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-16 00:11:32 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@331da721, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@335cbcbd, org.springframework.security.web.context.SecurityContextHolderFilter@20e4e27f, org.springframework.security.web.header.HeaderWriterFilter@7d7d7b1a, org.springframework.web.filter.CorsFilter@33bb3f86, org.springframework.security.web.authentication.logout.LogoutFilter@5d4af473, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@46c7e6c0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@715ea64a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1cbb394b, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@392af2e0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64c79b69, org.springframework.security.web.access.ExceptionTranslationFilter@53b60595, org.springframework.security.web.access.intercept.AuthorizationFilter@264c9994]
+2025-02-16 00:11:33 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-16 00:11:33 - Tomcat started on port 8080 (http) with context path ''
+2025-02-16 00:11:33 - Started FullstackbackendApplication in 10.503 seconds (process running for 11.121)
+2025-02-16 00:22:49 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-16 00:22:49 - Initializing Servlet 'dispatcherServlet'
+2025-02-16 00:22:49 - Completed initialization in 7 ms
+2025-02-16 00:22:55 - Generated reset token for email: lcvitas@gmail.com
+2025-02-16 00:23:37 - Confirming password reset for user ID: 1202
+2025-02-16 00:23:37 - Request payload: token=ece662f2-8ef2-4aae-8339-49604e065b59, email=null, newPassword=null
+2025-02-16 00:23:37 - Failed to reset password:
+java.lang.IllegalArgumentException: rawPassword cannot be null
+	at org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder.encode(BCryptPasswordEncoder.java:107)
+	at com.example.fullstackcrudreact.fullstackbackend.controller.AuthController.confirmResetPassword(AuthController.java:122)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:261)
@@ -586,49 +405,15 @@ org.springframework.mail.MailSendException: Failed messages: org.eclipse.angus.m
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-02-14 17:25:52 - HV000001: Hibernate Validator 8.0.2.Final
-2025-02-14 17:25:52 - Starting FullstackbackendApplication using Java 21.0.6 with PID 36984 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
-2025-02-14 17:25:52 - Running with Spring Boot v3.2.2, Spring v6.1.3
-2025-02-14 17:25:52 - No active profile set, falling back to 1 default profile: "default"
-2025-02-14 17:25:53 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-14 17:25:53 - Finished Spring Data repository scanning in 101 ms. Found 5 JPA repository interfaces.
-2025-02-14 17:25:55 - Tomcat initialized with port 8080 (http)
-2025-02-14 17:25:55 - Initializing ProtocolHandler ["http-nio-8080"]
-2025-02-14 17:25:55 - Starting service [Tomcat]
-2025-02-14 17:25:55 - Starting Servlet engine: [Apache Tomcat/10.1.18]
-2025-02-14 17:25:55 - Initializing Spring embedded WebApplicationContext
-2025-02-14 17:25:55 - Root WebApplicationContext: initialization completed in 2676 ms
-2025-02-14 17:25:55 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-14 17:25:55 - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-02-14 17:25:55 - HHH000026: Second-level cache disabled
-2025-02-14 17:25:56 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-14 17:25:56 - HikariPool-1 - Starting...
-2025-02-14 17:25:57 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e7b0bec
-2025-02-14 17:25:57 - HikariPool-1 - Start completed.
-2025-02-14 17:25:57 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-02-14 17:25:57 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-02-14 17:25:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-14 17:25:59 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-14 17:26:00 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-14 17:26:01 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@53b60595, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f9d47a3, org.springframework.security.web.context.SecurityContextHolderFilter@b67b359, org.springframework.security.web.header.HeaderWriterFilter@2524f9bf, org.springframework.web.filter.CorsFilter@307e4c44, org.springframework.security.web.authentication.logout.LogoutFilter@622e39d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@67c912d3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@130bd00e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4eb69e8d, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@395854dd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d7d7b1a, org.springframework.security.web.access.ExceptionTranslationFilter@76a86677, org.springframework.security.web.access.intercept.AuthorizationFilter@19370af1]
-2025-02-14 17:26:02 - Starting ProtocolHandler ["http-nio-8080"]
-2025-02-14 17:26:02 - Tomcat started on port 8080 (http) with context path ''
-2025-02-14 17:26:02 - Started FullstackbackendApplication in 10.58 seconds (process running for 11.328)
-2025-02-14 17:29:02 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-14 17:29:02 - Initializing Servlet 'dispatcherServlet'
-2025-02-14 17:29:02 - Completed initialization in 1 ms
-2025-02-14 17:29:03 - Generated reset token for email: lcvitas@gmail.com
-2025-02-14 17:29:05 - Failed to send reset password email:
-org.springframework.mail.MailSendException: Failed messages: org.eclipse.angus.mail.smtp.SMTPSendFailedException: 550 Request failed; Mailbox unavailable
-;
-  nested exception is:
-	org.eclipse.angus.mail.smtp.SMTPSenderFailedException: 550 Request failed; Mailbox unavailable
-
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:453)
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:350)
-	at org.springframework.mail.javamail.JavaMailSender.send(JavaMailSender.java:101)
-	at com.example.fullstackcrudreact.fullstackbackend.service.EmailService.sendResetPasswordEmail(EmailService.java:28)
-	at com.example.fullstackcrudreact.fullstackbackend.controller.AuthController.resetPassword(AuthController.java:70)
+2025-02-16 06:52:41 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h20m43s741ms959µs200ns).
+2025-02-16 11:17:22 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h59m9s409ms232µs700ns).
+2025-02-16 11:25:19 - Generated reset token for email: lcvitas@gmail.com
+2025-02-16 11:25:40 - Confirming password reset for user ID: 1202
+2025-02-16 11:25:40 - Request payload: token=c1a95f1f-81b6-4111-b96d-158e13ee31c9, email=null, newPassword=null
+2025-02-16 11:25:40 - Failed to reset password:
+java.lang.IllegalArgumentException: rawPassword cannot be null
+	at org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder.encode(BCryptPasswordEncoder.java:107)
+	at com.example.fullstackcrudreact.fullstackbackend.controller.AuthController.confirmResetPassword(AuthController.java:122)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:261)
@@ -730,35 +515,266 @@ org.springframework.mail.MailSendException: Failed messages: org.eclipse.angus.m
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-02-14 17:34:35 - HV000001: Hibernate Validator 8.0.2.Final
-2025-02-14 17:34:35 - Starting FullstackbackendApplication using Java 21.0.6 with PID 5288 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
-2025-02-14 17:34:35 - Running with Spring Boot v3.2.2, Spring v6.1.3
-2025-02-14 17:34:35 - No active profile set, falling back to 1 default profile: "default"
-2025-02-14 17:34:37 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-14 17:34:37 - Finished Spring Data repository scanning in 112 ms. Found 5 JPA repository interfaces.
-2025-02-14 17:34:38 - Tomcat initialized with port 8080 (http)
-2025-02-14 17:34:38 - Initializing ProtocolHandler ["http-nio-8080"]
-2025-02-14 17:34:38 - Starting service [Tomcat]
-2025-02-14 17:34:38 - Starting Servlet engine: [Apache Tomcat/10.1.18]
-2025-02-14 17:34:38 - Initializing Spring embedded WebApplicationContext
-2025-02-14 17:34:38 - Root WebApplicationContext: initialization completed in 2683 ms
-2025-02-14 17:34:38 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-14 17:34:39 - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-02-14 17:34:39 - HHH000026: Second-level cache disabled
-2025-02-14 17:34:39 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-14 17:34:39 - HikariPool-1 - Starting...
-2025-02-14 17:34:40 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f810c18
-2025-02-14 17:34:40 - HikariPool-1 - Start completed.
-2025-02-14 17:34:40 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-02-14 17:34:40 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-02-14 17:34:42 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-14 17:34:42 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-14 17:34:44 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-14 17:34:45 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1cbb394b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b4bc7b9, org.springframework.security.web.context.SecurityContextHolderFilter@34d6e9a4, org.springframework.security.web.header.HeaderWriterFilter@13cec4ff, org.springframework.web.filter.CorsFilter@307e4c44, org.springframework.security.web.authentication.logout.LogoutFilter@2dc54b50, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@67836d4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4822fc53, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e200307, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@715ea64a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@12d33d7a, org.springframework.security.web.access.ExceptionTranslationFilter@4eb69e8d, org.springframework.security.web.access.intercept.AuthorizationFilter@7d7d7b1a]
-2025-02-14 17:34:45 - Starting ProtocolHandler ["http-nio-8080"]
-2025-02-14 17:34:46 - Tomcat started on port 8080 (http) with context path ''
-2025-02-14 17:34:46 - Started FullstackbackendApplication in 11.162 seconds (process running for 11.77)
-2025-02-14 17:38:28 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-14 17:38:28 - Initializing Servlet 'dispatcherServlet'
-2025-02-14 17:38:28 - Completed initialization in 2 ms
-2025-02-14 17:38:43 - Generated reset token for email: lcvitas@gmail.com
+2025-02-16 11:37:44 - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-16 11:37:44 - Starting FullstackbackendApplication using Java 21.0.6 with PID 21332 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
+2025-02-16 11:37:44 - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-02-16 11:37:44 - No active profile set, falling back to 1 default profile: "default"
+2025-02-16 11:37:45 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-16 11:37:45 - Finished Spring Data repository scanning in 133 ms. Found 6 JPA repository interfaces.
+2025-02-16 11:37:47 - Tomcat initialized with port 8080 (http)
+2025-02-16 11:37:47 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-16 11:37:47 - Starting service [Tomcat]
+2025-02-16 11:37:47 - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-02-16 11:37:47 - Initializing Spring embedded WebApplicationContext
+2025-02-16 11:37:47 - Root WebApplicationContext: initialization completed in 2978 ms
+2025-02-16 11:37:47 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-16 11:37:47 - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-16 11:37:47 - HHH000026: Second-level cache disabled
+2025-02-16 11:37:48 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-16 11:37:48 - HikariPool-1 - Starting...
+2025-02-16 11:37:49 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b2e9db2
+2025-02-16 11:37:49 - HikariPool-1 - Start completed.
+2025-02-16 11:37:49 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-16 11:37:49 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-16 11:37:51 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-16 11:37:51 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-16 11:37:52 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-16 11:37:52 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@729eef5f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@264c9994, org.springframework.security.web.context.SecurityContextHolderFilter@16a89351, org.springframework.security.web.header.HeaderWriterFilter@67c912d3, org.springframework.web.filter.CorsFilter@65629ac6, org.springframework.security.web.authentication.logout.LogoutFilter@1a9e2c3b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@17a89cb1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@53b60595, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f9d47a3, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@6cb5a64d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46c7e6c0, org.springframework.security.web.access.ExceptionTranslationFilter@31a9eaa, org.springframework.security.web.access.intercept.AuthorizationFilter@1d4b0a07]
+2025-02-16 11:37:53 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-16 11:37:53 - Tomcat started on port 8080 (http) with context path ''
+2025-02-16 11:37:53 - Started FullstackbackendApplication in 10.267 seconds (process running for 10.958)
+2025-02-16 11:37:53 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-16 11:37:53 - Initializing Servlet 'dispatcherServlet'
+2025-02-16 11:37:53 - Completed initialization in 0 ms
+2025-02-16 11:49:58 - Generated reset token for email: lcvitas@gmail.com
+2025-02-16 11:50:39 - Confirming password reset for user ID: 1304
+2025-02-16 11:50:39 - Request payload: userId=1304, token= 8f15386a-0a85-4ac8-b072-f15e7e384f5b, newPassword=12345
+2025-02-16 11:50:39 - Token not found for user ID: 1304
+2025-02-16 12:06:14 - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-16 12:06:14 - Starting FullstackbackendApplication using Java 21.0.6 with PID 22552 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
+2025-02-16 12:06:14 - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-02-16 12:06:14 - No active profile set, falling back to 1 default profile: "default"
+2025-02-16 12:06:15 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-16 12:06:15 - Finished Spring Data repository scanning in 106 ms. Found 6 JPA repository interfaces.
+2025-02-16 12:06:17 - Tomcat initialized with port 8080 (http)
+2025-02-16 12:06:17 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-16 12:06:17 - Starting service [Tomcat]
+2025-02-16 12:06:17 - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-02-16 12:06:17 - Initializing Spring embedded WebApplicationContext
+2025-02-16 12:06:17 - Root WebApplicationContext: initialization completed in 3142 ms
+2025-02-16 12:06:17 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-16 12:06:17 - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-16 12:06:18 - HHH000026: Second-level cache disabled
+2025-02-16 12:06:18 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-16 12:06:18 - HikariPool-1 - Starting...
+2025-02-16 12:06:19 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@333a44f2
+2025-02-16 12:06:19 - HikariPool-1 - Start completed.
+2025-02-16 12:06:19 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-16 12:06:19 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-16 12:06:21 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-16 12:06:21 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-16 12:06:22 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-16 12:06:23 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@701a79b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2605433, org.springframework.security.web.context.SecurityContextHolderFilter@2f9d47a3, org.springframework.security.web.header.HeaderWriterFilter@16a89351, org.springframework.web.filter.CorsFilter@61615b4a, org.springframework.security.web.authentication.logout.LogoutFilter@73ccdfc1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3f2bf80d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67836d4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@65011123, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@46c7e6c0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40a2fdd2, org.springframework.security.web.access.ExceptionTranslationFilter@60515ab1, org.springframework.security.web.access.intercept.AuthorizationFilter@7af5ce66]
+2025-02-16 12:06:23 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-16 12:06:23 - Tomcat started on port 8080 (http) with context path ''
+2025-02-16 12:06:23 - Started FullstackbackendApplication in 10.722 seconds (process running for 11.586)
+2025-02-16 12:06:25 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-16 12:06:25 - Initializing Servlet 'dispatcherServlet'
+2025-02-16 12:06:25 - Completed initialization in 2 ms
+2025-02-16 12:06:35 - Generated reset token for email: lcvitas@gmail.com
+2025-02-16 12:06:58 - Confirming password reset for user ID: 1152
+2025-02-16 12:06:58 - Request payload: userId=1152, token=8afb1abc-4d41-4063-8dbf-20b9dd683ab2, newPassword=12345
+2025-02-16 12:06:58 - optionalToken.isPresent(): true
+2025-02-16 12:06:58 - passwordResetToken.getEmail(): lcvitas@gmail.com
+2025-02-16 12:06:58 - passwordResetToken.getExpiryDate(): 2025-02-16 13:06:38.901972
+2025-02-16 12:06:58 - request.getNewPassword(): 12345
+2025-02-16 12:06:58 - Failed to reset password for user ID: 1152: No EntityManager with actual transaction available for current thread - cannot reliably process 'remove' call
+org.springframework.dao.InvalidDataAccessApiUsageException: No EntityManager with actual transaction available for current thread - cannot reliably process 'remove' call
+	at org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:400)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:246)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:550)
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:335)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at jdk.proxy2/jdk.proxy2.$Proxy141.deleteByToken(Unknown Source)
+	at com.example.fullstackcrudreact.fullstackbackend.controller.AuthController.confirmResetPassword(AuthController.java:134)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:261)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:189)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:145)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: jakarta.persistence.TransactionRequiredException: No EntityManager with actual transaction available for current thread - cannot reliably process 'remove' call
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:303)
+	at jdk.proxy2/jdk.proxy2.$Proxy135.remove(Unknown Source)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$DeleteExecution.doExecute(JpaQueryExecution.java:298)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:149)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:137)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	... 109 common frames omitted
+2025-02-16 12:08:30 - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-16 12:08:30 - Starting FullstackbackendApplication using Java 21.0.6 with PID 31124 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
+2025-02-16 12:08:30 - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-02-16 12:08:30 - No active profile set, falling back to 1 default profile: "default"
+2025-02-16 12:08:32 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-16 12:08:32 - Finished Spring Data repository scanning in 193 ms. Found 6 JPA repository interfaces.
+2025-02-16 12:08:34 - Tomcat initialized with port 8080 (http)
+2025-02-16 12:08:34 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-16 12:08:34 - Starting service [Tomcat]
+2025-02-16 12:08:34 - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-02-16 12:08:34 - Initializing Spring embedded WebApplicationContext
+2025-02-16 12:08:34 - Root WebApplicationContext: initialization completed in 3559 ms
+2025-02-16 12:08:34 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-16 12:08:35 - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-16 12:08:35 - HHH000026: Second-level cache disabled
+2025-02-16 12:08:35 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-16 12:08:35 - HikariPool-1 - Starting...
+2025-02-16 12:08:36 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2dbf2da
+2025-02-16 12:08:36 - HikariPool-1 - Start completed.
+2025-02-16 12:08:36 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-16 12:08:36 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-16 12:08:37 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-16 12:08:37 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-16 12:08:38 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-16 12:08:39 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a457aa1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@763a72da, org.springframework.security.web.context.SecurityContextHolderFilter@16bbb59c, org.springframework.security.web.header.HeaderWriterFilter@1cbb394b, org.springframework.web.filter.CorsFilter@3a00b15d, org.springframework.security.web.authentication.logout.LogoutFilter@7af5ce66, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@335cbcbd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@163cd4a6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d0f03f6, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@281a54b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@50e32998, org.springframework.security.web.access.ExceptionTranslationFilter@36d7e8d2, org.springframework.security.web.access.intercept.AuthorizationFilter@331da721]
+2025-02-16 12:08:39 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-16 12:08:39 - Tomcat started on port 8080 (http) with context path ''
+2025-02-16 12:08:39 - Started FullstackbackendApplication in 9.972 seconds (process running for 10.524)
+2025-02-16 12:08:50 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-16 12:08:50 - Initializing Servlet 'dispatcherServlet'
+2025-02-16 12:08:50 - Completed initialization in 2 ms
+2025-02-16 12:09:00 - Generated reset token for email: lcvitas@gmail.com
+2025-02-16 12:09:23 - Confirming password reset for user ID: 1202
+2025-02-16 12:09:23 - Request payload: userId=1202, token=e611890d-a1e5-4ce2-b902-b065e95e88a0, newPassword=12345
+2025-02-16 12:09:23 - optionalToken.isPresent(): true
+2025-02-16 12:09:23 - passwordResetToken.getEmail(): lcvitas@gmail.com
+2025-02-16 12:09:23 - passwordResetToken.getExpiryDate(): 2025-02-16 13:09:03.177924
+2025-02-16 12:09:23 - request.getNewPassword(): 12345
+2025-02-16 12:11:39 - Generated reset token for email: lcvitas@gmail.com
+2025-02-16 12:12:10 - Confirming password reset for user ID: 1202
+2025-02-16 12:12:10 - Request payload: userId=1202, token=1ede9d71-9ae9-4435-9ccc-f3db6b299380, newPassword=23456
+2025-02-16 12:12:10 - optionalToken.isPresent(): true
+2025-02-16 12:12:10 - passwordResetToken.getEmail(): lcvitas@gmail.com
+2025-02-16 12:12:10 - passwordResetToken.getExpiryDate(): 2025-02-16 13:11:42.059079
+2025-02-16 12:12:10 - request.getNewPassword(): 23456
+2025-02-16 12:16:06 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m508ms542µs200ns).
+2025-02-16 12:35:53 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m46s400ms348µs200ns).
+2025-02-16 17:08:43 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h28m20s269ms507µs400ns).
+2025-02-16 17:15:48 - Generated reset token for email: lcvitas@gmail.com
+2025-02-16 17:16:28 - Confirming password reset for user ID: 1304
+2025-02-16 17:16:28 - Request payload: userId=1304, token= d7e71e15-f5ea-42f0-a6b9-5779e1b3447b, newPassword=majmun
+2025-02-16 17:16:28 - optionalToken.isPresent(): false
+2025-02-16 17:16:28 - Token not found for user ID: 1304
