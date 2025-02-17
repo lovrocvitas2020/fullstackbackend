@@ -31,6 +31,4 @@ build/
 
 ### VS Code ###
 .vscode/
-logs/application-2025-02-09.log
-logs/application-2025-02-08.log
 logs/application.log

@@ -39,6 +39,10 @@ public class SecurityConfig {
                     "/adduserdetails/**",
                     "/send-reset-request/**",
                     "/confirm-reset-password/**",
+                    "/addprojects",
+                    "/viewprojects",
+                    "/editproject/**",
+                    "/projects/*",
                     "/user/**"
                 ).permitAll()
                 .anyRequest().authenticated()
