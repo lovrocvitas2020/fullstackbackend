@@ -471,3 +471,34 @@ Caused by: java.lang.ClassNotFoundException: Claims
 2025-02-18 00:42:52 - Started FullstackbackendApplication in 9.42 seconds (process running for 10.218)
 2025-02-18 07:40:26 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h51m6s996ms938µs300ns).
 2025-02-18 07:45:57 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m29s256ms610µs500ns).
+2025-02-18 07:47:31 - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-18 07:47:31 - Starting FullstackbackendApplication using Java 21.0.6 with PID 8268 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
+2025-02-18 07:47:31 - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-02-18 07:47:31 - No active profile set, falling back to 1 default profile: "default"
+2025-02-18 07:47:33 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-18 07:47:33 - Finished Spring Data repository scanning in 102 ms. Found 6 JPA repository interfaces.
+2025-02-18 07:47:34 - Tomcat initialized with port 8080 (http)
+2025-02-18 07:47:34 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 07:47:34 - Starting service [Tomcat]
+2025-02-18 07:47:34 - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-02-18 07:47:34 - Initializing Spring embedded WebApplicationContext
+2025-02-18 07:47:34 - Root WebApplicationContext: initialization completed in 3411 ms
+2025-02-18 07:47:35 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-18 07:47:35 - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-18 07:47:35 - HHH000026: Second-level cache disabled
+2025-02-18 07:47:36 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-18 07:47:36 - HikariPool-1 - Starting...
+2025-02-18 07:47:36 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@64c95480
+2025-02-18 07:47:36 - HikariPool-1 - Start completed.
+2025-02-18 07:47:36 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-18 07:47:36 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-18 07:47:38 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-18 07:47:39 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-18 07:47:40 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-18 07:47:41 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3ce71bbb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@661d49d1, org.springframework.security.web.context.SecurityContextHolderFilter@40cd02fc, org.springframework.security.web.header.HeaderWriterFilter@73299197, org.springframework.web.filter.CorsFilter@ea04cab, org.springframework.security.web.authentication.logout.LogoutFilter@2edc6690, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@498bfeec, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9742012, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@118d7e0e, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@47d7e8b5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f1eff72, org.springframework.security.web.access.ExceptionTranslationFilter@57d1edf0, org.springframework.security.web.access.intercept.AuthorizationFilter@44e19b99]
+2025-02-18 07:47:41 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 07:47:41 - Tomcat started on port 8080 (http) with context path ''
+2025-02-18 07:47:41 - Started FullstackbackendApplication in 11.242 seconds (process running for 12.095)
+2025-02-18 07:48:04 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18 07:48:04 - Initializing Servlet 'dispatcherServlet'
+2025-02-18 07:48:04 - Completed initialization in 2 ms
