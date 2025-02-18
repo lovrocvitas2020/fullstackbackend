@@ -35,6 +35,8 @@ import com.example.fullstackcrudreact.fullstackbackend.model.User;
 import com.example.fullstackcrudreact.fullstackbackend.repository.UserRepository;
 import com.example.fullstackcrudreact.fullstackbackend.service.ExcelExportService;
 
+import com.example.fullstackcrudreact.fullstackbackend.util.JwtTokenUtil;
+
 import jakarta.transaction.Transactional;
 
 @RestController
@@ -50,16 +52,19 @@ public class UserController {
     private final PasswordEncoder passwordEncoder;
     private final ExcelExportService excelExportService;
     private final PagedResourcesAssembler<User> pagedResourcesAssembler;
+    private final JwtTokenUtil jwtTokenUtil;
 
     @Autowired
     public UserController(UserRepository userRepository, 
                           PasswordEncoder passwordEncoder,
                           ExcelExportService excelExportService,
-                          PagedResourcesAssembler<User> pagedResourcesAssembler) {
+                          PagedResourcesAssembler<User> pagedResourcesAssembler,
+                          JwtTokenUtil jwTokenUtil) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.excelExportService = excelExportService;
         this.pagedResourcesAssembler = pagedResourcesAssembler;
+        this.jwtTokenUtil = jwTokenUtil;
     }
 
 
@@ -109,13 +114,18 @@ public class UserController {
     /**
      * Login User
      */
-    @PostMapping("/loginuser")
+    @PostMapping("/loginuser")   
     public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
         User user = userRepository.findByUsername(loginRequest.getUsername());
         if (user != null && passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
-            Map<String, String> response = new HashMap<>();
-            response.put("username", user.getUsername());
-            response.put("email", user.getEmail());
+            String token = jwtTokenUtil.generateToken(user);
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("token", token);
+            response.put("user", Map.of(
+                "username", user.getUsername(),
+                "email", user.getEmail()
+            ));
             return ResponseEntity.ok(response);
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
