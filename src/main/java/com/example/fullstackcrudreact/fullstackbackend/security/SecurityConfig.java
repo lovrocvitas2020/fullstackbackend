@@ -43,6 +43,8 @@ public class SecurityConfig {
                     "/viewprojects",
                     "/editproject/**",
                     "/projects/*",
+                    "/viewtasks",
+                    "/addtask",
                     "/user/**"
                 ).permitAll()
                 .anyRequest().authenticated()
