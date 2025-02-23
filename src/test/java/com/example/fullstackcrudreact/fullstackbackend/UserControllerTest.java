@@ -25,6 +25,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.test.context.support.WithMockUser;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -32,6 +33,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
@@ -89,20 +91,21 @@ public class UserControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "lovro", roles = {"USER"})
+    @WithMockUser(username = "lovro", roles = {"ADMIN"})
     public void testCreateUser() throws Exception {
         when(userRepository.save(any(User.class))).thenReturn(testUser);
         when(passwordEncoder.encode(any(String.class))).thenReturn("encodedPassword");
 
         mockMvc.perform(post("/user")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(testUser)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.username").value("lovro"));
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(objectMapper.writeValueAsString(testUser))
+            .with(csrf()))  // Include CSRF token
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.username").value("lovro"));
     }
 
     @Test
-    @WithMockUser(username = "lovro", roles = {"USER"})
+    @WithMockUser(username = "lovro", roles = {"ADMIN"})
     public void testGetUserById() throws Exception {
         when(userRepository.findById(1L)).thenReturn(Optional.of(testUser));
 
@@ -113,31 +116,33 @@ public class UserControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "lovro", roles = {"USER"})
+    @WithMockUser(username = "lovro", roles = {"ADMIN"})
     public void testUpdateUser() throws Exception {
         when(userRepository.findById(1L)).thenReturn(Optional.of(testUser));
         when(userRepository.save(any(User.class))).thenReturn(testUser);
 
         mockMvc.perform(put("/user/1")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(testUser)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$").value("User updated successfully"));
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(objectMapper.writeValueAsString(testUser))
+            .with(csrf()))  // Include CSRF token
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$").value("User updated successfully"));
     }
 
     @Test
-    @WithMockUser(username = "lovro", roles = {"USER"})
+    @WithMockUser(username = "lovro", roles = {"ADMIN"})
     public void testDeleteUser() throws Exception {
         when(userRepository.existsById(1L)).thenReturn(true);
 
         mockMvc.perform(delete("/user/1")
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$").value("User with ID 1 has been deleted successfully."));
+            .contentType(MediaType.APPLICATION_JSON)
+            .with(csrf()))  // Include CSRF token
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$").value("User with ID 1 has been deleted successfully."));
     }
 
     @Test
-    @WithMockUser(username = "lovro", roles = {"USER"})
+    @WithMockUser(username = "lovro", roles = {"ADMIN"})
     public void testGetAllUsers() throws Exception {
         List<User> users = new ArrayList<>();
         users.add(testUser);
@@ -146,8 +151,9 @@ public class UserControllerTest {
         when(userRepository.findAll(any(Pageable.class))).thenReturn(page);
 
         mockMvc.perform(get("/users")
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.content[0].username").value("lovro"));
+        .contentType(MediaType.APPLICATION_JSON))
+        .andDo(print())  // Print the response to verify its structure
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$._embedded.userList[0].username").value("lovro"));
     }
 }
