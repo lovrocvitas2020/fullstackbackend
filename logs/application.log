@@ -1176,3 +1176,6 @@ This generated password is for development use only. Your security configuration
 2025-02-27 08:38:21 - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-02-27 08:38:21 - HikariPool-1 - Shutdown initiated...
 2025-02-27 08:38:21 - HikariPool-1 - Shutdown completed.
+2025-02-27 09:15:13 - Securing GET /users?page=4&size=10
+2025-02-27 09:15:13 - Secured GET /users?page=4&size=10
+2025-02-27 09:15:13 - Set SecurityContextHolder to anonymous SecurityContext
