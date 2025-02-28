@@ -10062,3 +10062,1220 @@ Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Da
 2025-02-28 10:55:24 - Starting ProtocolHandler ["http-nio-8080"]
 2025-02-28 10:55:25 - Tomcat started on port 8080 (http) with context path ''
 2025-02-28 10:55:25 - Started FullstackbackendApplication in 11.737 seconds (process running for 12.458)
+2025-02-28 10:55:51 - HV000001: Hibernate Validator 8.0.2.Final
+2025-02-28 10:55:51 - Starting FullstackbackendApplication using Java 21.0.6 with PID 30088 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
+2025-02-28 10:55:51 - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-02-28 10:55:51 - No active profile set, falling back to 1 default profile: "default"
+2025-02-28 10:55:53 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-28 10:55:53 - Finished Spring Data repository scanning in 120 ms. Found 8 JPA repository interfaces.
+2025-02-28 10:55:54 - Tomcat initialized with port 8080 (http)
+2025-02-28 10:55:54 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-28 10:55:54 - Starting service [Tomcat]
+2025-02-28 10:55:54 - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-02-28 10:55:54 - Initializing Spring embedded WebApplicationContext
+2025-02-28 10:55:54 - Root WebApplicationContext: initialization completed in 2543 ms
+2025-02-28 10:55:54 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-28 10:55:54 - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-28 10:55:55 - HHH000026: Second-level cache disabled
+2025-02-28 10:55:55 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-28 10:55:55 - HikariPool-1 - Starting...
+2025-02-28 10:55:56 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6e3b2dd3
+2025-02-28 10:55:56 - HikariPool-1 - Start completed.
+2025-02-28 10:55:56 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-28 10:55:56 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-28 10:55:57 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-28 10:55:58 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table payment_slip modify column generatedqrcode tinyblob" via JDBC [Data truncation: Data too long for column 'generatedqrcode' at row 4]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table payment_slip modify column generatedqrcode tinyblob" via JDBC [Data truncation: Data too long for column 'generatedqrcode' at row 4]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:574)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:514)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.migrateTable(AbstractSchemaMigrator.java:333)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:84)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:286)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1820)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1769)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1231)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:949)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.fullstackcrudreact.fullstackbackend.FullstackbackendApplication.main(FullstackbackendApplication.java:10)
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'generatedqrcode' at row 4
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:770)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	... 38 common frames omitted
+2025-02-28 10:55:58 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-28 10:55:58 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-28 10:55:59 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-28 10:56:00 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5d5ad1e2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fc378cd, org.springframework.security.web.context.SecurityContextHolderFilter@7be3baf2, org.springframework.security.web.header.HeaderWriterFilter@1e0be005, org.springframework.web.filter.CorsFilter@5d7d8613, org.springframework.security.web.authentication.logout.LogoutFilter@30f39d9d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5967f0ff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3443732a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68950f25, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@311683ea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b886bd3, org.springframework.security.web.access.ExceptionTranslationFilter@5ceeab0c, org.springframework.security.web.access.intercept.AuthorizationFilter@7eee42fc]
+2025-02-28 10:56:01 - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-28 10:56:01 - Tomcat started on port 8080 (http) with context path ''
+2025-02-28 10:56:01 - Started FullstackbackendApplication in 10.305 seconds (process running for 11.013)
+2025-02-28 10:57:50 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-28 10:57:50 - Initializing Servlet 'dispatcherServlet'
+2025-02-28 10:57:50 - Completed initialization in 2 ms
+2025-02-28 10:57:50 - Securing GET /viewpaymentslips
+2025-02-28 10:57:50 - Secured GET /viewpaymentslips
+2025-02-28 10:57:50 - Fetching all payment slips
+2025-02-28 10:57:51 - Securing GET /viewpaymentslips
+2025-02-28 10:57:51 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:57:51 - Secured GET /viewpaymentslips
+2025-02-28 10:57:51 - Fetching all payment slips
+2025-02-28 10:57:51 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:58:17 - Securing OPTIONS /addpaymentslips
+2025-02-28 10:58:17 - Securing POST /addpaymentslips
+2025-02-28 10:58:17 - Secured POST /addpaymentslips
+2025-02-28 10:58:17 - createPaymentSlip ADD NEW payment slip
+2025-02-28 10:58:17 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:58:35 - Securing GET /viewpaymentslips
+2025-02-28 10:58:35 - Secured GET /viewpaymentslips
+2025-02-28 10:58:35 - Fetching all payment slips
+2025-02-28 10:58:35 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:58:35 - Securing GET /viewpaymentslips
+2025-02-28 10:58:35 - Secured GET /viewpaymentslips
+2025-02-28 10:58:35 - Fetching all payment slips
+2025-02-28 10:58:35 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:58:36 - Securing GET /viewpaymentslip/502
+2025-02-28 10:58:36 - Secured GET /viewpaymentslip/502
+2025-02-28 10:58:36 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:58:36 - Securing GET /viewpaymentslip/502
+2025-02-28 10:58:36 - Secured GET /viewpaymentslip/502
+2025-02-28 10:58:36 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Securing GET /paymentslips/502
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Saved request http://localhost:8080/paymentslips/502?continue to session
+2025-02-28 10:59:01 - Redirecting to http://localhost:8080/login
+2025-02-28 10:59:01 - Securing GET /login
+2025-02-28 10:59:01 - Secured GET /login
+2025-02-28 10:59:01 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Securing GET /error
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 10:59:01 - Redirecting to http://localhost:8080/login
+2025-02-28 10:59:01 - Securing GET /login
+2025-02-28 10:59:01 - Secured GET /login
+2025-02-28 10:59:01 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Securing GET /error
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 10:59:01 - Redirecting to http://localhost:8080/login
+2025-02-28 10:59:01 - Securing GET /login
+2025-02-28 10:59:01 - Secured GET /login
+2025-02-28 10:59:01 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Securing GET /error
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 10:59:01 - Redirecting to http://localhost:8080/login
+2025-02-28 10:59:01 - Securing GET /login
+2025-02-28 10:59:01 - Secured GET /login
+2025-02-28 10:59:01 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Securing GET /error
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 10:59:01 - Redirecting to http://localhost:8080/login
+2025-02-28 10:59:01 - Securing GET /login
+2025-02-28 10:59:01 - Secured GET /login
+2025-02-28 10:59:01 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Securing GET /error
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 10:59:01 - Redirecting to http://localhost:8080/login
+2025-02-28 10:59:01 - Securing GET /login
+2025-02-28 10:59:01 - Secured GET /login
+2025-02-28 10:59:01 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Securing GET /error
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 10:59:01 - Redirecting to http://localhost:8080/login
+2025-02-28 10:59:01 - Securing GET /login
+2025-02-28 10:59:01 - Secured GET /login
+2025-02-28 10:59:01 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Securing GET /error
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 10:59:01 - Redirecting to http://localhost:8080/login
+2025-02-28 10:59:01 - Securing GET /login
+2025-02-28 10:59:01 - Secured GET /login
+2025-02-28 10:59:01 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Securing GET /error
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 10:59:01 - Redirecting to http://localhost:8080/login
+2025-02-28 10:59:01 - Securing GET /login
+2025-02-28 10:59:01 - Secured GET /login
+2025-02-28 10:59:01 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Securing GET /error
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 10:59:01 - Redirecting to http://localhost:8080/login
+2025-02-28 10:59:01 - Securing GET /login
+2025-02-28 10:59:01 - Secured GET /login
+2025-02-28 10:59:01 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Securing GET /error
+2025-02-28 10:59:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 10:59:01 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 10:59:01 - Redirecting to http://localhost:8080/login
+2025-02-28 10:59:17 - Securing GET /viewpaymentslip/502
+2025-02-28 10:59:17 - Secured GET /viewpaymentslip/502
+2025-02-28 10:59:17 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:01:02 - Securing GET /viewpaymentslips
+2025-02-28 11:01:02 - Secured GET /viewpaymentslips
+2025-02-28 11:01:02 - Fetching all payment slips
+2025-02-28 11:01:02 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:01:02 - Securing GET /viewpaymentslips
+2025-02-28 11:01:02 - Secured GET /viewpaymentslips
+2025-02-28 11:01:02 - Fetching all payment slips
+2025-02-28 11:01:02 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:04:06 - Securing GET /viewpaymentslip/502
+2025-02-28 11:04:06 - Secured GET /viewpaymentslip/502
+2025-02-28 11:04:06 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:04:06 - Securing GET /viewpaymentslip/502
+2025-02-28 11:04:06 - Secured GET /viewpaymentslip/502
+2025-02-28 11:04:06 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:04:25 - Securing GET /viewpaymentslips
+2025-02-28 11:04:25 - Secured GET /viewpaymentslips
+2025-02-28 11:04:25 - Fetching all payment slips
+2025-02-28 11:04:25 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:04:25 - Securing GET /viewpaymentslips
+2025-02-28 11:04:25 - Secured GET /viewpaymentslips
+2025-02-28 11:04:25 - Fetching all payment slips
+2025-02-28 11:04:25 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:04:29 - Securing GET /viewpaymentslip/502
+2025-02-28 11:04:29 - Secured GET /viewpaymentslip/502
+2025-02-28 11:04:29 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:04:29 - Securing GET /viewpaymentslip/502
+2025-02-28 11:04:29 - Secured GET /viewpaymentslip/502
+2025-02-28 11:04:29 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:05:58 - Securing GET /viewpaymentslips
+2025-02-28 11:05:58 - Secured GET /viewpaymentslips
+2025-02-28 11:05:58 - Fetching all payment slips
+2025-02-28 11:05:58 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:05:58 - Securing GET /viewpaymentslips
+2025-02-28 11:05:58 - Secured GET /viewpaymentslips
+2025-02-28 11:05:58 - Fetching all payment slips
+2025-02-28 11:05:58 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:01 - Securing GET /viewpaymentslip/502
+2025-02-28 11:06:01 - Secured GET /viewpaymentslip/502
+2025-02-28 11:06:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:01 - Securing GET /viewpaymentslip/502
+2025-02-28 11:06:01 - Secured GET /viewpaymentslip/502
+2025-02-28 11:06:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:28 - Securing GET /viewpaymentslips
+2025-02-28 11:06:28 - Secured GET /viewpaymentslips
+2025-02-28 11:06:28 - Fetching all payment slips
+2025-02-28 11:06:28 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:28 - Securing GET /viewpaymentslips
+2025-02-28 11:06:28 - Secured GET /viewpaymentslips
+2025-02-28 11:06:28 - Fetching all payment slips
+2025-02-28 11:06:28 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Securing OPTIONS /validate-token
+2025-02-28 11:06:44 - Securing OPTIONS /validate-token
+2025-02-28 11:06:44 - Securing GET /validate-token
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Saved request http://localhost:8080/validate-token?continue to session
+2025-02-28 11:06:44 - Redirecting to http://localhost:8080/login
+2025-02-28 11:06:44 - Securing GET /validate-token
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Securing OPTIONS /login
+2025-02-28 11:06:44 - Saved request http://localhost:8080/validate-token?continue to session
+2025-02-28 11:06:44 - Redirecting to http://localhost:8080/login
+2025-02-28 11:06:44 - Securing GET /login
+2025-02-28 11:06:44 - Secured GET /login
+2025-02-28 11:06:44 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Securing GET /error
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:44 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:44 - Securing OPTIONS /login
+2025-02-28 11:06:44 - Securing GET /login
+2025-02-28 11:06:44 - Secured GET /login
+2025-02-28 11:06:44 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Securing GET /login
+2025-02-28 11:06:44 - Securing GET /error
+2025-02-28 11:06:44 - Secured GET /login
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:44 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:44 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Securing GET /error
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Securing OPTIONS /login
+2025-02-28 11:06:44 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:44 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:44 - Securing GET /login
+2025-02-28 11:06:44 - Secured GET /login
+2025-02-28 11:06:44 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Securing GET /login
+2025-02-28 11:06:44 - Securing GET /error
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Secured GET /login
+2025-02-28 11:06:44 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:44 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:44 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Securing GET /error
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:44 - Securing GET /login
+2025-02-28 11:06:44 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:44 - Secured GET /login
+2025-02-28 11:06:44 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Securing GET /error
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:44 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:44 - Securing GET /login
+2025-02-28 11:06:44 - Securing GET /login
+2025-02-28 11:06:44 - Secured GET /login
+2025-02-28 11:06:44 - Secured GET /login
+2025-02-28 11:06:44 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:44 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Securing GET /error
+2025-02-28 11:06:44 - Securing GET /error
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:44 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:44 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:44 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:44 - Securing GET /login
+2025-02-28 11:06:44 - Securing GET /login
+2025-02-28 11:06:44 - Secured GET /login
+2025-02-28 11:06:44 - Secured GET /login
+2025-02-28 11:06:44 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Securing GET /error
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:44 - Securing GET /error
+2025-02-28 11:06:44 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:44 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:44 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:44 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:44 - Securing GET /login
+2025-02-28 11:06:44 - Secured GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /login
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Secured GET /login
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=282C738B505F527C21852F2D9F8B5B76
+2025-02-28 11:06:45 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Securing GET /error
+2025-02-28 11:06:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:45 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:06:45 - Redirecting to http://localhost:8080/login;jsessionid=C63EEB090023064D5039D294FD222507
+2025-02-28 11:06:48 - Securing OPTIONS /loginuser
+2025-02-28 11:06:48 - Securing POST /loginuser
+2025-02-28 11:06:48 - Secured POST /loginuser
+2025-02-28 11:06:48 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:48 - Securing GET /users?page=0&size=10
+2025-02-28 11:06:48 - Secured GET /users?page=0&size=10
+2025-02-28 11:06:48 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:48 - Securing GET /users?page=0&size=10
+2025-02-28 11:06:48 - Secured GET /users?page=0&size=10
+2025-02-28 11:06:48 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:51 - Securing GET /viewpaymentslips
+2025-02-28 11:06:51 - Secured GET /viewpaymentslips
+2025-02-28 11:06:51 - Fetching all payment slips
+2025-02-28 11:06:51 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:51 - Securing GET /viewpaymentslips
+2025-02-28 11:06:51 - Secured GET /viewpaymentslips
+2025-02-28 11:06:51 - Fetching all payment slips
+2025-02-28 11:06:51 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:52 - Securing GET /viewpaymentslip/502
+2025-02-28 11:06:52 - Secured GET /viewpaymentslip/502
+2025-02-28 11:06:52 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:06:52 - Securing GET /viewpaymentslip/502
+2025-02-28 11:06:52 - Secured GET /viewpaymentslip/502
+2025-02-28 11:06:52 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:07:24 - Securing GET /viewpaymentslips
+2025-02-28 11:07:24 - Secured GET /viewpaymentslips
+2025-02-28 11:07:24 - Fetching all payment slips
+2025-02-28 11:07:24 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:07:24 - Securing GET /viewpaymentslips
+2025-02-28 11:07:24 - Secured GET /viewpaymentslips
+2025-02-28 11:07:24 - Fetching all payment slips
+2025-02-28 11:07:24 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:07:30 - Securing GET /users?page=0&size=10
+2025-02-28 11:07:30 - Secured GET /users?page=0&size=10
+2025-02-28 11:07:30 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:07:30 - Securing GET /users?page=0&size=10
+2025-02-28 11:07:30 - Secured GET /users?page=0&size=10
+2025-02-28 11:07:30 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:07:53 - Securing OPTIONS /loginuser
+2025-02-28 11:07:53 - Securing POST /loginuser
+2025-02-28 11:07:53 - Secured POST /loginuser
+2025-02-28 11:07:53 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:07:53 - Securing GET /users?page=0&size=10
+2025-02-28 11:07:53 - Secured GET /users?page=0&size=10
+2025-02-28 11:07:53 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:07:53 - Securing GET /users?page=0&size=10
+2025-02-28 11:07:53 - Secured GET /users?page=0&size=10
+2025-02-28 11:07:53 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:08:00 - Securing GET /viewpaymentslips
+2025-02-28 11:08:00 - Secured GET /viewpaymentslips
+2025-02-28 11:08:00 - Fetching all payment slips
+2025-02-28 11:08:00 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:08:00 - Securing GET /viewpaymentslips
+2025-02-28 11:08:00 - Secured GET /viewpaymentslips
+2025-02-28 11:08:00 - Fetching all payment slips
+2025-02-28 11:08:00 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:16 - Securing GET /viewpaymentslips
+2025-02-28 11:11:16 - Secured GET /viewpaymentslips
+2025-02-28 11:11:16 - Fetching all payment slips
+2025-02-28 11:11:16 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:16 - Securing GET /viewpaymentslips
+2025-02-28 11:11:16 - Secured GET /viewpaymentslips
+2025-02-28 11:11:16 - Fetching all payment slips
+2025-02-28 11:11:16 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:25 - Securing GET /viewpaymentslips
+2025-02-28 11:11:25 - Secured GET /viewpaymentslips
+2025-02-28 11:11:25 - Fetching all payment slips
+2025-02-28 11:11:25 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:25 - Securing GET /viewpaymentslips
+2025-02-28 11:11:25 - Secured GET /viewpaymentslips
+2025-02-28 11:11:25 - Fetching all payment slips
+2025-02-28 11:11:25 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing OPTIONS /validate-token
+2025-02-28 11:11:40 - Securing OPTIONS /validate-token
+2025-02-28 11:11:40 - Securing GET /validate-token
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/validate-token?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login
+2025-02-28 11:11:40 - Securing GET /validate-token
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/validate-token?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login
+2025-02-28 11:11:40 - Securing OPTIONS /login
+2025-02-28 11:11:40 - Securing OPTIONS /login
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Securing OPTIONS /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Securing OPTIONS /login
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=3548D2910FAB0260FBF85EB2E6D4107A
+2025-02-28 11:11:40 - Securing GET /login
+2025-02-28 11:11:40 - Secured GET /login
+2025-02-28 11:11:40 - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "login"]
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Securing GET /error
+2025-02-28 11:11:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:11:40 - Saved request http://localhost:8080/error?continue to session
+2025-02-28 11:11:40 - Redirecting to http://localhost:8080/login;jsessionid=D23F2AF33DF506DCE61CEDA02E2ACC8C
+2025-02-28 11:15:15 - Securing OPTIONS /loginuser
+2025-02-28 11:15:15 - Securing POST /loginuser
+2025-02-28 11:15:15 - Secured POST /loginuser
+2025-02-28 11:15:15 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:15 - Securing GET /users?page=0&size=10
+2025-02-28 11:15:15 - Secured GET /users?page=0&size=10
+2025-02-28 11:15:15 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:15 - Securing GET /users?page=0&size=10
+2025-02-28 11:15:15 - Secured GET /users?page=0&size=10
+2025-02-28 11:15:15 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:18 - Securing GET /users
+2025-02-28 11:15:18 - Secured GET /users
+2025-02-28 11:15:18 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:18 - Securing GET /users
+2025-02-28 11:15:18 - Secured GET /users
+2025-02-28 11:15:18 - Securing GET /users?page=1&size=10
+2025-02-28 11:15:18 - Secured GET /users?page=1&size=10
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Securing GET /users
+2025-02-28 11:15:19 - Secured GET /users
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Securing GET /users?page=1&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=1&size=10
+2025-02-28 11:15:19 - Securing GET /users?page=2&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=2&size=10
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Securing GET /users
+2025-02-28 11:15:19 - Secured GET /users
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Securing GET /users?page=1&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=1&size=10
+2025-02-28 11:15:19 - Securing GET /users?page=2&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=2&size=10
+2025-02-28 11:15:19 - Securing GET /users?page=3&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=3&size=10
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Securing GET /users?page=1&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=1&size=10
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Securing GET /users?page=2&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=2&size=10
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Securing GET /users?page=3&size=10
+2025-02-28 11:15:19 - Securing GET /users?page=4&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=3&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=4&size=10
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Securing GET /users?page=2&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=2&size=10
+2025-02-28 11:15:19 - Securing GET /users?page=4&size=10
+2025-02-28 11:15:19 - Securing GET /users?page=3&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=4&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=3&size=10
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Securing GET /viewworklog
+2025-02-28 11:15:19 - Secured GET /viewworklog
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Securing GET /users?page=4&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=4&size=10
+2025-02-28 11:15:19 - Securing GET /users?page=3&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=3&size=10
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Securing GET /users?page=4&size=10
+2025-02-28 11:15:19 - Secured GET /users?page=4&size=10
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:19 - Securing GET /viewworklog
+2025-02-28 11:15:19 - Secured GET /viewworklog
+2025-02-28 11:15:19 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:27 - Securing GET /users?page=0&size=10
+2025-02-28 11:15:27 - Secured GET /users?page=0&size=10
+2025-02-28 11:15:27 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:27 - Securing GET /users?page=0&size=10
+2025-02-28 11:15:27 - Secured GET /users?page=0&size=10
+2025-02-28 11:15:27 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:29 - Securing GET /viewpaymentslips
+2025-02-28 11:15:29 - Secured GET /viewpaymentslips
+2025-02-28 11:15:29 - Fetching all payment slips
+2025-02-28 11:15:29 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:29 - Securing GET /viewpaymentslips
+2025-02-28 11:15:29 - Secured GET /viewpaymentslips
+2025-02-28 11:15:29 - Fetching all payment slips
+2025-02-28 11:15:29 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:30 - Securing GET /viewpaymentslip/502
+2025-02-28 11:15:30 - Secured GET /viewpaymentslip/502
+2025-02-28 11:15:30 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:15:30 - Securing GET /viewpaymentslip/502
+2025-02-28 11:15:30 - Secured GET /viewpaymentslip/502
+2025-02-28 11:15:30 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:16:27 - Securing GET /viewpaymentslips
+2025-02-28 11:16:27 - Secured GET /viewpaymentslips
+2025-02-28 11:16:27 - Fetching all payment slips
+2025-02-28 11:16:27 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:16:27 - Securing GET /viewpaymentslips
+2025-02-28 11:16:27 - Secured GET /viewpaymentslips
+2025-02-28 11:16:27 - Fetching all payment slips
+2025-02-28 11:16:27 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:16:31 - Securing GET /viewpaymentslip/502
+2025-02-28 11:16:31 - Secured GET /viewpaymentslip/502
+2025-02-28 11:16:31 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:16:31 - Securing GET /viewpaymentslip/502
+2025-02-28 11:16:31 - Secured GET /viewpaymentslip/502
+2025-02-28 11:16:31 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:18:04 - Securing GET /viewpaymentslips
+2025-02-28 11:18:04 - Secured GET /viewpaymentslips
+2025-02-28 11:18:04 - Fetching all payment slips
+2025-02-28 11:18:04 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:18:04 - Securing GET /viewpaymentslips
+2025-02-28 11:18:04 - Secured GET /viewpaymentslips
+2025-02-28 11:18:04 - Fetching all payment slips
+2025-02-28 11:18:04 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:18:06 - Securing GET /viewpaymentslip/502
+2025-02-28 11:18:06 - Secured GET /viewpaymentslip/502
+2025-02-28 11:18:06 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:18:06 - Securing GET /viewpaymentslip/502
+2025-02-28 11:18:06 - Secured GET /viewpaymentslip/502
+2025-02-28 11:18:07 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:18:14 - Securing GET /viewpaymentslip/502
+2025-02-28 11:18:14 - Secured GET /viewpaymentslip/502
+2025-02-28 11:18:14 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:18:43 - Securing GET /viewpaymentslips
+2025-02-28 11:18:43 - Secured GET /viewpaymentslips
+2025-02-28 11:18:43 - Fetching all payment slips
+2025-02-28 11:18:43 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:18:43 - Securing GET /viewpaymentslips
+2025-02-28 11:18:43 - Secured GET /viewpaymentslips
+2025-02-28 11:18:43 - Fetching all payment slips
+2025-02-28 11:18:43 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:18:46 - Securing GET /viewpaymentslip/502
+2025-02-28 11:18:46 - Secured GET /viewpaymentslip/502
+2025-02-28 11:18:46 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:18:46 - Securing GET /viewpaymentslip/502
+2025-02-28 11:18:46 - Secured GET /viewpaymentslip/502
+2025-02-28 11:18:46 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:20:00 - Securing GET /viewpaymentslips
+2025-02-28 11:20:00 - Secured GET /viewpaymentslips
+2025-02-28 11:20:00 - Fetching all payment slips
+2025-02-28 11:20:00 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:20:00 - Securing GET /viewpaymentslips
+2025-02-28 11:20:00 - Secured GET /viewpaymentslips
+2025-02-28 11:20:00 - Fetching all payment slips
+2025-02-28 11:20:00 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:20:01 - Securing GET /viewpaymentslip/502
+2025-02-28 11:20:01 - Secured GET /viewpaymentslip/502
+2025-02-28 11:20:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:20:01 - Securing GET /viewpaymentslip/502
+2025-02-28 11:20:01 - Secured GET /viewpaymentslip/502
+2025-02-28 11:20:01 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:28:15 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m49s4ms967µs900ns).
+2025-02-28 11:40:46 - Securing GET /viewpaymentslips
+2025-02-28 11:40:46 - Secured GET /viewpaymentslips
+2025-02-28 11:40:46 - Fetching all payment slips
+2025-02-28 11:40:46 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:40:46 - Securing GET /viewpaymentslips
+2025-02-28 11:40:46 - Secured GET /viewpaymentslips
+2025-02-28 11:40:46 - Fetching all payment slips
+2025-02-28 11:40:46 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:43:27 - Securing GET /viewpaymentslip/502
+2025-02-28 11:43:27 - Secured GET /viewpaymentslip/502
+2025-02-28 11:43:27 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:43:27 - Securing GET /viewpaymentslip/502
+2025-02-28 11:43:27 - Secured GET /viewpaymentslip/502
+2025-02-28 11:43:27 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:43:29 - Securing GET /viewpaymentslips
+2025-02-28 11:43:29 - Secured GET /viewpaymentslips
+2025-02-28 11:43:29 - Fetching all payment slips
+2025-02-28 11:43:29 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:43:29 - Securing GET /viewpaymentslips
+2025-02-28 11:43:29 - Secured GET /viewpaymentslips
+2025-02-28 11:43:29 - Fetching all payment slips
+2025-02-28 11:43:29 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:06 - Securing GET /viewpaymentslips
+2025-02-28 11:44:06 - Secured GET /viewpaymentslips
+2025-02-28 11:44:06 - Fetching all payment slips
+2025-02-28 11:44:06 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:06 - Securing GET /viewpaymentslips
+2025-02-28 11:44:06 - Secured GET /viewpaymentslips
+2025-02-28 11:44:06 - Fetching all payment slips
+2025-02-28 11:44:06 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:10 - Securing GET /viewpaymentslip/502
+2025-02-28 11:44:10 - Secured GET /viewpaymentslip/502
+2025-02-28 11:44:10 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:10 - Securing GET /viewpaymentslip/502
+2025-02-28 11:44:10 - Secured GET /viewpaymentslip/502
+2025-02-28 11:44:10 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:17 - Securing GET /viewpaymentslips
+2025-02-28 11:44:17 - Secured GET /viewpaymentslips
+2025-02-28 11:44:17 - Fetching all payment slips
+2025-02-28 11:44:17 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:17 - Securing GET /viewpaymentslips
+2025-02-28 11:44:17 - Secured GET /viewpaymentslips
+2025-02-28 11:44:17 - Fetching all payment slips
+2025-02-28 11:44:17 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:20 - Securing GET /users?page=0&size=10
+2025-02-28 11:44:20 - Secured GET /users?page=0&size=10
+2025-02-28 11:44:20 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:20 - Securing GET /users?page=0&size=10
+2025-02-28 11:44:20 - Secured GET /users?page=0&size=10
+2025-02-28 11:44:20 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:24 - Securing GET /users?page=4&size=10
+2025-02-28 11:44:24 - Secured GET /users?page=4&size=10
+2025-02-28 11:44:24 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:27 - Securing GET /user/2553
+2025-02-28 11:44:27 - Secured GET /user/2553
+2025-02-28 11:44:27 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:27 - Securing GET /user/2553
+2025-02-28 11:44:27 - Secured GET /user/2553
+2025-02-28 11:44:27 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:28 - Securing GET /userdetails/2553
+2025-02-28 11:44:28 - Secured GET /userdetails/2553
+2025-02-28 11:44:28 - Securing GET /userdetails/2553
+2025-02-28 11:44:28 - Secured GET /userdetails/2553
+2025-02-28 11:44:28 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:28 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:30 - Securing GET /user/2553
+2025-02-28 11:44:30 - Secured GET /user/2553
+2025-02-28 11:44:30 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:30 - Securing GET /user/2553
+2025-02-28 11:44:30 - Secured GET /user/2553
+2025-02-28 11:44:30 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:31 - Securing GET /users?page=0&size=10
+2025-02-28 11:44:31 - Secured GET /users?page=0&size=10
+2025-02-28 11:44:31 - Set SecurityContextHolder to anonymous SecurityContext
+2025-02-28 11:44:31 - Securing GET /users?page=0&size=10
+2025-02-28 11:44:31 - Secured GET /users?page=0&size=10
+2025-02-28 11:44:31 - Set SecurityContextHolder to anonymous SecurityContext
