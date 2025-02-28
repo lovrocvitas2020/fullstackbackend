@@ -46,6 +46,9 @@ public class SecurityConfig {
                     "/editproject/**",
                     "/projects/*",
                     "/viewtasks",
+                    "/viewpaymentslips",
+                    "/addpaymentslips",
+                    "/viewpaymentslip/**",
                     "/addtask",
                     "/user/**"
                 ).permitAll()
