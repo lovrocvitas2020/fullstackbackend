@@ -1,9 +1,13 @@
 package com.example.fullstackcrudreact.fullstackbackend.model;
 
-import java.math.BigDecimal;
+import java.util.Base64;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -19,7 +23,7 @@ public class PaymentSlip {
     @Length(max = 3)
     private String currencyCode;
 
-    private BigDecimal amount;
+    private String amount;
 
     @Length(max = 30)
     private String payerName;
@@ -54,13 +58,21 @@ public class PaymentSlip {
     private String description;
 
     @Lob
-    private byte[] generatedQRcode; // Changed to byte[] for simplicity
+    @Column(columnDefinition = "LONGBLOB") // Allows large binary data storage
+    @JsonIgnore
+    private byte[] generatedQRcode;
+
+    // Getter for Base64-encoded QR Code to send to the frontend
+    @JsonProperty("generatedQRcode")
+    public String getGeneratedQRcodeBase64() {
+        return (generatedQRcode != null) ? Base64.getEncoder().encodeToString(generatedQRcode) : null;
+    }
 
     // Default constructor
     public PaymentSlip() {}
 
     // Full-argument constructor
-    public PaymentSlip(BigDecimal amount, String callModelNumber, String currencyCode, String description, Long id, 
+    public PaymentSlip(String amount, String callModelNumber, String currencyCode, String description, Long id, 
                        String modelNumber, String payerAddress, String payerCity, String payerName, 
                        String purposeCode, String recipientAccount, String recipientAddress, 
                        String recipientCity, String recipientName, byte[] generatedQRcode) {
@@ -98,11 +110,11 @@ public class PaymentSlip {
         this.currencyCode = currencyCode;
     }
 
-    public BigDecimal getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 
