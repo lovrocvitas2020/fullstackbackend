@@ -4,3 +4,23 @@
 2025-03-03 00:04:34 - Securing GET /viewdocumenttemplates
 2025-03-03 00:04:34 - Secured GET /viewdocumenttemplates
 2025-03-03 00:04:34 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-03 00:04:36 - Securing GET /documenttemplate/4/image
+2025-03-03 00:04:36 - Secured GET /documenttemplate/4/image
+2025-03-03 00:04:36 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-03 00:38:43 - Securing GET /viewdocumenttemplates
+2025-03-03 00:38:43 - Secured GET /viewdocumenttemplates
+2025-03-03 00:38:43 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-03 00:38:43 - Securing GET /viewdocumenttemplates
+2025-03-03 00:38:43 - Secured GET /viewdocumenttemplates
+2025-03-03 00:38:43 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-03 00:38:45 - Securing GET /documenttemplate/4/image
+2025-03-03 00:38:45 - Secured GET /documenttemplate/4/image
+2025-03-03 00:38:45 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-03 00:38:52 - Securing GET /viewpaymentslips
+2025-03-03 00:38:52 - Secured GET /viewpaymentslips
+2025-03-03 00:38:52 - Fetching all payment slips
+2025-03-03 00:38:52 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-03 00:38:52 - Securing GET /viewpaymentslips
+2025-03-03 00:38:52 - Secured GET /viewpaymentslips
+2025-03-03 00:38:52 - Fetching all payment slips
+2025-03-03 00:38:52 - Set SecurityContextHolder to anonymous SecurityContext
