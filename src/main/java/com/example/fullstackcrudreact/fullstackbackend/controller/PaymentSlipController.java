@@ -2,6 +2,8 @@ package com.example.fullstackcrudreact.fullstackbackend.controller;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,9 +11,17 @@ import java.util.Optional;
 
 import javax.imageio.ImageIO;
 
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.common.PDRectangle;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -208,64 +218,159 @@ public class PaymentSlipController {
     }
 
 
+        
+
     private String prepareBarcodeData(PaymentSlip paymentSlip) {
         StringBuilder barcodeData = new StringBuilder();
-    
+
         // Header (8 characters)
         barcodeData.append("HRVHUB30").append("\n");
-    
+
         // Currency (3 characters)
-        barcodeData.append(paymentSlip.getCurrencyCode()).append("\n");
-    
+        barcodeData.append(formatField(paymentSlip.getCurrencyCode(), 3)).append("\n");
+
         // Amount (15 characters, right-aligned, padded with leading zeros)
-        // Parse the amount from String to double
         double amountInEuros;
         try {
             amountInEuros = Double.parseDouble(paymentSlip.getAmount());
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("Invalid amount format: " + paymentSlip.getAmount(), e);
         }
-    
-        // Convert amount from euros to eurocents (e.g., 123.35 EUR -> 12335)
         long amountInCents = (long) (amountInEuros * 100);
-        String amount = String.format("%015d", amountInCents); // Format as 15-digit integer
-        barcodeData.append(amount).append("\n");
-    
-        // Payer Name (30 characters)
-        barcodeData.append(paymentSlip.getPayerName()).append("\n");
-    
-        // Payer Address (Street and Number, 27 characters)
-        barcodeData.append(paymentSlip.getPayerAddress()).append("\n");
-    
-        // Payer Address (Postal Code and City, 27 characters)
-        barcodeData.append(paymentSlip.getPayerCity()).append("\n");
-    
-        // Recipient Name (25 characters)
-        barcodeData.append(paymentSlip.getRecipientName()).append("\n");
-    
-        // Recipient Address (Street and Number, 25 characters)
-        barcodeData.append(paymentSlip.getRecipientAddress()).append("\n");
-    
-        // Recipient Address (Postal Code and City, 27 characters)
-        barcodeData.append(paymentSlip.getRecipientCity()).append("\n");
-    
-        // Recipient Account (IBAN, 21 characters)
-        barcodeData.append(paymentSlip.getRecipientAccount()).append("\n");
-    
+        barcodeData.append(String.format("%015d", amountInCents)).append("\n");
+
+        // Payer Information
+        barcodeData.append(formatField(paymentSlip.getPayerName(), 30)).append("\n");
+        barcodeData.append(formatField(paymentSlip.getPayerAddress(), 27)).append("\n");
+        barcodeData.append(formatField(paymentSlip.getPayerCity(), 27)).append("\n");
+
+        // Recipient Information
+        barcodeData.append(formatField(paymentSlip.getRecipientName(), 25)).append("\n");
+        barcodeData.append(formatField(paymentSlip.getRecipientAddress(), 25)).append("\n");
+        barcodeData.append(formatField(paymentSlip.getRecipientCity(), 27)).append("\n");
+
+        // Validate IBAN
+        String recipientIban = paymentSlip.getRecipientAccount();
+        if (!isValidIBAN(recipientIban)) {
+            throw new IllegalArgumentException("Invalid IBAN: " + recipientIban);
+        }
+        barcodeData.append(recipientIban).append("\n");
+
         // Model Control Number (4 characters)
-        barcodeData.append("HR").append(paymentSlip.getModelNumber()).append("\n");
-    
+        barcodeData.append("HR").append(formatField(paymentSlip.getModelNumber(), 2)).append("\n");
+
         // Call to Number (22 characters)
-        barcodeData.append(paymentSlip.getCallModelNumber()).append("\n");
-    
+        barcodeData.append(formatField(paymentSlip.getCallModelNumber(), 22)).append("\n");
+
         // Purpose Code (4 characters)
-        barcodeData.append(paymentSlip.getPurposeCode()).append("\n");
-    
+        barcodeData.append(formatField(paymentSlip.getPurposeCode(), 4)).append("\n");
+
         // Payment Description (35 characters)
-        barcodeData.append(paymentSlip.getDescription());
-    
+        barcodeData.append(formatField(paymentSlip.getDescription(), 35));
+
         return barcodeData.toString();
     }
+
+    // Utility method to handle field length & null values
+    private String formatField(String value, int maxLength) {
+        if (value == null) {
+            value = "";
+        }
+        return value.length() > maxLength ? value.substring(0, maxLength) : value;
+    }
+
+    // IBAN validation using Modulo 97 check (ISO 13616 standard)
+    private boolean isValidIBAN(String iban) {
+        if (iban == null || iban.length() < 15 || iban.length() > 34) {
+            return false; // IBAN length should be between 15 and 34 characters
+        }
+
+        // Move first four characters to the end
+        String rearrangedIban = iban.substring(4) + iban.substring(0, 4);
+
+        // Convert letters to numbers (A=10, B=11, ..., Z=35)
+        StringBuilder numericIban = new StringBuilder();
+        for (char ch : rearrangedIban.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                numericIban.append(ch);
+            } else {
+                numericIban.append(ch - 'A' + 10);
+            }
+        }
+
+        // Convert to BigInteger and check modulo 97
+        BigInteger ibanNumber = new BigInteger(numericIban.toString());
+        return ibanNumber.mod(BigInteger.valueOf(97)).intValue() == 1;
+    }
+
+    @GetMapping("/generatepdf/{id}")
+    public ResponseEntity<byte[]> generatePdf(@PathVariable Long id) {
+        Optional<PaymentSlip> paymentSlipOptional = paymentSlipRepository.findById(id);
+
+        if (paymentSlipOptional.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        PaymentSlip slip = paymentSlipOptional.get();
+        byte[] pdfBytes;
+
+        try {
+            pdfBytes = createPaymentSlipPDF(slip);
+        } catch (IOException e) {
+            logger.error("Error generating PDF", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_PDF);
+        headers.setContentDispositionFormData("attachment", "payment_slip_" + id + ".pdf");
+
+        return new ResponseEntity<>(pdfBytes, headers, HttpStatus.OK);
+    }
+
+    private byte[] createPaymentSlipPDF(PaymentSlip slip) throws IOException {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PDDocument document = new PDDocument();
+        PDPage page = new PDPage(PDRectangle.A4);
+        document.addPage(page);
+
+        PDPageContentStream contentStream = new PDPageContentStream(document, page);
+
+        // Retrieve image from PaymentSlip entity
+        byte[] imageData = slip.getGeneratedQRcode();
+        if (imageData != null && imageData.length > 0) {
+            PDImageXObject background = PDImageXObject.createFromByteArray(document, imageData, "background");
+            contentStream.drawImage(background, 50, 500, 200, 100); // Adjust image position & size
+        }
+
+        // Set font and color for text overlay
+        contentStream.setFont(PDType1Font.HELVETICA_BOLD, 12);
+        //contentStream.setNonStrokingColor(Color.BLACK);
+
+        // Overlaying text (adjust positions as needed)
+        addText(contentStream, "Payer: " + slip.getPayerName(), 100, 700);
+        addText(contentStream, "Recipient: " + slip.getRecipientName(), 100, 670);
+        addText(contentStream, "Amount: " + slip.getAmount() + " " + slip.getCurrencyCode(), 100, 640);
+        addText(contentStream, "Account: " + slip.getRecipientAccount(), 100, 610);
+        addText(contentStream, "Purpose: " + slip.getPurposeCode(), 100, 580);
+
+        contentStream.close();
+        document.save(outputStream);
+        document.close();
+
+        return outputStream.toByteArray();
+    }
+
+    private void addText(PDPageContentStream contentStream, String text, float x, float y) throws IOException {
+        contentStream.beginText();
+        contentStream.newLineAtOffset(x, y);
+        contentStream.showText(text);
+        contentStream.endText();
+    }
+
+    
+
+
 
 
 }

@@ -51,6 +51,10 @@ public class SecurityConfig {
                     "/viewpaymentslip/**",
                     "/deletepaymentslip/**",
                     "/editpaymentslip/**",
+                    "/viewdocumenttemplates",
+                    "/deletedocumenttemplate/**",
+                    "/documenttemplateupload",
+                    "/documenttemplate/**",
                     "/addtask",
                     "/user/**"
                 ).permitAll()
