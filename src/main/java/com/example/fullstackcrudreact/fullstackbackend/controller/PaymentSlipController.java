@@ -2,6 +2,7 @@ package com.example.fullstackcrudreact.fullstackbackend.controller;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.HashMap;
@@ -14,8 +15,8 @@ import javax.imageio.ImageIO;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.common.PDRectangle;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.pdfbox.pdmodel.font.PDType0Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.fullstackcrudreact.fullstackbackend.model.DocumentTemplate;
 import com.example.fullstackcrudreact.fullstackbackend.model.PaymentSlip;
+import com.example.fullstackcrudreact.fullstackbackend.repository.DocumentTemplateRepository;
 import com.example.fullstackcrudreact.fullstackbackend.repository.PaymentSlipRepository;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -54,6 +57,9 @@ public class PaymentSlipController {
     @Autowired
     private PaymentSlipRepository paymentSlipRepository;
 
+    @Autowired
+    private DocumentTemplateRepository documentTemplateRepository;
+
     @GetMapping("/viewpaymentslips")
     public List<PaymentSlip> getAllPaymentSlips() {
 
@@ -61,6 +67,12 @@ public class PaymentSlipController {
         return paymentSlipRepository.findAll();
     }
 
+    /**
+     *  Gets details for single payment slip
+     * 
+     * @param id
+     * @return
+     */
     @GetMapping("/viewpaymentslip/{id}")
     public ResponseEntity<PaymentSlip> getPaymentSlipById(@PathVariable Long id) {
         Optional<PaymentSlip> paymentSlip = paymentSlipRepository.findById(id);
@@ -75,6 +87,13 @@ public class PaymentSlipController {
         }
     }
 
+    /**
+     *  Creates new payment slip
+     * 
+     * 
+     * @param paymentSlip
+     * @return
+     */
     @PostMapping("/addpaymentslips")
     @Transactional
     public ResponseEntity<?> createPaymentSlip(@RequestBody PaymentSlip paymentSlip) {
@@ -155,6 +174,13 @@ public class PaymentSlipController {
     }
 }
 
+    /**
+     *  Updates payment slip
+     * 
+     * @param id
+     * @param paymentSlipDetails
+     * @return
+     */
     @PutMapping("/editpaymentslip/{id}")
     public ResponseEntity<PaymentSlip> updatePaymentSlip(@PathVariable Long id, @RequestBody PaymentSlip paymentSlipDetails) {
         Optional<PaymentSlip> paymentSlip = paymentSlipRepository.findById(id);
@@ -206,6 +232,12 @@ public class PaymentSlipController {
         }
     }
 
+    /**
+     *  Deletes payment slip
+     * 
+     * @param id
+     * @return
+     */
     @DeleteMapping("/deletepaymentslip/{id}")
     public ResponseEntity<Void> deletePaymentSlip(@PathVariable Long id) {
         Optional<PaymentSlip> paymentSlip = paymentSlipRepository.findById(id);
@@ -219,7 +251,12 @@ public class PaymentSlipController {
 
 
         
-
+    /**
+     *  Method for preparing barcode data 
+     * 
+     * @param paymentSlip
+     * @return
+     */
     private String prepareBarcodeData(PaymentSlip paymentSlip) {
         StringBuilder barcodeData = new StringBuilder();
 
@@ -279,7 +316,12 @@ public class PaymentSlipController {
         return value.length() > maxLength ? value.substring(0, maxLength) : value;
     }
 
-    // IBAN validation using Modulo 97 check (ISO 13616 standard)
+    /**
+     * Method for IBAN validation using Modulo 97 check (ISO 13616 standard)
+     * 
+     * @param iban
+     * @return
+     */
     private boolean isValidIBAN(String iban) {
         if (iban == null || iban.length() < 15 || iban.length() > 34) {
             return false; // IBAN length should be between 15 and 34 characters
@@ -303,19 +345,41 @@ public class PaymentSlipController {
         return ibanNumber.mod(BigInteger.valueOf(97)).intValue() == 1;
     }
 
+    /**
+     * Method for generating HUB3 payment slip 
+     * 
+     * @param id
+     * @return
+     */
     @GetMapping("/generatepdf/{id}")
     public ResponseEntity<byte[]> generatePdf(@PathVariable Long id) {
+
+        System.out.println("Method generatePdf for id: "+id);
+
+
         Optional<PaymentSlip> paymentSlipOptional = paymentSlipRepository.findById(id);
 
         if (paymentSlipOptional.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
 
-        PaymentSlip slip = paymentSlipOptional.get();
-        byte[] pdfBytes;
+    
 
+        Optional<DocumentTemplate> templateOptional = documentTemplateRepository.findByTemplateName("HUB3 nalog");
+        if (templateOptional.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(("Template 'HUB3 nalog' not found").getBytes());
+        } else {
+            System.out.println("Template found!");
+        }
+
+        PaymentSlip slip = paymentSlipOptional.get();
+        DocumentTemplate template = templateOptional.get();
+
+         // Generate the PDF using the template
+            byte[] pdfBytes;
         try {
-            pdfBytes = createPaymentSlipPDF(slip);
+            pdfBytes = createPaymentSlipPDF(slip, template.getImageData()); // Pass template data
         } catch (IOException e) {
             logger.error("Error generating PDF", e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
@@ -328,36 +392,61 @@ public class PaymentSlipController {
         return new ResponseEntity<>(pdfBytes, headers, HttpStatus.OK);
     }
 
-    private byte[] createPaymentSlipPDF(PaymentSlip slip) throws IOException {
+    /**
+     * Method for creating payment slips
+     */
+    private byte[] createPaymentSlipPDF(PaymentSlip slip, byte[] templateData) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PDDocument document = new PDDocument();
-        PDPage page = new PDPage(PDRectangle.A4);
-        document.addPage(page);
+    
+        // Load the PDF template
+        PDDocument document = PDDocument.load(templateData);
+        PDPage page = document.getPage(0); // Assuming template has at least one page
 
-        PDPageContentStream contentStream = new PDPageContentStream(document, page);
-
-        // Retrieve image from PaymentSlip entity
+        // Load a Unicode-supported font
+        File fontFile = new File("C:/Windows/Fonts/Arial.ttf"); // Adjust path as needed
+        PDFont font = PDType0Font.load(document, fontFile);
+    
+        PDPageContentStream contentStream = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, true, true);
+    
+        // Retrieve image from PaymentSlip entity (QR code)
         byte[] imageData = slip.getGeneratedQRcode();
         if (imageData != null && imageData.length > 0) {
-            PDImageXObject background = PDImageXObject.createFromByteArray(document, imageData, "background");
-            contentStream.drawImage(background, 50, 500, 200, 100); // Adjust image position & size
+            PDImageXObject barcodeImage = PDImageXObject.createFromByteArray(document, imageData, "barcode");
+            contentStream.drawImage(barcodeImage, 30, 320, 160, 80); // Adjust position & size
         }
+    
+        // Set font for text overlay
+        contentStream.setFont(font, 12);
+    
+        // Overlay payment slip data
+        addText(contentStream, "" + slip.getPayerName(), 25, 520);
+        addText(contentStream, "" + slip.getPayerAddress(), 25, 505);
+        addText(contentStream, "" + slip.getPayerCity(), 25, 490);
+        addText(contentStream, "" + slip.getRecipientName(), 25, 440);
+        addText(contentStream, "" + slip.getRecipientAddress(), 25, 425);
+        addText(contentStream, "" + slip.getRecipientCity(), 25, 410);
+        addText(contentStream, "" + slip.getAmount() , 280, 530);
+        addText(contentStream, "" + slip.getCurrencyCode(), 215, 530);
+        addText(contentStream, "" + slip.getRecipientAccount(), 215, 475);
+        addText(contentStream, "" + slip.getPurposeCode(), 148, 424);
+        addText(contentStream, "" + slip.getModelNumber(), 148, 452);
+        addText(contentStream, "" + slip.getCallModelNumber(), 205, 452);
+        addText(contentStream, "Printed by CvitasTech" , 250, 330);
+        addText(contentStream, "" + slip.getDescription(), 233, 435);
+       
 
-        // Set font and color for text overlay
-        contentStream.setFont(PDType1Font.HELVETICA_BOLD, 12);
-        //contentStream.setNonStrokingColor(Color.BLACK);
-
-        // Overlaying text (adjust positions as needed)
-        addText(contentStream, "Payer: " + slip.getPayerName(), 100, 700);
-        addText(contentStream, "Recipient: " + slip.getRecipientName(), 100, 670);
-        addText(contentStream, "Amount: " + slip.getAmount() + " " + slip.getCurrencyCode(), 100, 640);
-        addText(contentStream, "Account: " + slip.getRecipientAccount(), 100, 610);
-        addText(contentStream, "Purpose: " + slip.getPurposeCode(), 100, 580);
-
+        // again but with smaller font size
+        contentStream.setFont(font, 10);
+        addText(contentStream, "" + slip.getAmount() , 435, 530);      
+        addText(contentStream, "" + slip.getModelNumber(), 435, 490);
+        addText(contentStream, "   " + slip.getCallModelNumber(), 445, 490);
+        addText(contentStream, "" + slip.getRecipientAccount(), 435, 473);
+        addText(contentStream, "" + slip.getDescription(), 435, 430);
+    
         contentStream.close();
         document.save(outputStream);
         document.close();
-
+    
         return outputStream.toByteArray();
     }
 
