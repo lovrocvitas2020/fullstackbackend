@@ -1,8 +1,11 @@
 package com.example.fullstackcrudreact.fullstackbackend.model;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Base64;
 
 import org.hibernate.validator.constraints.Length;
+import org.springframework.lang.NonNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -12,6 +15,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
+import jakarta.persistence.PrePersist;
 
 @Entity
 public class PaymentSlip {
@@ -57,6 +61,9 @@ public class PaymentSlip {
     @Length(max = 35)
     private String description;
 
+    @NonNull
+    private Timestamp createdOn; 
+
     @Lob
     @Column(columnDefinition = "LONGBLOB") // Allows large binary data storage
     @JsonIgnore
@@ -66,6 +73,11 @@ public class PaymentSlip {
     @JsonProperty("generatedQRcode")
     public String getGeneratedQRcodeBase64() {
         return (generatedQRcode != null) ? Base64.getEncoder().encodeToString(generatedQRcode) : null;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        createdOn = Timestamp.from(Instant.now());
     }
 
     // Default constructor

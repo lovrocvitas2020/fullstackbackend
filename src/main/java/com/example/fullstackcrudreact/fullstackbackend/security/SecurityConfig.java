@@ -57,6 +57,8 @@ public class SecurityConfig {
                     "/documenttemplateupload",
                     "/documenttemplate/**",
                     "/addtask",
+                    "/batch/startbatch1",
+                    "/files/**",
                     "/user/**"
                 ).permitAll()
                 .anyRequest().authenticated()
