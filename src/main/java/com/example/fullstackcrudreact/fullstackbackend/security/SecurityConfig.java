@@ -58,6 +58,7 @@ public class SecurityConfig {
                     "/documenttemplate/**",
                     "/addtask",
                     "/batch/startbatch1",
+                    "/batch/startbatch2",
                     "/files/**",
                     "/user/**"
                 ).permitAll()

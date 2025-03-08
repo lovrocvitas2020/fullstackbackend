@@ -2,6 +2,7 @@ package com.example.fullstackcrudreact.fullstackbackend.model;
 
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.util.Arrays;
 import java.util.Base64;
 
 import org.hibernate.validator.constraints.Length;
@@ -18,7 +19,7 @@ import jakarta.persistence.Lob;
 import jakarta.persistence.PrePersist;
 
 @Entity
-public class PaymentSlip {
+public class GeneratedPaymentSlip {
 
     @Id
     @GeneratedValue
@@ -64,6 +65,8 @@ public class PaymentSlip {
     @NonNull
     private Timestamp createdOn; 
 
+    private Timestamp generatedOn;
+
     private boolean isMarkedForSending;
 
     @Lob
@@ -93,53 +96,6 @@ public class PaymentSlip {
         createdOn = Timestamp.from(Instant.now());
     }
 
-    // Default constructor
-    public PaymentSlip() {}
-
-            // Full-argument constructor
-            public PaymentSlip(String amount, String callModelNumber, String currencyCode, String description, Long id, 
-            String modelNumber, String payerAddress, String payerCity, String payerName, 
-            String purposeCode, String recipientAccount, String recipientAddress, boolean isMarkedForSending,
-            String recipientCity, String recipientName, byte[] generatedQRcode, byte[] generatedPdf) {
-        this.amount = amount;
-        this.callModelNumber = callModelNumber;
-        this.currencyCode = currencyCode;
-        this.description = description;
-        this.id = id;
-        this.modelNumber = modelNumber;
-        this.payerAddress = payerAddress;
-        this.payerCity = payerCity;
-        this.payerName = payerName;
-        this.purposeCode = purposeCode;
-        this.recipientAccount = recipientAccount;
-        this.recipientAddress = recipientAddress;
-        this.recipientCity = recipientCity;
-        this.recipientName = recipientName;
-        this.generatedQRcode = generatedQRcode;
-        this.generatedPdf = generatedPdf;
-        this.isMarkedForSending = isMarkedForSending;
-    }
-
-
-     // Getters and Setters
-     public byte[] getGeneratedPdf() {
-        return generatedPdf;
-    }
-
-    public void setGeneratedPdf(byte[] generatedPdf) {
-        this.generatedPdf = generatedPdf;
-    }
-
-
-    public boolean isMarkedForSending() {
-        return isMarkedForSending;
-    }
-
-    public void setMarkedForSending(boolean isMarkedForSending) {
-        this.isMarkedForSending = isMarkedForSending;
-    }
-
-   
     public Long getId() {
         return id;
     }
@@ -252,6 +208,22 @@ public class PaymentSlip {
         this.description = description;
     }
 
+    public Timestamp getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(Timestamp createdOn) {
+        this.createdOn = createdOn;
+    }
+
+    public boolean isMarkedForSending() {
+        return isMarkedForSending;
+    }
+
+    public void setMarkedForSending(boolean isMarkedForSending) {
+        this.isMarkedForSending = isMarkedForSending;
+    }
+
     public byte[] getGeneratedQRcode() {
         return generatedQRcode;
     }
@@ -260,12 +232,34 @@ public class PaymentSlip {
         this.generatedQRcode = generatedQRcode;
     }
 
+    public byte[] getGeneratedPdf() {
+        return generatedPdf;
+    }
+
+    public void setGeneratedPdf(byte[] generatedPdf) {
+        this.generatedPdf = generatedPdf;
+    }
+
     @Override
     public String toString() {
-        return "PaymentSlip [id=" + id + ", currencyCode=" + currencyCode + ", amount=" + amount + ", payerName="
-                + payerName + ", payerAddress=" + payerAddress + ", payerCity=" + payerCity + ", recipientName="
-                + recipientName + ", recipientAddress=" + recipientAddress + ", recipientCity=" + recipientCity
-                + ", recipientAccount=" + recipientAccount + ", modelNumber=" + modelNumber + ", callModelNumber="
-                + callModelNumber + ", isMarkedForSending=" + isMarkedForSending + ", purposeCode=" + purposeCode + ", description=" + description + "]";
+        return "GeneratedPaymentSlip [id=" + id + ", currencyCode=" + currencyCode + ", amount=" + amount
+                + ", payerName=" + payerName + ", payerAddress=" + payerAddress + ", payerCity=" + payerCity
+                + ", recipientName=" + recipientName + ", recipientAddress=" + recipientAddress + ", recipientCity="
+                + recipientCity + ", recipientAccount=" + recipientAccount + ", modelNumber=" + modelNumber
+                + ", callModelNumber=" + callModelNumber + ", purposeCode=" + purposeCode + ", description="
+                + description + ", createdOn=" + createdOn + ", isMarkedForSending=" + isMarkedForSending
+                + ", generatedQRcode=" + Arrays.toString(generatedQRcode) + ", generatedPdf="
+                + Arrays.toString(generatedPdf) + "]";
     }
+
+    public Timestamp getGeneratedOn() {
+        return generatedOn;
+    }
+
+    public void setGeneratedOn(Timestamp generatedOn) {
+        this.generatedOn = generatedOn;
+    }
+
+    
+
 }

@@ -37,6 +37,7 @@ import com.example.fullstackcrudreact.fullstackbackend.model.DocumentTemplate;
 import com.example.fullstackcrudreact.fullstackbackend.model.PaymentSlip;
 import com.example.fullstackcrudreact.fullstackbackend.repository.DocumentTemplateRepository;
 import com.example.fullstackcrudreact.fullstackbackend.repository.PaymentSlipRepository;
+import com.example.fullstackcrudreact.fullstackbackend.service.PaymentSlipService;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
@@ -59,6 +60,9 @@ public class PaymentSlipController {
 
     @Autowired
     private DocumentTemplateRepository documentTemplateRepository;
+
+    @Autowired
+    private PaymentSlipService paymentSlipService;
 
     @GetMapping("/viewpaymentslips")
     public List<PaymentSlip> getAllPaymentSlips() {
@@ -128,8 +132,6 @@ public class PaymentSlipController {
         int height = 300; // Adjust based on printer resolution (26 mm = ~102 pixels at 100 DPI)
 
         // Generate the PDF417 barcode
-
-        System.out.println("Test sa barcodeText formatiranim tekstom");
         BitMatrix bitMatrix = pdf417Writer.encode(barcodeData, BarcodeFormat.PDF_417, width, height, hints); // tu puca com.google.zxing.WriterException: Unable to fit message in columns
 
         // Get the number of columns and rows
@@ -356,15 +358,12 @@ public class PaymentSlipController {
 
         System.out.println("Method generatePdf for id: "+id);
 
-
         Optional<PaymentSlip> paymentSlipOptional = paymentSlipRepository.findById(id);
 
         if (paymentSlipOptional.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
-
-    
-
+   
         Optional<DocumentTemplate> templateOptional = documentTemplateRepository.findByTemplateName("HUB3 nalog");
         if (templateOptional.isEmpty()) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -393,9 +392,14 @@ public class PaymentSlipController {
     }
 
     /**
-     * Method for creating payment slips
+     *  Method for creating payment slips
+     * 
+     * @param slip
+     * @param templateData
+     * @return
+     * @throws IOException
      */
-    private byte[] createPaymentSlipPDF(PaymentSlip slip, byte[] templateData) throws IOException {
+    public byte[] createPaymentSlipPDF(PaymentSlip slip, byte[] templateData) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
     
         // Load the PDF template
