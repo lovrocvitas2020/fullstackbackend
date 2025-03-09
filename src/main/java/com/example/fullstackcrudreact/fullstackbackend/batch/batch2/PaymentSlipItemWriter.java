@@ -39,65 +39,69 @@ public class PaymentSlipItemWriter implements ItemWriter<PaymentSlip> {
     @Override
     public void write(Chunk<? extends PaymentSlip> chunk) throws Exception {
         for (PaymentSlip slip : chunk) {
-            generatePdfForPaymentSlip(slip);
-            insertGeneratedPaymentSlip(slip);
+            byte[] generatedPdf = generatePdfForPaymentSlip(slip);
+            slip.setGeneratedPdf(generatedPdf); // Set PDF in PaymentSlip
+            insertGeneratedPaymentSlip(slip, generatedPdf);
         }
     }
-
-
-    /* 
-    @Override
-    public void write(List<? extends PaymentSlip> paymentSlips) throws Exception {
-        for (PaymentSlip slip : paymentSlips) {
-            generatePdfForPaymentSlip(slip);
-        }
-    }
-    */
 
     /**
-     * Method for generating payment slips 
-     * 
-     * @param slip
+     * Generates a PDF for a given payment slip and returns the PDF as a byte array.
      */
-    private void generatePdfForPaymentSlip(PaymentSlip slip) {
+    private byte[] generatePdfForPaymentSlip(PaymentSlip slip) {
         try {
             // Fetch template from database
             Optional<DocumentTemplate> templateOptional = documentTemplateRepository.findByTemplateName("HUB3 nalog");
 
             if (templateOptional.isEmpty()) {
                 logger.error("Template 'HUB3 nalog' not found for Payment Slip ID: {}", slip.getId());
-                return;
+                return null;
             }
 
             DocumentTemplate template = templateOptional.get();
             byte[] pdfBytes = createPaymentSlipPDF(slip, template.getImageData());
 
             UUID uuid = UUID.randomUUID();
-            System.out.println("Generated UUID: " + uuid.toString());
-            System.out.println("payer name:"+slip.getPayerName());
+            logger.info("Generated UUID: {}", uuid);
+            logger.info("Payer name: {}", slip.getPayerName());
 
-            // Define file path (adjust as needed)
-            String outputFilePath = "generated_pdfs/Uplatnica_" +slip.getPayerName()+"_"+slip.getId()+"_"+uuid.toString()+".pdf";
+            // Define file path
+            String outputFilePath = "generated_pdfs/Uplatnica_" + slip.getPayerName() + "_" + slip.getId() + "_" + uuid + ".pdf";
             File outputFile = new File(outputFilePath);
-            outputFile.getParentFile().mkdirs(); // Ensure the directory exists
-       
+
+            // Ensure the directory exists
+            File parentDir = outputFile.getParentFile();
+            if (parentDir != null && !parentDir.exists()) {
+                if (!parentDir.mkdirs()) {
+                    logger.error("Failed to create directories for path: {}", outputFilePath);
+                    return null;
+                }
+            }
+
             // Write PDF to file
             try (FileOutputStream fos = new FileOutputStream(outputFile)) {
                 fos.write(pdfBytes);
-                logger.info("Generated PDF for Payment Slip ID: {}", slip.getId()+uuid.toString());
+                logger.info("Generated PDF for Payment Slip ID: {} UUID: {}", slip.getId(), uuid);
             }
+
+            return pdfBytes; // Return generated PDF bytes
 
         } catch (IOException e) {
             logger.error("Error generating PDF for Payment Slip ID: {}", slip.getId(), e);
+            return null;
         }
     }
 
     /**
-     * Inserts generated payment slip data into the database
+     * Inserts generated payment slip data into the database, including the PDF bytes.
      */
-    private void insertGeneratedPaymentSlip(PaymentSlip slip) {
+    private void insertGeneratedPaymentSlip(PaymentSlip slip, byte[] pdfBytes) {
+        if (pdfBytes == null) {
+            logger.error("Skipping database insert for Payment Slip ID: {} due to PDF generation failure.", slip.getId());
+            return;
+        }
+
         GeneratedPaymentSlip generatedSlip = new GeneratedPaymentSlip();
-        generatedSlip.setId(slip.getId());
         generatedSlip.setAmount(slip.getAmount());
         generatedSlip.setCurrencyCode(slip.getCurrencyCode());
         generatedSlip.setCallModelNumber(slip.getCallModelNumber());
@@ -106,30 +110,22 @@ public class PaymentSlipItemWriter implements ItemWriter<PaymentSlip> {
         generatedSlip.setPayerCity(slip.getPayerCity());
         generatedSlip.setRecipientName(slip.getRecipientName());
         generatedSlip.setRecipientAddress(slip.getRecipientAddress());
-        generatedSlip.setRecipientCity(slip.getRecipientAddress());
+        generatedSlip.setRecipientCity(slip.getRecipientCity());
         generatedSlip.setDescription(slip.getDescription());
         generatedSlip.setModelNumber(slip.getModelNumber());
         generatedSlip.setPurposeCode(slip.getPurposeCode());
         generatedSlip.setGeneratedOn(Timestamp.from(Instant.now()));
         generatedSlip.setRecipientAccount(slip.getRecipientAccount());
-
+        generatedSlip.setGeneratedPdf(pdfBytes);
+       
         generatedPaymentSlipRepository.save(generatedSlip);
         logger.info("Inserted payment slip record for ID: {}", slip.getId());
     }
-    
+
     /**
      * Method for creating payment slip from template
-     * 
-     * @param slip
-     * @param templateData
-     * @return
-     * @throws IOException
      */
     private byte[] createPaymentSlipPDF(PaymentSlip slip, byte[] templateData) throws IOException {
-
-            return paymentSlipService.createPaymentSlipPDF(slip, templateData);
-      
+        return paymentSlipService.createPaymentSlipPDF(slip, templateData);
     }
-
-  
 }

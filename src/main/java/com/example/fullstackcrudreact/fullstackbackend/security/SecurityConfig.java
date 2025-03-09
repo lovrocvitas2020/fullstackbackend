@@ -60,6 +60,10 @@ public class SecurityConfig {
                     "/batch/startbatch1",
                     "/batch/startbatch2",
                     "/files/**",
+                    "/viewgeneratedpaymentslips",
+                    "/getgeneratedpaymentslip/**",
+                    "/deletegeneratedpaymentslip/**",
+                    "/generatedpaymentslips/pdf/**",
                     "/user/**"
                 ).permitAll()
                 .anyRequest().authenticated()

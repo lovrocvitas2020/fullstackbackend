@@ -61,8 +61,16 @@ public class PaymentSlipService {
         addText(contentStream, slip.getPurposeCode(), 148, 424);
         addText(contentStream, slip.getModelNumber(), 148, 452);
         addText(contentStream, slip.getCallModelNumber(), 205, 452);
-        addText(contentStream, "Printed by CvitasTech", 250, 330);
+        addText(contentStream, "Printed by CvitasTech 2025", 250, 330);
         addText(contentStream, slip.getDescription(), 233, 435);
+
+        // again but with smaller font size
+        contentStream.setFont(font, 10);
+        addText(contentStream, "" + slip.getAmount() , 435, 530);      
+        addText(contentStream, "" + slip.getModelNumber(), 435, 490);
+        addText(contentStream, "   " + slip.getCallModelNumber(), 445, 490);
+        addText(contentStream, "" + slip.getRecipientAccount(), 435, 473);
+        addText(contentStream, "" + slip.getDescription(), 435, 430);
 
         contentStream.close();
         document.save(outputStream);

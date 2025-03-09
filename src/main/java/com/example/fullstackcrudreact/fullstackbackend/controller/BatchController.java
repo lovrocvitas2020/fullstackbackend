@@ -36,7 +36,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/batch")
 public class BatchController {
 
-    private static final String REPORTS_DIRECTORY = "C:\\Users\\josip\\Documents\\SpringBootProjects\\TestFolderForProjectClone\\fullstackbackend\\";
+    private static final String REPORTS_DIRECTORY = "C:\\Users\\josip\\Documents\\SpringBootProjects\\TestFolderForProjectClone\\fullstackbackend\\generated_pdfs";
 
     private final JobLauncher jobLauncher;
     private final Job worklogJob;
@@ -139,9 +139,9 @@ public class BatchController {
                             // Create a mutable Map to store the file details
                             Map<String, Object> fileDetails = new HashMap<>();
                             fileDetails.put("fileName", file.getName());
-                            fileDetails.put("lastModified", file.lastModified());
-                            fileDetails.put("size", file.length());
-                            fileDetails.put("blob", fileContent);
+                           // fileDetails.put("lastModified", file.lastModified());
+                           // fileDetails.put("size", file.length());
+                           // fileDetails.put("blob", fileContent);
     
                             return fileDetails;
                         } catch (Exception e) {
