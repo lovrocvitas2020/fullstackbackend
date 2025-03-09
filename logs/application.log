@@ -2573,3 +2573,186 @@ com.example.fullstackcrudreact.fullstackbackend.controller.GeneratedPaymentSlipC
 2025-03-09 09:51:51 - Securing GET /generatedpaymentslips/pdf/508
 2025-03-09 09:51:51 - Secured GET /generatedpaymentslips/pdf/508
 2025-03-09 09:51:51 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 09:52:41 - HV000001: Hibernate Validator 8.0.2.Final
+2025-03-09 09:52:42 - Starting FullstackbackendApplication using Java 21.0.6 with PID 36896 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
+2025-03-09 09:52:42 - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-03-09 09:52:42 - No active profile set, falling back to 1 default profile: "default"
+2025-03-09 09:52:43 - Finished Spring Batch infrastructure beans configuration in 11 ms.
+2025-03-09 09:52:43 - Bean jobRepository already defined in the application context, skipping the registration of a jobRepository
+2025-03-09 09:52:43 - Bean jobExplorer already defined in the application context, skipping the registration of a jobExplorer
+2025-03-09 09:52:43 - Bean jobLauncher already defined in the application context, skipping the registration of a jobLauncher
+2025-03-09 09:52:43 - Bean jobRegistry already defined in the application context, skipping the registration of a jobRegistry
+2025-03-09 09:52:43 - Bean jobRegistrySmartInitializingSingleton already defined in the application context, skipping the registration of a jobRegistrySmartInitializingSingleton
+2025-03-09 09:52:43 - Bean jobOperator already defined in the application context, skipping the registration of a jobOperator
+2025-03-09 09:52:43 - Finished Spring Batch infrastructure beans configuration in 3 ms.
+2025-03-09 09:52:44 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-09 09:52:44 - Finished Spring Data repository scanning in 146 ms. Found 10 JPA repository interfaces.
+2025-03-09 09:52:45 - Tomcat initialized with port 8080 (http)
+2025-03-09 09:52:45 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-09 09:52:45 - Starting service [Tomcat]
+2025-03-09 09:52:45 - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-03-09 09:52:45 - Initializing Spring embedded WebApplicationContext
+2025-03-09 09:52:45 - Root WebApplicationContext: initialization completed in 3550 ms
+2025-03-09 09:52:46 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-09 09:52:46 - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-03-09 09:52:46 - HHH000026: Second-level cache disabled
+2025-03-09 09:52:46 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-09 09:52:46 - HikariPool-1 - Starting...
+2025-03-09 09:52:47 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@681d704e
+2025-03-09 09:52:47 - HikariPool-1 - Start completed.
+2025-03-09 09:52:47 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-09 09:52:47 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-03-09 09:52:49 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-09 09:52:49 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-09 09:52:49 - No database type set, using meta data indicating: MYSQL
+2025-03-09 09:52:50 - No TaskExecutor has been set, defaulting to synchronous executor.
+2025-03-09 09:52:50 - No Micrometer observation registry found, defaulting to ObservationRegistry.NOOP
+2025-03-09 09:52:50 - No Micrometer observation registry found, defaulting to ObservationRegistry.NOOP
+2025-03-09 09:52:50 - No Micrometer observation registry found, defaulting to ObservationRegistry.NOOP
+2025-03-09 09:52:50 - No Micrometer observation registry found, defaulting to ObservationRegistry.NOOP
+2025-03-09 09:52:50 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-09 09:52:51 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-09 09:52:52 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1344ee24, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d3946b6, org.springframework.security.web.context.SecurityContextHolderFilter@1c89cec5, org.springframework.security.web.header.HeaderWriterFilter@79ae2d13, org.springframework.web.filter.CorsFilter@4e140497, org.springframework.security.web.authentication.logout.LogoutFilter@525b999, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@f64ce35, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b6c3f70, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@77ec911, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@77614e7c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7a6433f3, org.springframework.security.web.access.ExceptionTranslationFilter@5d55eb7a, org.springframework.security.web.access.intercept.AuthorizationFilter@39dfadd7]
+2025-03-09 09:52:52 - Starting ProtocolHandler ["http-nio-8080"]
+2025-03-09 09:52:52 - Tomcat started on port 8080 (http) with context path ''
+2025-03-09 09:52:52 - Started FullstackbackendApplication in 11.734 seconds (process running for 12.58)
+2025-03-09 09:55:35 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-09 09:55:35 - Initializing Servlet 'dispatcherServlet'
+2025-03-09 09:55:35 - Completed initialization in 2 ms
+2025-03-09 09:55:35 - Securing GET /viewgeneratedpaymentslips
+2025-03-09 09:55:35 - Secured GET /viewgeneratedpaymentslips
+2025-03-09 09:55:35 - Securing GET /viewgeneratedpaymentslips
+2025-03-09 09:55:35 - Secured GET /viewgeneratedpaymentslips
+2025-03-09 09:55:35 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 09:55:36 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 09:55:50 - Securing GET /generatedpaymentslips/pdf/415
+2025-03-09 09:55:50 - Secured GET /generatedpaymentslips/pdf/415
+2025-03-09 09:55:50 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 10:00:28 - Securing GET /viewgeneratedpaymentslips
+2025-03-09 10:00:28 - Secured GET /viewgeneratedpaymentslips
+2025-03-09 10:00:28 - Securing GET /viewgeneratedpaymentslips
+2025-03-09 10:00:28 - Secured GET /viewgeneratedpaymentslips
+2025-03-09 10:00:28 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 10:00:29 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 10:03:48 - Securing GET /viewgeneratedpaymentslips
+2025-03-09 10:03:48 - Secured GET /viewgeneratedpaymentslips
+2025-03-09 10:03:48 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 10:03:48 - Securing GET /viewgeneratedpaymentslips
+2025-03-09 10:03:48 - Secured GET /viewgeneratedpaymentslips
+2025-03-09 10:03:48 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 10:04:18 - Securing GET /viewgeneratedpaymentslips
+2025-03-09 10:04:18 - Secured GET /viewgeneratedpaymentslips
+2025-03-09 10:04:18 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 10:04:18 - Securing GET /viewgeneratedpaymentslips
+2025-03-09 10:04:18 - Secured GET /viewgeneratedpaymentslips
+2025-03-09 10:04:18 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 10:04:27 - Securing OPTIONS /batch/startbatch2
+2025-03-09 10:04:27 - Securing POST /batch/startbatch2
+2025-03-09 10:04:27 - Secured POST /batch/startbatch2
+2025-03-09 10:04:27 - Job: [SimpleJob: [name=generatePaymentSlipJob]] launched with the following parameters: [{'time':'{value=1741511067887, type=class java.lang.Long, identifying=true}'}]
+2025-03-09 10:04:28 - Executing step: [generatePaymentSlipStep]
+2025-03-09 10:04:28 - Generated UUID: 225ac465-ec82-40e1-a75b-bcc04494a233
+2025-03-09 10:04:28 - Payer name: Lovro Cvitaš
+2025-03-09 10:04:28 - Generated PDF for Payment Slip ID: 953 UUID: 225ac465-ec82-40e1-a75b-bcc04494a233
+2025-03-09 10:04:28 - Inserted payment slip record for ID: 953
+2025-03-09 10:04:28 - Generated UUID: 2bef6d04-520e-493a-9506-94b49209821d
+2025-03-09 10:04:28 - Payer name: Martin Baturina
+2025-03-09 10:04:28 - Generated PDF for Payment Slip ID: 1002 UUID: 2bef6d04-520e-493a-9506-94b49209821d
+2025-03-09 10:04:28 - Inserted payment slip record for ID: 1002
+2025-03-09 10:04:28 - Generated UUID: 6bec388f-10be-495f-9e7b-e125d26fddf5
+2025-03-09 10:04:28 - Payer name: Josip Cvitaš
+2025-03-09 10:04:28 - Generated PDF for Payment Slip ID: 1052 UUID: 6bec388f-10be-495f-9e7b-e125d26fddf5
+2025-03-09 10:04:28 - Inserted payment slip record for ID: 1052
+2025-03-09 10:04:29 - Generated UUID: 7c98e4b4-f165-4099-ad34-7e161268ba92
+2025-03-09 10:04:29 - Payer name: Sandro Kulenović
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1102 UUID: 7c98e4b4-f165-4099-ad34-7e161268ba92
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1102
+2025-03-09 10:04:29 - Generated UUID: 1bce7aaf-1213-4c3e-a55c-0ebb74eea75f
+2025-03-09 10:04:29 - Payer name: Toma Mlinarić
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1103 UUID: 1bce7aaf-1213-4c3e-a55c-0ebb74eea75f
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1103
+2025-03-09 10:04:29 - Generated UUID: 7cfade81-aa02-41f8-a73a-d644f64ed27b
+2025-03-09 10:04:29 - Payer name: Petar Sučić
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1104 UUID: 7cfade81-aa02-41f8-a73a-d644f64ed27b
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1104
+2025-03-09 10:04:29 - Generated UUID: 5c1043b3-940d-4758-9e1c-b0383c56ade5
+2025-03-09 10:04:29 - Payer name: Josip Cvitaš
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1105 UUID: 5c1043b3-940d-4758-9e1c-b0383c56ade5
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1105
+2025-03-09 10:04:29 - Generated UUID: 271e12e1-e9d2-46a1-b64e-e158bf1035f1
+2025-03-09 10:04:29 - Payer name: Mirko Cvitaš
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1106 UUID: 271e12e1-e9d2-46a1-b64e-e158bf1035f1
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1106
+2025-03-09 10:04:29 - Generated UUID: 46a9d0b1-a189-4f55-a350-de3b6d2939ab
+2025-03-09 10:04:29 - Payer name: Pero Perić
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1107 UUID: 46a9d0b1-a189-4f55-a350-de3b6d2939ab
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1107
+2025-03-09 10:04:29 - Generated UUID: 8239060e-ca7e-4e64-9ba2-ccfc7518dd7a
+2025-03-09 10:04:29 - Payer name: Kévin Théophile-Catherine
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1108 UUID: 8239060e-ca7e-4e64-9ba2-ccfc7518dd7a
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1108
+2025-03-09 10:04:29 - Generated UUID: 16b7c714-bb88-4c92-b84c-5aaa0e75b0e2
+2025-03-09 10:04:29 - Payer name: Josip Cvitaš
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1109 UUID: 16b7c714-bb88-4c92-b84c-5aaa0e75b0e2
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1109
+2025-03-09 10:04:29 - Generated UUID: 5c4b5869-5659-4c6f-8785-e9208498e2a4
+2025-03-09 10:04:29 - Payer name: Josip Cvitaš
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1110 UUID: 5c4b5869-5659-4c6f-8785-e9208498e2a4
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1110
+2025-03-09 10:04:29 - Generated UUID: 9a2d7e14-37ce-4192-9d1e-14dbfabfeb1d
+2025-03-09 10:04:29 - Payer name: Josip Cvitaš
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1152 UUID: 9a2d7e14-37ce-4192-9d1e-14dbfabfeb1d
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1152
+2025-03-09 10:04:29 - Generated UUID: 2289391e-fc7f-4446-a4bb-7ac83ba40d95
+2025-03-09 10:04:29 - Payer name: Josip Cvitaš
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1202 UUID: 2289391e-fc7f-4446-a4bb-7ac83ba40d95
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1202
+2025-03-09 10:04:29 - Generated UUID: abf73eaf-2bbb-4781-8b07-b86fdc91bae7
+2025-03-09 10:04:29 - Payer name: Josip Cvitaš
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1252 UUID: abf73eaf-2bbb-4781-8b07-b86fdc91bae7
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1252
+2025-03-09 10:04:29 - Generated UUID: aaff131c-05ff-4139-85d0-32d1f01ef556
+2025-03-09 10:04:29 - Payer name: Franjo Jadro
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1253 UUID: aaff131c-05ff-4139-85d0-32d1f01ef556
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1253
+2025-03-09 10:04:29 - Generated UUID: 44b74e62-0da6-4253-8601-8b9c79bf4a70
+2025-03-09 10:04:29 - Payer name: Zoran Milanović
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1254 UUID: 44b74e62-0da6-4253-8601-8b9c79bf4a70
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1254
+2025-03-09 10:04:29 - Generated UUID: 8784e3ab-15c6-4d0c-bb9c-8cbf4802372e
+2025-03-09 10:04:29 - Payer name: Franjo Jović
+2025-03-09 10:04:29 - Generated PDF for Payment Slip ID: 1302 UUID: 8784e3ab-15c6-4d0c-bb9c-8cbf4802372e
+2025-03-09 10:04:29 - Inserted payment slip record for ID: 1302
+2025-03-09 10:04:30 - Generated UUID: 4a96e45a-509f-4b83-87df-25ae2605b8f5
+2025-03-09 10:04:30 - Payer name: Jean-Jacques Suffren
+2025-03-09 10:04:30 - Generated PDF for Payment Slip ID: 1303 UUID: 4a96e45a-509f-4b83-87df-25ae2605b8f5
+2025-03-09 10:04:30 - Inserted payment slip record for ID: 1303
+2025-03-09 10:04:30 - Generated UUID: 2cec3669-fa2f-4f7d-8f4d-6a1faf8026a3
+2025-03-09 10:04:30 - Payer name: Marin Dajak
+2025-03-09 10:04:30 - Generated PDF for Payment Slip ID: 1352 UUID: 2cec3669-fa2f-4f7d-8f4d-6a1faf8026a3
+2025-03-09 10:04:30 - Inserted payment slip record for ID: 1352
+2025-03-09 10:04:30 - Generated UUID: 3f4ad5f8-f3fa-4c07-a19d-a07e0f78cac3
+2025-03-09 10:04:30 - Payer name: Tomislav Tomislavić
+2025-03-09 10:04:30 - Generated PDF for Payment Slip ID: 1353 UUID: 3f4ad5f8-f3fa-4c07-a19d-a07e0f78cac3
+2025-03-09 10:04:30 - Inserted payment slip record for ID: 1353
+2025-03-09 10:04:30 - Generated UUID: 4557d2f6-c024-4575-8dcf-cc209b0ebfe5
+2025-03-09 10:04:30 - Payer name: Ivan Ivić
+2025-03-09 10:04:30 - Generated PDF for Payment Slip ID: 1402 UUID: 4557d2f6-c024-4575-8dcf-cc209b0ebfe5
+2025-03-09 10:04:30 - Inserted payment slip record for ID: 1402
+2025-03-09 10:04:30 - Generated UUID: 4a595c92-f281-4b5a-97c1-0872aee1df87
+2025-03-09 10:04:30 - Payer name: Ana Anić
+2025-03-09 10:04:30 - Generated PDF for Payment Slip ID: 1403 UUID: 4a595c92-f281-4b5a-97c1-0872aee1df87
+2025-03-09 10:04:30 - Inserted payment slip record for ID: 1403
+2025-03-09 10:04:30 - Step: [generatePaymentSlipStep] executed in 2s336ms
+2025-03-09 10:04:30 - Job: [SimpleJob: [name=generatePaymentSlipJob]] completed with the following parameters: [{'time':'{value=1741511067887, type=class java.lang.Long, identifying=true}'}] and the following status: [COMPLETED] in 2s418ms
+2025-03-09 10:04:33 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 10:04:38 - Securing GET /viewgeneratedpaymentslips
+2025-03-09 10:04:38 - Secured GET /viewgeneratedpaymentslips
+2025-03-09 10:04:38 - Securing GET /viewgeneratedpaymentslips
+2025-03-09 10:04:38 - Secured GET /viewgeneratedpaymentslips
+2025-03-09 10:04:38 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 10:04:38 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 10:04:42 - Securing GET /generatedpaymentslips/pdf/552
+2025-03-09 10:04:42 - Secured GET /generatedpaymentslips/pdf/552
+2025-03-09 10:04:42 - Set SecurityContextHolder to anonymous SecurityContext
+2025-03-09 11:09:17 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=57m59s845ms900µs).
