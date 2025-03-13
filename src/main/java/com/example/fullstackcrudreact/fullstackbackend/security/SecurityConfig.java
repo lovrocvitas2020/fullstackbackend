@@ -64,6 +64,11 @@ public class SecurityConfig {
                     "/getgeneratedpaymentslip/**",
                     "/deletegeneratedpaymentslip/**",
                     "/generatedpaymentslips/pdf/**",
+                    "/viewboats",
+                    "/viewboat/**",
+                    "/addboat",
+                    "/updateboat/**",
+                    "/deleteboat/**",
                     "/user/**"
                 ).permitAll()
                 .anyRequest().authenticated()
