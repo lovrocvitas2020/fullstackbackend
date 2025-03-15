@@ -67,7 +67,7 @@ public class SecurityConfig {
                     "/viewboats",
                     "/viewboat/**",
                     "/addboat",
-                    "/updateboat/**",
+                    "/editboat/**",
                     "/deleteboat/**",
                     "/user/**"
                 ).permitAll()

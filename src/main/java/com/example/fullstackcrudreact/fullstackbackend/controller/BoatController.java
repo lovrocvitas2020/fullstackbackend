@@ -40,10 +40,11 @@ public class BoatController {
     @Transactional
     public Boat addBoat(@RequestBody Boat boat) {
     
+        System.out.println("addBoat boat.toString():"+boat.toString());
         return boatService.addBoat(boat);
     }
 
-    @PutMapping("/updateboat/{id}")
+    @PutMapping("/editboat/{id}")
     @Transactional
     public Boat updateBoat(@PathVariable Long id, @RequestBody Boat boat) {
         return boatService.updateBoat(id, boat);

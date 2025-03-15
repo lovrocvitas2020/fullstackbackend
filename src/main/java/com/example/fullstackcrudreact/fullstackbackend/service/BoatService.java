@@ -34,7 +34,7 @@ public class BoatService {
             boat.setSeats(newBoat.getSeats());
             boat.setMaterial(newBoat.getMaterial());
             boat.setYear(newBoat.getYear());
-            boat.setBoatCondition(newBoat.getBoatCondition());
+            boat.setConditionOfBoat(newBoat.getConditionOfBoat());
             boat.setAvailable(newBoat.isAvailable());
             return boatRepository.save(boat);
         }).orElseThrow(() -> new RuntimeException("Boat not found"));

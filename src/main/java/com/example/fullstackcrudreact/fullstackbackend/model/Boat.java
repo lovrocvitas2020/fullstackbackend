@@ -1,5 +1,6 @@
 package com.example.fullstackcrudreact.fullstackbackend.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,8 +23,9 @@ public class Boat {
     private String material; // Boat material (e.g., "Carbon Fiber", "Wood")
   
     private int year; // Year of manufacture
- 
-    private String boatCondition; // Condition (e.g., "Excellent", "Good", "Needs Repair")
+  
+    @Column(name = "conditionofboat")
+    private String conditionOfBoat; // Condition (e.g., "Excellent", "Good", "Needs Repair")
   
     private boolean available; // Is the boat available for use?
 
@@ -31,13 +33,13 @@ public class Boat {
     @Override
     public String toString() {
         return "Boat [id=" + id + ", name=" + name + ", type=" + type + ", seats=" + seats + ", material=" + material
-                + ", year=" + year + ", boatCondition=" + boatCondition + ", available=" + available + "]";
+                + ", year=" + year + ", conditionOfBoat=" + conditionOfBoat + ", available=" + available + "]";
     }
 
     // default constructor
     public Boat() {};
 
-    public Boat(Long id, String name, String type, int seats, String material, int year, String boatCondition,
+    public Boat(Long id, String name, String type, int seats, String material, int year, String conditionOfBoat,
             boolean available) {
         this.id = id;
         this.name = name;
@@ -45,7 +47,7 @@ public class Boat {
         this.seats = seats;
         this.material = material;
         this.year = year;
-        this.boatCondition = boatCondition;
+        this.conditionOfBoat = conditionOfBoat;
         this.available = available;
     }
 
@@ -97,12 +99,13 @@ public class Boat {
         this.year = year;
     }
 
-    public String getBoatCondition() {
-        return boatCondition;
+    public String getConditionOfBoat() {
+        return conditionOfBoat;
     }
 
-    public void setBoatCondition(String boatCondition) {
-        this.boatCondition = boatCondition;
+    public void setConditionOfBoat(String conditionOfBoat) {
+        System.out.println("Setting conditionOfBoat: "+conditionOfBoat);
+        this.conditionOfBoat = conditionOfBoat;
     }
 
     public boolean isAvailable() {
