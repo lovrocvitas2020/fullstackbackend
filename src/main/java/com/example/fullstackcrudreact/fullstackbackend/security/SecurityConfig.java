@@ -69,6 +69,10 @@ public class SecurityConfig {
                     "/addboat",
                     "/editboat/**",
                     "/deleteboat/**",
+                    "/viewequipment",
+                    "/deleteequipment/**",
+                    "/editequipment/**",
+                    "/addequipment",
                     "/user/**"
                 ).permitAll()
                 .anyRequest().authenticated()
