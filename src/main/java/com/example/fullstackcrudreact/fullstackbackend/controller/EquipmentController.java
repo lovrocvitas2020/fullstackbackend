@@ -59,6 +59,7 @@ public class EquipmentController {
             equipment.setYear(updatedEquipment.getYear());
             equipment.setAvailable(updatedEquipment.isAvailable());
             equipment.setConditionOfEquipment(updatedEquipment.getConditionOfEquipment());
+            equipment.setSerialNumber(updatedEquipment.getSerialNumber());
             return ResponseEntity.ok(equipmentRepository.save(equipment));
         }).orElse(ResponseEntity.notFound().build());
     }

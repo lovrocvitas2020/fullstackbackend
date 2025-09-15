@@ -21,6 +21,9 @@ public class Equipment {
 
     private int year; // Year of manufacture
 
+    private String serialNumber; // Serial Number
+
+
     private boolean available; // Is the equipment available for use?
 
     @Column(name = "conditionofequipment")
@@ -29,15 +32,18 @@ public class Equipment {
     // Default constructor
     public Equipment() {}
 
-    public Equipment(Long id, String name, String category, String brand, int year, boolean available, String conditionOfEquipment) {
+    public Equipment(Long id, String name, String category, String brand, int year, String serialNumber, boolean available, String conditionOfEquipment) {
         this.id = id;
         this.name = name;
         this.category = category;
         this.brand = brand;
         this.year = year;
+        this.serialNumber = serialNumber;
         this.available = available;
         this.conditionOfEquipment = conditionOfEquipment;
     }
+
+
 
     public Long getId() {
         return id;
@@ -91,6 +97,14 @@ public class Equipment {
         return conditionOfEquipment;
     }
 
+      public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
+
     public void setConditionOfEquipment(String conditionOfEquipment) {
         System.out.println("Setting conditionOfEquipment: " + conditionOfEquipment);
         this.conditionOfEquipment = conditionOfEquipment;
@@ -99,6 +113,8 @@ public class Equipment {
     @Override
     public String toString() {
         return "Equipment [id=" + id + ", name=" + name + ", category=" + category + ", brand=" + brand
-                + ", year=" + year + ", available=" + available + ", conditionOfEquipment=" + conditionOfEquipment + "]";
+               + ", serialNumber=" + serialNumber + ", year=" + year + ", available=" + available + ", conditionOfEquipment=" + conditionOfEquipment + "]";
     }
+
+  
 }

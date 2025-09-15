@@ -73,6 +73,9 @@ public class SecurityConfig {
                     "/deleteequipment/**",
                     "/editequipment/**",
                     "/addequipment",
+                    "/addtraining",
+                    "/viewtraining/**",
+                    "/viewtrainings",
                     "/user/**"
                 ).permitAll()
                 .anyRequest().authenticated()
