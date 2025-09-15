@@ -1,0 +1,237 @@
+2025-08-24 08:19:22 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h51m49s480ms330µs300ns).
+2025-08-24 08:35:35 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m41s630ms682µs100ns).
+2025-08-24 08:44:03 - Securing GET /viewpaymentslips
+2025-08-24 08:44:03 - Secured GET /viewpaymentslips
+2025-08-24 08:44:03 - Fetching all payment slips
+2025-08-24 08:44:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:44:03 - Securing GET /viewpaymentslips
+2025-08-24 08:44:03 - Secured GET /viewpaymentslips
+2025-08-24 08:44:03 - Fetching all payment slips
+2025-08-24 08:44:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:44:15 - Securing GET /viewpaymentslip/1403
+2025-08-24 08:44:15 - Secured GET /viewpaymentslip/1403
+2025-08-24 08:44:15 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:44:15 - Securing GET /viewpaymentslip/1403
+2025-08-24 08:44:15 - Secured GET /viewpaymentslip/1403
+2025-08-24 08:44:15 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:44:18 - Securing GET /viewpaymentslips
+2025-08-24 08:44:18 - Secured GET /viewpaymentslips
+2025-08-24 08:44:18 - Fetching all payment slips
+2025-08-24 08:44:18 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:44:18 - Securing GET /viewpaymentslips
+2025-08-24 08:44:18 - Secured GET /viewpaymentslips
+2025-08-24 08:44:18 - Fetching all payment slips
+2025-08-24 08:44:18 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:44:23 - Securing GET /users?page=0&size=10
+2025-08-24 08:44:23 - Secured GET /users?page=0&size=10
+2025-08-24 08:44:23 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:44:23 - Securing GET /users?page=0&size=10
+2025-08-24 08:44:23 - Secured GET /users?page=0&size=10
+2025-08-24 08:44:23 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:57:15 - Securing GET /users?page=1&size=10
+2025-08-24 08:57:15 - Secured GET /users?page=1&size=10
+2025-08-24 08:57:15 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:57:16 - Securing GET /users?page=2&size=10
+2025-08-24 08:57:16 - Secured GET /users?page=2&size=10
+2025-08-24 08:57:16 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:57:17 - Securing GET /users?page=5&size=10
+2025-08-24 08:57:17 - Secured GET /users?page=5&size=10
+2025-08-24 08:57:17 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:57:22 - Securing GET /users?page=0&size=10
+2025-08-24 08:57:22 - Secured GET /users?page=0&size=10
+2025-08-24 08:57:22 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:57:22 - Securing GET /users?page=0&size=10
+2025-08-24 08:57:22 - Secured GET /users?page=0&size=10
+2025-08-24 08:57:22 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:57:26 - Securing GET /viewequipment
+2025-08-24 08:57:26 - Secured GET /viewequipment
+2025-08-24 08:57:26 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 08:57:26 - Securing GET /viewequipment
+2025-08-24 08:57:26 - Secured GET /viewequipment
+2025-08-24 08:57:26 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 10:56:14 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m37s147ms677µs600ns).
+2025-08-24 11:00:58 - Securing OPTIONS /loginuser
+2025-08-24 11:00:58 - Securing POST /loginuser
+2025-08-24 11:00:58 - Secured POST /loginuser
+2025-08-24 11:00:58 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:00:58 - Securing POST /loginuser
+2025-08-24 11:00:58 - Secured POST /loginuser
+2025-08-24 11:00:58 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:00:58 - Securing GET /users?page=0&size=10
+2025-08-24 11:00:58 - Secured GET /users?page=0&size=10
+2025-08-24 11:00:58 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:00:58 - Securing GET /users?page=0&size=10
+2025-08-24 11:00:58 - Secured GET /users?page=0&size=10
+2025-08-24 11:00:58 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:01:21 - Securing GET /users
+2025-08-24 11:01:21 - Secured GET /users
+2025-08-24 11:01:21 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:01:21 - Securing OPTIONS /user
+2025-08-24 11:01:21 - Securing POST /user
+2025-08-24 11:01:21 - Secured POST /user
+2025-08-24 11:01:21 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:01:21 - Securing GET /users?page=0&size=10
+2025-08-24 11:01:21 - Secured GET /users?page=0&size=10
+2025-08-24 11:01:21 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:01:21 - Securing GET /users?page=0&size=10
+2025-08-24 11:01:21 - Secured GET /users?page=0&size=10
+2025-08-24 11:01:21 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:04:58 - HV000001: Hibernate Validator 8.0.2.Final
+2025-08-24 11:04:58 - Starting FullstackbackendApplication using Java 21.0.8 with PID 20856 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
+2025-08-24 11:04:58 - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-08-24 11:04:58 - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 11:05:01 - Finished Spring Batch infrastructure beans configuration in 9 ms.
+2025-08-24 11:05:01 - Bean jobRepository already defined in the application context, skipping the registration of a jobRepository
+2025-08-24 11:05:01 - Bean jobExplorer already defined in the application context, skipping the registration of a jobExplorer
+2025-08-24 11:05:01 - Bean jobLauncher already defined in the application context, skipping the registration of a jobLauncher
+2025-08-24 11:05:01 - Bean jobRegistry already defined in the application context, skipping the registration of a jobRegistry
+2025-08-24 11:05:01 - Bean jobRegistrySmartInitializingSingleton already defined in the application context, skipping the registration of a jobRegistrySmartInitializingSingleton
+2025-08-24 11:05:01 - Bean jobOperator already defined in the application context, skipping the registration of a jobOperator
+2025-08-24 11:05:01 - Finished Spring Batch infrastructure beans configuration in 1 ms.
+2025-08-24 11:05:02 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-24 11:05:02 - Finished Spring Data repository scanning in 146 ms. Found 12 JPA repository interfaces.
+2025-08-24 11:05:04 - Tomcat initialized with port 8080 (http)
+2025-08-24 11:05:04 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-24 11:05:04 - Starting service [Tomcat]
+2025-08-24 11:05:04 - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-08-24 11:05:04 - Initializing Spring embedded WebApplicationContext
+2025-08-24 11:05:04 - Root WebApplicationContext: initialization completed in 5704 ms
+2025-08-24 11:05:05 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-24 11:05:05 - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-08-24 11:05:05 - HHH000026: Second-level cache disabled
+2025-08-24 11:05:06 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-24 11:05:06 - HikariPool-1 - Starting...
+2025-08-24 11:05:07 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@126d8659
+2025-08-24 11:05:07 - HikariPool-1 - Start completed.
+2025-08-24 11:05:07 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-24 11:05:07 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-08-24 11:05:09 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-24 11:05:09 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-24 11:05:09 - No database type set, using meta data indicating: MYSQL
+2025-08-24 11:05:11 - No TaskExecutor has been set, defaulting to synchronous executor.
+2025-08-24 11:05:12 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-24 11:05:13 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-24 11:05:14 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-08-24 11:05:14 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@261d8a9c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e43189c, org.springframework.security.web.context.SecurityContextHolderFilter@27b94ed9, org.springframework.security.web.header.HeaderWriterFilter@662b17b3, org.springframework.web.filter.CorsFilter@50bf795f, org.springframework.security.web.authentication.logout.LogoutFilter@404f1907, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6f139a8f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31b273b2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6dc6608c, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@37b3e8b3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2fce55d6, org.springframework.security.web.access.ExceptionTranslationFilter@fe32f34, org.springframework.security.web.access.intercept.AuthorizationFilter@43da05ee]
+2025-08-24 11:05:15 - Starting ProtocolHandler ["http-nio-8080"]
+2025-08-24 11:05:15 - Tomcat started on port 8080 (http) with context path ''
+2025-08-24 11:05:15 - Started FullstackbackendApplication in 18.068 seconds (process running for 19.816)
+2025-08-24 11:05:18 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24 11:05:18 - Initializing Servlet 'dispatcherServlet'
+2025-08-24 11:05:18 - Completed initialization in 3 ms
+2025-08-24 11:08:45 - HV000001: Hibernate Validator 8.0.2.Final
+2025-08-24 11:08:45 - Starting FullstackbackendApplication using Java 21.0.8 with PID 14908 (C:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend\target\classes started by josip in c:\Users\josip\Documents\SpringBootProjects\TestFolderForProjectClone\fullstackbackend)
+2025-08-24 11:08:45 - Running with Spring Boot v3.2.2, Spring v6.1.3
+2025-08-24 11:08:45 - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 11:08:47 - Finished Spring Batch infrastructure beans configuration in 10 ms.
+2025-08-24 11:08:47 - Bean jobRepository already defined in the application context, skipping the registration of a jobRepository
+2025-08-24 11:08:47 - Bean jobExplorer already defined in the application context, skipping the registration of a jobExplorer
+2025-08-24 11:08:47 - Bean jobLauncher already defined in the application context, skipping the registration of a jobLauncher
+2025-08-24 11:08:47 - Bean jobRegistry already defined in the application context, skipping the registration of a jobRegistry
+2025-08-24 11:08:47 - Bean jobRegistrySmartInitializingSingleton already defined in the application context, skipping the registration of a jobRegistrySmartInitializingSingleton
+2025-08-24 11:08:47 - Bean jobOperator already defined in the application context, skipping the registration of a jobOperator
+2025-08-24 11:08:47 - Finished Spring Batch infrastructure beans configuration in 1 ms.
+2025-08-24 11:08:48 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-24 11:08:48 - Finished Spring Data repository scanning in 151 ms. Found 12 JPA repository interfaces.
+2025-08-24 11:08:49 - Tomcat initialized with port 8080 (http)
+2025-08-24 11:08:49 - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-24 11:08:49 - Starting service [Tomcat]
+2025-08-24 11:08:49 - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2025-08-24 11:08:50 - Initializing Spring embedded WebApplicationContext
+2025-08-24 11:08:50 - Root WebApplicationContext: initialization completed in 4179 ms
+2025-08-24 11:08:51 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-24 11:08:51 - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-08-24 11:08:51 - HHH000026: Second-level cache disabled
+2025-08-24 11:08:51 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-24 11:08:51 - HikariPool-1 - Starting...
+2025-08-24 11:08:52 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f8d42d1
+2025-08-24 11:08:52 - HikariPool-1 - Start completed.
+2025-08-24 11:08:52 - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-24 11:08:52 - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-08-24 11:08:54 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-24 11:08:54 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-24 11:08:54 - No database type set, using meta data indicating: MYSQL
+2025-08-24 11:08:56 - No TaskExecutor has been set, defaulting to synchronous executor.
+2025-08-24 11:08:57 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-24 11:08:58 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-24 11:08:59 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-08-24 11:08:59 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@35d9d10b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7006b304, org.springframework.security.web.context.SecurityContextHolderFilter@57dcdc14, org.springframework.security.web.header.HeaderWriterFilter@2fce55d6, org.springframework.web.filter.CorsFilter@4f402027, org.springframework.security.web.authentication.logout.LogoutFilter@452d9887, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@219505d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@eecf56b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33a267f, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@20ecbeda, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@321b0237, org.springframework.security.web.access.ExceptionTranslationFilter@140db646, org.springframework.security.web.access.intercept.AuthorizationFilter@7bdfd631]
+2025-08-24 11:09:01 - Starting ProtocolHandler ["http-nio-8080"]
+2025-08-24 11:09:01 - Tomcat started on port 8080 (http) with context path ''
+2025-08-24 11:09:01 - Started FullstackbackendApplication in 16.162 seconds (process running for 17.012)
+2025-08-24 11:09:03 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24 11:09:03 - Initializing Servlet 'dispatcherServlet'
+2025-08-24 11:09:03 - Completed initialization in 4 ms
+2025-08-24 11:12:55 - Securing GET /users?page=0&size=10
+2025-08-24 11:12:55 - Secured GET /users?page=0&size=10
+2025-08-24 11:12:55 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:12:55 - Securing GET /users?page=0&size=10
+2025-08-24 11:12:55 - Secured GET /users?page=0&size=10
+2025-08-24 11:12:55 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:12:57 - Securing GET /viewequipment
+2025-08-24 11:12:57 - Secured GET /viewequipment
+2025-08-24 11:12:57 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:12:57 - Securing GET /viewequipment
+2025-08-24 11:12:57 - Secured GET /viewequipment
+2025-08-24 11:12:57 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:13:05 - Securing GET /viewequipment
+2025-08-24 11:13:05 - Secured GET /viewequipment
+2025-08-24 11:13:05 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:13:05 - Securing GET /viewequipment
+2025-08-24 11:13:05 - Secured GET /viewequipment
+2025-08-24 11:13:05 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:13:36 - Securing OPTIONS /addequipment
+2025-08-24 11:13:36 - Securing POST /addequipment
+2025-08-24 11:13:36 - Secured POST /addequipment
+2025-08-24 11:13:36 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:13:36 - Securing GET /viewequipment
+2025-08-24 11:13:36 - Secured GET /viewequipment
+2025-08-24 11:13:36 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 11:13:36 - Securing GET /viewequipment
+2025-08-24 11:13:36 - Secured GET /viewequipment
+2025-08-24 11:13:36 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 15:12:05 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h4m42s427ms621µs700ns).
+2025-08-24 15:40:30 - Securing OPTIONS /deleteequipment/2
+2025-08-24 15:40:30 - Securing DELETE /deleteequipment/2
+2025-08-24 15:40:30 - Secured DELETE /deleteequipment/2
+2025-08-24 15:40:31 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 15:40:34 - Securing GET /users?page=0&size=10
+2025-08-24 15:40:34 - Secured GET /users?page=0&size=10
+2025-08-24 15:40:34 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 15:40:34 - Securing GET /users?page=0&size=10
+2025-08-24 15:40:34 - Secured GET /users?page=0&size=10
+2025-08-24 15:40:34 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 15:44:40 - Securing OPTIONS /loginuser
+2025-08-24 15:44:40 - Securing POST /loginuser
+2025-08-24 15:44:40 - Secured POST /loginuser
+2025-08-24 15:44:40 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 15:44:40 - Securing POST /loginuser
+2025-08-24 15:44:40 - Secured POST /loginuser
+2025-08-24 15:44:41 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 15:44:41 - Securing GET /users?page=0&size=10
+2025-08-24 15:44:41 - Secured GET /users?page=0&size=10
+2025-08-24 15:44:41 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 15:44:41 - Securing GET /users?page=0&size=10
+2025-08-24 15:44:41 - Secured GET /users?page=0&size=10
+2025-08-24 15:44:41 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 16:05:50 - Securing OPTIONS /loginuser
+2025-08-24 16:05:51 - Securing POST /loginuser
+2025-08-24 16:05:51 - Secured POST /loginuser
+2025-08-24 16:05:51 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 16:05:51 - Securing POST /loginuser
+2025-08-24 16:05:51 - Secured POST /loginuser
+2025-08-24 16:05:51 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 16:05:51 - Securing GET /users?page=0&size=10
+2025-08-24 16:05:51 - Secured GET /users?page=0&size=10
+2025-08-24 16:05:51 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 16:05:51 - Securing GET /users?page=0&size=10
+2025-08-24 16:05:51 - Secured GET /users?page=0&size=10
+2025-08-24 16:05:51 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 17:11:41 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58m5s335ms417µs400ns).
+2025-08-24 20:49:23 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h43m40s534ms373µs800ns).
+2025-08-24 20:54:43 - Securing GET /viewequipment
+2025-08-24 20:54:43 - Secured GET /viewequipment
+2025-08-24 20:54:43 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-24 20:54:43 - Securing GET /viewequipment
+2025-08-24 20:54:43 - Secured GET /viewequipment
+2025-08-24 20:54:43 - Set SecurityContextHolder to anonymous SecurityContext

@@ -1,0 +1,29 @@
+2025-09-05 05:56:59 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h2m37s457ms420µs200ns).
+2025-09-05 16:35:29 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10h38m39s62ms531µs200ns).
+2025-09-05 16:52:17 - Securing GET /user/1
+2025-09-05 16:52:17 - Secured GET /user/1
+2025-09-05 16:52:18 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-05 16:52:18 - Securing GET /user/1
+2025-09-05 16:52:18 - Secured GET /user/1
+2025-09-05 16:52:18 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-05 16:52:20 - Securing GET /userdetails/1
+2025-09-05 16:52:20 - Secured GET /userdetails/1
+2025-09-05 16:52:20 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-05 16:52:20 - Securing GET /userdetails/1
+2025-09-05 16:52:20 - Secured GET /userdetails/1
+2025-09-05 16:52:20 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-05 16:52:21 - Securing GET /user/1
+2025-09-05 16:52:21 - Secured GET /user/1
+2025-09-05 16:52:21 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-05 16:52:21 - Securing GET /user/1
+2025-09-05 16:52:21 - Secured GET /user/1
+2025-09-05 16:52:21 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-05 16:52:23 - Securing GET /users?page=0&size=10
+2025-09-05 16:52:23 - Secured GET /users?page=0&size=10
+2025-09-05 16:52:23 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-05 16:52:23 - Securing GET /users?page=0&size=10
+2025-09-05 16:52:23 - Secured GET /users?page=0&size=10
+2025-09-05 16:52:23 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-05 17:03:15 - Starting PaymentSlip Batch Job
+2025-09-05 19:35:55 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h22m23s583ms451µs).
+2025-09-05 23:38:59 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h48m33s293ms75µs401ns).

@@ -12,10 +12,10 @@ services:
 
   backend:
     build:
-      context: ./backend
+      context: ../fullstackbackend
       dockerfile: Dockerfile.backend
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/fullstack
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/fullstack
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: admin
     ports:
@@ -25,7 +25,7 @@ services:
 
   frontend:
     build:
-      context: ./frontend
+      context: C:/Users/josip/Desktop/fullstack-front
       dockerfile: Dockerfile.frontend
     ports:
       - "3000:3000"

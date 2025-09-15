@@ -1,0 +1,93 @@
+2025-09-03 03:07:55 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h22m4s634ms563µs).
+2025-09-03 23:03:55 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19h55m59s421ms119µs500ns).
+2025-09-03 23:15:02 - Securing GET /users
+2025-09-03 23:15:02 - Secured GET /users
+2025-09-03 23:15:02 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:02 - Securing GET /users
+2025-09-03 23:15:02 - Secured GET /users
+2025-09-03 23:15:02 - Securing GET /users?page=1&size=10
+2025-09-03 23:15:02 - Secured GET /users?page=1&size=10
+2025-09-03 23:15:02 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:02 - Securing GET /users
+2025-09-03 23:15:02 - Secured GET /users
+2025-09-03 23:15:02 - Securing GET /users?page=1&size=10
+2025-09-03 23:15:02 - Secured GET /users?page=1&size=10
+2025-09-03 23:15:02 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:02 - Securing GET /users?page=2&size=10
+2025-09-03 23:15:02 - Secured GET /users?page=2&size=10
+2025-09-03 23:15:02 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:02 - Securing GET /users
+2025-09-03 23:15:02 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:02 - Secured GET /users
+2025-09-03 23:15:02 - Securing GET /users?page=1&size=10
+2025-09-03 23:15:02 - Secured GET /users?page=1&size=10
+2025-09-03 23:15:02 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:02 - Securing GET /users?page=2&size=10
+2025-09-03 23:15:02 - Secured GET /users?page=2&size=10
+2025-09-03 23:15:02 - Securing GET /users?page=3&size=10
+2025-09-03 23:15:02 - Secured GET /users?page=3&size=10
+2025-09-03 23:15:02 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:02 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:02 - Securing GET /users?page=1&size=10
+2025-09-03 23:15:02 - Secured GET /users?page=1&size=10
+2025-09-03 23:15:02 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Securing GET /users?page=4&size=10
+2025-09-03 23:15:03 - Securing GET /users?page=2&size=10
+2025-09-03 23:15:03 - Secured GET /users?page=2&size=10
+2025-09-03 23:15:03 - Securing GET /users?page=3&size=10
+2025-09-03 23:15:03 - Secured GET /users?page=3&size=10
+2025-09-03 23:15:03 - Secured GET /users?page=4&size=10
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Securing GET /users?page=2&size=10
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Secured GET /users?page=2&size=10
+2025-09-03 23:15:03 - Securing GET /users?page=3&size=10
+2025-09-03 23:15:03 - Secured GET /users?page=3&size=10
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Securing GET /users?page=4&size=10
+2025-09-03 23:15:03 - Securing GET /users?page=5&size=10
+2025-09-03 23:15:03 - Secured GET /users?page=4&size=10
+2025-09-03 23:15:03 - Secured GET /users?page=5&size=10
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Securing GET /users?page=4&size=10
+2025-09-03 23:15:03 - Securing GET /users?page=3&size=10
+2025-09-03 23:15:03 - Secured GET /users?page=3&size=10
+2025-09-03 23:15:03 - Secured GET /users?page=4&size=10
+2025-09-03 23:15:03 - Securing GET /users?page=5&size=10
+2025-09-03 23:15:03 - Secured GET /users?page=5&size=10
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Securing GET /viewworklog
+2025-09-03 23:15:03 - Secured GET /viewworklog
+2025-09-03 23:15:03 - Securing GET /users?page=5&size=10
+2025-09-03 23:15:03 - Securing GET /users?page=4&size=10
+2025-09-03 23:15:03 - Secured GET /users?page=5&size=10
+2025-09-03 23:15:03 - Secured GET /users?page=4&size=10
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Securing GET /users?page=5&size=10
+2025-09-03 23:15:03 - Secured GET /users?page=5&size=10
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:03 - Securing GET /viewworklog
+2025-09-03 23:15:03 - Secured GET /viewworklog
+2025-09-03 23:15:03 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:50 - Securing OPTIONS /add_worklog
+2025-09-03 23:15:50 - Securing POST /add_worklog
+2025-09-03 23:15:50 - Secured POST /add_worklog
+2025-09-03 23:15:50 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:15:50 - Securing GET /viewworklog
+2025-09-03 23:15:50 - Secured GET /viewworklog
+2025-09-03 23:15:50 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:16:28 - Securing GET /users?page=0&size=10
+2025-09-03 23:16:28 - Secured GET /users?page=0&size=10
+2025-09-03 23:16:28 - Set SecurityContextHolder to anonymous SecurityContext
+2025-09-03 23:16:28 - Securing GET /users?page=0&size=10
+2025-09-03 23:16:28 - Secured GET /users?page=0&size=10
+2025-09-03 23:16:28 - Set SecurityContextHolder to anonymous SecurityContext

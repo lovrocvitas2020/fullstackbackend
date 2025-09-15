@@ -1,0 +1,26 @@
+2025-08-25 14:09:54 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15h20m59s784ms868µs800ns).
+2025-08-25 22:19:51 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h58m57s133ms572µs500ns).
+2025-08-25 22:21:14 - Securing GET /users?page=0&size=10
+2025-08-25 22:21:14 - Secured GET /users?page=0&size=10
+2025-08-25 22:21:14 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-25 22:21:14 - Securing GET /users?page=0&size=10
+2025-08-25 22:21:14 - Secured GET /users?page=0&size=10
+2025-08-25 22:21:14 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-25 22:24:37 - Securing GET /users?page=5&size=10
+2025-08-25 22:24:37 - Secured GET /users?page=5&size=10
+2025-08-25 22:24:37 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-25 22:52:48 - Securing OPTIONS /loginuser
+2025-08-25 22:52:48 - Securing OPTIONS /loginuser
+2025-08-25 22:52:48 - Securing POST /loginuser
+2025-08-25 22:52:48 - Securing POST /loginuser
+2025-08-25 22:52:48 - Secured POST /loginuser
+2025-08-25 22:52:48 - Secured POST /loginuser
+2025-08-25 22:52:48 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-25 22:52:48 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-25 22:52:48 - Securing GET /users?page=0&size=10
+2025-08-25 22:52:48 - Secured GET /users?page=0&size=10
+2025-08-25 22:52:48 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-25 22:52:48 - Securing GET /users?page=0&size=10
+2025-08-25 22:52:48 - Secured GET /users?page=0&size=10
+2025-08-25 22:52:48 - Set SecurityContextHolder to anonymous SecurityContext
+2025-08-25 23:11:19 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m57s747ms30µs300ns).

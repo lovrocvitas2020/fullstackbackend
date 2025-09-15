@@ -1,0 +1,6 @@
+2025-08-27 11:28:36 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18h30m53s189ms586µs300ns).
+2025-08-27 15:07:30 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h35m56s285ms606µs100ns).
+2025-08-27 17:07:47 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h57m46s846ms622µs900ns).
+2025-08-27 17:31:17 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m59s654ms44µs600ns).
+2025-08-27 20:39:06 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h19m48s578ms323µs900ns).
+2025-08-27 21:07:21 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m14s88ms20µs).
